@@ -11,7 +11,8 @@ It includes practices for multiple languages, based on our own experience and ex
 * [Sass && CSS]()
 * [Javascript && Coffescript]()
 * [Objective-C && Swift]()
-* [NodeJs]
+* [NodeJs]()
+* [Deployment]()
 
 Primary guidelines:
 
