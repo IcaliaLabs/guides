@@ -1,5 +1,4 @@
 # Code Convention
-===
 
 Below we haved listed some of the practices we follow for every Rails project.
 
