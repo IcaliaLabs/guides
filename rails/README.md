@@ -27,7 +27,7 @@ Then setup the dependencies:
 
 ```
 $ bundle install
-``
+```
 
 Add the `database.yml` file and edit it to meet your credentials. Then create the database and run the migrations:
 
