@@ -1,5 +1,4 @@
 # Icalia Guides
-===
 
 Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintanable code to get things done.
 
