@@ -103,3 +103,20 @@ Remember that this process only applies for [hot fixes]() and merged features to
 * Make sure the PG-Backups add on is enabled
 * Make sure to add a logs providers
 * Make sure you have [New Relic] for app monitoring
+
+## Deployment checklist
+
+Whenever we are deploying an application to production for the first time, we make sure we have everything covered:
+
+* Are we on Cedar?
+* Are we using Unicorn as the server? [Setup Unicorn](https://devcenter.heroku.com/articles/rails-unicorn)
+* Are we using Delayed jobs for sending emails?
+* Is Ruby 2.x.x defined in the Gemfile?
+* Are we using Figaro to setup the environment variables? [Setup Figaro](https://github.com/laserlemon/figaro)
+* Are we saving logs in Heroku through one of the providers?
+* Are we backing up the databases on Heroku?
+* Are we monitoring the application performance? [New Relic](https://devcenter.heroku.com/articles/newrelic#ruby-configuration)
+* Are we tracking errors? [Exception Notification](https://github.com/smartinez87/exception_notification)
+* Is the domain configured?
+* Is Sendgrid configured for email delivering?
+

@@ -11,7 +11,6 @@ It includes practices for multiple languages, based on our own experience and ex
 * [Javascript && Coffescript]()
 * [Objective-C && Swift]()
 * [NodeJs]()
-* [Deployment]()
 
 Primary guidelines:
 
