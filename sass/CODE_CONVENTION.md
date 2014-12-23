@@ -21,7 +21,6 @@ Below we haved listed some of the practices we follow when using Sass as a pre-p
 
 
 ## Listing rules
-------------
 
 **List @extend(s) first**
 
@@ -73,7 +72,6 @@ This way `placeholders` and `mixins` are separated and allows an easier reading.
 ```
 
 ## Variable naming
-------------
 
 When comes to naming variables, it may be hard to find the correct name for it, at Icalia Labs we the variable names to be related to the behavior or purpose of the variable and not the color or style.
 

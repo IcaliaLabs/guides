@@ -3,7 +3,6 @@
 For code convention check out the [CODE_CONVENTION]() file.
 
 ## Installing Compass
-------------
 
 When working with Sass we always include [compass] no matter if it's a Rails project or a static page. Compass help us to produce more code with less effort and in less time thanks to the huge amount of mixins and placeholders it has.
 
@@ -25,7 +24,6 @@ If you find it hard to work with this, we have put together a set up for happy f
 Having problems?, head over to the leader of your project and ask for help or if you find you can solve it and probably place a pull request you are welcome.
 
 ## Directory structure
-------------
 
 This structure applies for a Rails project and for a static site:
 
@@ -72,7 +70,6 @@ If you take a good look on the order of the files invocations, you will notice t
 
 
 ## Code Review
-------------
 
 There are simple guidelines when providing code review to a teammate. The most particular are:
 
