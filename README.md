@@ -1,7 +1,7 @@
-# Taikai
+# Icalia Guides
 ===
 
-Taikai is the code convention used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintanable code to get things done.
+Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintanable code to get things done.
 
 It includes practices for multiple languages, based on our own experience and experts advice. It also includes how to handle code review when working with teammates.
 
@@ -21,7 +21,7 @@ Primary guidelines:
 * Be kind with your teammate
 * Don't violate any guideline, unless you can convince another teammate of doing so
 
-Language used on Taiki:
+Language used on Icalia Guides:
 
 * "Choose" means that there could be multiple options to choose from
 * "Use" is a positive declaration
@@ -40,11 +40,11 @@ Everyone is freely to collaborate and submit pull request if needed.
 Credits
 -------
 
-Thank you, [contributors](https://github.com/icalialabs/taiki/graphs/contributors)!
+Thank you, [contributors](https://github.com/icalialabs/icalia_guides/graphs/contributors)!
 
 ![Icalia Labs](https://raw.githubusercontent.com/IcaliaLabs/kaishi/master/logo.png)
 
-Taiki is maintained by [Icalia Labs](http://www.icalialabs.com/team).
+Icalia Guides is maintained by [Icalia Labs](http://www.icalialabs.com/team).
 
 License
 -------
