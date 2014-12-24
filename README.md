@@ -4,13 +4,13 @@ Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com
 
 It includes practices for multiple languages, based on our own experience and experts advice. It also includes how to handle code review when working with teammates.
 
-* [Rails]()
-* [Ruby]()
-* [Git]()
-* [Sass && CSS]()
-* [Javascript && Coffescript]()
-* [Objective-C && Swift]()
-* [NodeJs]()
+* [Rails](https://github.com/IcaliaLabs/icalia_guides/tree/master/rails)
+* [Ruby](https://github.com/IcaliaLabs/icalia_guides/tree/master/ruby)
+* [Git](https://github.com/IcaliaLabs/icalia_guides/tree/master/git)
+* [Sass && CSS](https://github.com/IcaliaLabs/icalia_guides/tree/master/sass)
+* [Javascript && Coffescript](https://github.com/IcaliaLabs/icalia_guides/tree/master/coffeescript)
+* [Objective-C && Swift](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift)
+* NodeJs (in progress)
 
 Primary guidelines:
 

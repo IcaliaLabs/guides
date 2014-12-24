@@ -1,10 +1,10 @@
 # Sass
 
-For code convention check out the [CODE_CONVENTION]() file.
+For code convention check out the [CODE_CONVENTION](https://github.com/IcaliaLabs/icalia_guides/blob/master/sass/CODE_CONVENTION.md) file.
 
 ## Installing Compass
 
-When working with Sass we always include [compass] no matter if it's a Rails project or a static page. Compass help us to produce more code with less effort and in less time thanks to the huge amount of mixins and placeholders it has.
+When working with Sass we always include [compass](http://compass-style.org/) no matter if it's a Rails project or a static page. Compass help us to produce more code with less effort and in less time thanks to the huge amount of mixins and placeholders it has.
 
 The installation is pretty easy, just open de terminal and run:
 

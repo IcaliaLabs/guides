@@ -44,7 +44,7 @@ If for some reason you find it hard to run it or something is missing about the 
 
 ## Tracking && Developing
 
-We love git, we use it for every single project. Check out the [Git guide]() for information about this.
+We love git, we use it for every single project. Check out the [Git guide](https://github.com/IcaliaLabs/icalia_guides/tree/master/git) for information about this.
 
 
 ## Code Review
@@ -59,7 +59,7 @@ There are simple guidelines when providing code review to a teammate. The most p
 
 ## Deployment
 
-It is important that you always deploy from the master of your local computer to the production environment on Heroku. To see more about new feature branches and staging environment, checkout the [git guide]().
+It is important that you always deploy from the master of your local computer to the production environment on Heroku. To see more about new feature branches and staging environment, checkout the [git guide](https://github.com/IcaliaLabs/icalia_guides/tree/master/git).
 
 The first step is fetch any change from the `origin` remote:
 
@@ -75,7 +75,7 @@ $ git checkout master
 $ git merge dev
 ```
 
-If necessary, add the new environment variables to Heroku, we use [Figaro]() to handle this:
+If necessary, add the new environment variables to Heroku, we use [Figaro](https://github.com/laserlemon/figaro) to handle this:
 
 ```
 $ bundle exec figaro heroku:set -e production
@@ -94,11 +94,11 @@ $ heroku run rake db:migrate --remote production
 $ heroku restart --remote production
 ```
 
-Remember that this process only applies for [hot fixes]() and merged features to dev, as they have been already been tested on the browser.
+Remember that this process only applies for hot fixes and merged features to dev, as they have been already been tested on the browser.
 
 ## Setup the production environment
 
-* Make sure you have a correct [Procfile]() set up and ready to run with [unicorn]()
+* Make sure you have a correct [Procfile](https://github.com/IcaliaLabs/icalia_guides/blob/master/rails/Procfile_Sample) set up and ready to run with [unicorn](https://github.com/IcaliaLabs/icalia_guides/blob/master/rails/unicorn_sample.rb)
 * Make sure you have the ruby version specified on the `Gemfile`
 * Make sure the PG-Backups add on is enabled
 * Make sure to add a logs providers

@@ -75,5 +75,5 @@ $ git branch --delete <feature-branch>
 
 ## .gitignore samples
 
-* [Rails]()
-* [iOS]()
+* [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
+* [iOS](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_ios)
