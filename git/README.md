@@ -73,6 +73,21 @@ $ git branch --delete <feature-branch>
 **If you think that you might need some code review from another developer, you can ask him/her kindly, and place a pull request assigned to him/her**
 
 
+## Multiple environments
+
+At Icalia Labs we like to be sure whenever we deploy a feature or set of features to production, and the tests sometimes may not be enough. A human filter is necessary, therefore it should be validated on a real environment by the [product owner]() who is commonly the client and in other cases the leader of the project.
+
+So in order to check for changes on a real environment we deploy to two different heroku apps:
+
+The **staging** environment is basically a mirror app of the production app and this is were the features get approved by the `product owner` together with the leader of the project.
+
+To keep things seamless and whenever a deployment to staging is going to be perfomed, we sync the production database to the staging app. Check out the [guide](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/DATABASE_SYNC.md) on this for more information.
+
+### Setting up the staging environment
+
+In order to create this two environments, there is an excellente [article](https://devcenter.heroku.com/articles/multiple-environments) on heroku on how to achieve this.
+
+
 ## .gitignore samples
 
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
