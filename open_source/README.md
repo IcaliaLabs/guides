@@ -1,4 +1,4 @@
-# Open Dource
+# Open Source Projects
 
 We love open source as we are very aware of the power it has, not just from re-using code from someone's else library but it is a great way to tell the people how do we actually do things and that we can also collaborate a bit. We think that things to keep in mind if you someone is building or collaborating on a project are:
 
