@@ -88,6 +88,36 @@ To keep things seamless and whenever a deployment to staging is going to be perf
 In order to create this two environments, there is an excellente [article](https://devcenter.heroku.com/articles/multiple-environments) on heroku on how to achieve this.
 
 
+## Releases
+
+Every time a new version is going to be deployed to production, a corresponding tag of the version should be created, and pushed to remote to be able to easily get a copy of the code as it was in that release in case needed for the future.
+
+To create a tag use the command:
+
+````
+ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
+````
+
+Where the number followed by the annotation flag `-a 1.0.0` should be written following the [semantic versioning rules](http://semver.org)
+
+After creating the tag you can view the created tag by using:
+
+````
+ git tag -l
+`````
+
+Then you can push your tag to remote by using:
+
+````
+ git push origin [tagname]
+````
+
+Or if you have many tags you can push them by using:
+
+````
+ git push origin —-tags
+`````
+
 ## .gitignore samples
 
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
