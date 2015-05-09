@@ -5,6 +5,7 @@ Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com
 It includes practices for multiple languages, based on our own experience and experts advice. It also includes how to handle code review when working with teammates.
 
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/tree/master/rails)
+* [RSpec](https://github.com/IcaliaLabs/icalia_guides/tree/master/rspec)
 * [Ruby](https://github.com/IcaliaLabs/icalia_guides/tree/master/ruby)
 * [Git](https://github.com/IcaliaLabs/icalia_guides/tree/master/git)
 * [Sass && CSS](https://github.com/IcaliaLabs/icalia_guides/tree/master/sass)
