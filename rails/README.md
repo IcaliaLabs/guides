@@ -117,6 +117,6 @@ Whenever we are deploying an application to production for the first time, we ma
 * Are we backing up the databases on Heroku?
 * Are we monitoring the application performance? [New Relic](https://devcenter.heroku.com/articles/newrelic#ruby-configuration)
 * Are we tracking errors? [Exception Notification](https://github.com/smartinez87/exception_notification)
-* Is the domain configured?
+* Is the domain configured? [Domain Configuration](https://github.com/IcaliaLabs/icalia_guides/blob/master/rails/DOMAIN_CONFIG.md)
 * Is Sendgrid configured for email delivering?
 
