@@ -2,7 +2,7 @@
 
 * Use snake case for variable naming
 * Use metaprogramming as a last resource
-* Abstain single line blocks when more than one thing is being done inside of it
+* Abstain from using single line blocks when more than one thing is being done inside of it
 * Declare very descriptive method names, no matter if they are long
 * Don't name your classes or modules with the type on it, `SearchClass`, `VotableModule`
 * Use camel case for naming your classes/modules
