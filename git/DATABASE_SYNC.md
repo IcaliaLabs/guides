@@ -1,59 +1,40 @@
 # Database Sync
 
-In order to keep the staging and production databases on sync, you can just follow this steps. But before:
-
-## Pre requisites
-
-You must have the `pgbackups` add-on enabled on heroku for both, the staging and production apps:
-
-```console
-$ heroku addons:add pgbackups --app PRODUCTION_APP_NAME
-$ heroku addons:add pgbackups --app STAGING_APP_NAME
-```
+In order to keep the staging and production databases in sync, just follow these steps.
 
 ## Synchronization
 
-Now in order to synchronize the databases you need to capture a database clip through the `pgbackups` add-on:
-
-First you need to capture the prodution one:
+You can copy the production app's data to the staging app's database with this command:
 
 ```console
-$ heroku pgbackups:capture --expire --app YOUR_PRODUCTION_APP_NAME
+$ heroku pg:copy YOUR_PRODUCTION_APP_NAME::YOUR_PRODUCTION_APP_DATABASE_COLOR YOUR_STAGING_APP_DATABASE_COLOR --app YOUR_STAGING_APP_NAME
 ```
-
-Then restore the staging database with the production database:
+For example, this could look like:
 
 ```console
-$ heroku pgbackups:restore DATABASE `heroku pgbackups:url --app PRODUCTION_APP_NAME` \ --app STAGING_APP_NAME --confirm STAGING_APP_NAME
+$ heroku pg:copy my-new-app::BRONZE BRONZE --app my-new-app-staging
 ```
 
-To make things easy, you can put both commands on a `database_sync.sh` file under the `script/` directory, the complete file should look like:
+Then confirm that you want to destroy all the staging app data by typing in the staging app name:
 
-**script/database_sync.sh**
-
-```
-heroku pgbackups:capture --expire --app YOUR_PRODUCTION_APP_NAME
-heroku pgbackups:restore DATABASE `heroku pgbackups:url --app PRODUCTION_APP_NAME` \ --app STAGING_APP_NAME --confirm STAGING_APP_NAME
-```
-
-So each time you want to sync the databases, you just need to run:
-
-```
-$ heroku run bash scripts/database_sync.sh
+```console
+> STAGING_APP_NAME
 ```
 
 ## Adding a scheduler
 
-We like to automate everything, and to keep the databases on sync we use scheduler to achieve this.
+Using a Heroku scheduler is a great way to automatically keep the staging database in sync with the production database.
 
-First we need to add the [scheduler](https://addons.heroku.com/scheduler) add-on to the `production` app
+First we need to add the [Heroku scheduler](https://elements.heroku.com/addons/scheduler) add-on to the **staging** app.
 
 ```
-$ heroku addons:add scheduler --app PRODUCTION_APP_NAME
+$ heroku addons:create scheduler --app PRODUCTION_APP_NAME
 ```
 
-And then on the scheduler page, just add a command to run daily like so:
-
-![Database Sync](https://raw.githubusercontent.com/IcaliaLabs/icalia_guides/master/git/scheduler.png)
-
+Go to the Heroku dashboard for your staging app. At the bottom of the page, in the add-ons section, click on Heroku Scheduler. On the scheduler page, just add a command to run daily like so:
+```
+$ heroku pg:copy YOUR_PRODUCTION_APP_NAME::YOUR_PRODUCTION_APP_DATABASE_COLOR YOUR_STAGING_APP_COLOR --app YOUR_STAGING_APP_NAME --confirm YOUR_STAGING_APP_NAME
+```
 So now you have a daily synchronization to keep the staging app up to date with the production.
+
+NOTE: Heroku commands have been changing frequently. If these commands don't work check Heroku and/or Stack Overflow for the latest.
