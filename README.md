@@ -11,6 +11,7 @@ It includes practices for multiple languages, based on our own experience and ex
 * [Javascript && Coffescript](https://github.com/IcaliaLabs/icalia_guides/tree/master/coffeescript)
 * [Objective-C && Swift](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift)
 * [Open source projects](https://github.com/IcaliaLabs/icalia_guides/tree/master/open_source)
+* [Dev happiness](https://github.com/IcaliaLabs/icalia_guides/tree/master/dev_happiness)
 
 Primary guidelines:
 
