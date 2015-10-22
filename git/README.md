@@ -94,29 +94,29 @@ Every time a new version is going to be deployed to production, a corresponding 
 
 To create a tag use the command:
 
-````
- git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
-````
+```console 
+$ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
+```
 
 Where the number followed by the annotation flag `-a 1.0.0` should be written following the [semantic versioning rules](http://semver.org)
 
 After creating the tag you can view the created tag by using:
 
-````
- git tag -l
-`````
+```console
+$ git tag -l
+```
 
 Then you can push your tag to remote by using:
 
-````
- git push origin [tagname]
-````
+```console
+$ git push origin [tagname]
+```
 
 Or if you have many tags you can push them by using:
 
-````
- git push origin —-tags
-`````
+```console
+$ git push origin —-tags
+```
 ## Stashing
 
 There are times when you want to work on a project but you've made changes which are not ready to be commited, there's a powerful tool to help us with that: git stash.
@@ -125,45 +125,51 @@ Basically this command saves modified files and puts them in a stack where they 
 
 To stash modified files and staged changes:
 
-````
- git stash
-`````
+```console
+$ git stash
+```
 
 This will clean your working directory, you can confirm that by using:
 
-````
- git status
-`````
+```console
+$ git status
+```
 
 To see a list of stored stashes use:
 
-````
- git stash list
-`````
+```console
+$ git stash list
+```
 
 Then if you want to apply the most recent stash run:
 
-````
- git stash apply
-`````
+```console
+$ git stash apply
+```
 
 You can also call to a specific stash by using:
 
-````
- git stash apply stash@{1}
-`````
+```console
+$ git stash apply stash@{1}
+```
 
 You can also delete a stash from your stash list by using:
 
-````
- git stash drop stash@{0}
-`````
+```console
+$ git stash drop stash@{0}
+``` 
+
+To stash and drop current changes use:
+
+```console
+$ git stash pop
+```
 
 It's also possible to create a branch from a stash by using:
 
-````
- git stash branch {NameOfBranch}
-`````
+```console
+$ git stash branch {NameOfBranch}
+```
 
 
 ## .gitignore samples
