@@ -2,9 +2,10 @@
 
 ### Xcode
 
-The latest version's of **X-Code** *do* these things automatically, suposedly. But in my experience they usually mess things up and create an enormous amount of certificates and provisioning profiles. So I highly recommend doing all these manually in the **Apple Developer - Member Center**, and give them all descriptive names. By doing this you avoid trouble and learn a little bit about this whole proccess and how everything works together.
+The latest version's of **X-Code** *do* these things automatically, suposedly. But in our experience they usually mess things up and create an enormous amount of certificates and provisioning profiles. So we highly recommend doing all these manually in the **Apple Developer - Member Center**, and give them all descriptive names. By doing this you avoid trouble and learn a little bit about this whole proccess and how everything works together.
 
 ### Certificates
+
 Certificates are electronic credentials that are used to certify the identities of individuals or computer systems. Apple uses them in order to certify that only the appropiate developers or computers can develop or distribute certain apps by forcing developers to sign the apps with their certificates.
 
 ### Development Certificates
