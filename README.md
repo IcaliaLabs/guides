@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/IcaliaLabs/icalia_guides.png?label=ready&title=Ready)](https://waffle.io/IcaliaLabs/icalia_guides)
 # Icalia Guides
 
 Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintanable code to get things done.
