@@ -1,26 +1,27 @@
 #Manual / Tips
 
-Will dive this guide on 4 parts. 1st part will be the begging of the project, the 2nd part will talk about the continuous deliveries you’ll be making along the development process, and the 3rd one will talk about the changes the client will ask during the project development (trust us those will always come), lastly the 4th is the closing of the project.
+We will divide this guide into 4 parts. The 1st part will be the beginning of the project, the 2nd part will talk about the continuous delivery process, the 3rd one will talk about the changes the client may ask for during the project development (trust us those will always come), and lastly the 4th is project delivery.
 
-1st Beginning of the project (Definition)
+### 1st Starting the Project
 
-- Make sure that when you start a project, you establish the reach of the project. This means setting the capabilities or features it’ll posses at the end of it. This part is extremely important since it will help you define the MVP when we talk about a new project, or the new features or fixes that will have to be develop on an existing product. 
+- Make sure that when you start a project, you establish the extent of the project. This means clearly setting all the capabilities or features it will have. This part is extremely important since it will help you define the MVP when we talk about a new project, or the new features or fixes that will have to be developed for an existing product.
 - After all of this has been established make sure the client understands the capabilities or changes that the product will have by the end of the project.
 
-2nd Continuous delivery
+### 2nd Continuous Delivery
 
-We have found that stabling continuous meeting the client and on each one of this meetings showing the so far progress, helps to maintain the trust relationship between the client and us. As well, as setting a great opportunity for spotting early changes on the product. Many times since you are showing the client how the product is taking form, they can come to see, that this is not what they had in mind (here comes the changes). Thanks to this, we can make the change on early development stage.
+We have found that establishing frequent meetings with the client and showing the incremental progress at each one of these meetings, helps to maintain a good relationship with the client as well as providing a great opportunity for spotting needed fixes early on. Many times since you are showing the client how the product is taking form, they can quickly see if is not what they had in mind. Thanks to this, we can make changes early on in development process.
 
-- Try to set this meeting as often as any major develop comes so the client can keep up with the status of the product and keeps the trust that is moving forward.
-- When working remote, is important to at least manage some presence meetings.
-- Continuous delivery helps you keep a good track of the time you are have and the status you are on, before the release. 
+- Try to set up these meetings frequently (at a minimum, as often as any features are developed), so the client can keep up with the status of the product and can see that it is moving forward.
+- When working remotely, is important to have at least some in-person meetings.
+- Continuous delivery helps you keep a good track of the time you are have and the project status before the release.
 
-3rd Changes
+### 3rd Changes
 
-This part is really crucial since here is where most of the pain comes so will try to help you avoid them. 
-- When having a meeting with a client regarding a redefinition to the product, or a new feature to be develop, make sure to always take note on what it was discussed during the meeting, have this notes saved in a digital format so that it can be send to the client and have them approved by them before any changes are made. 
-- If the client ask for a changes, make sure it’s regarding an existing feature or a change on something that was in the reach of the definition, and not a whole new feature.
+This part is really crucial since here is where most of the pain comes so we will try to help you avoid them.
+- When having a meeting with a client regarding a refinement of the product, or a new feature to be developed, make sure to always take note on what was discussed during the meeting. Save these notes and email them to the client before any changes are made.
+- Add all the requested changes to Pivotal Tracker or whatever project management tool you are using for the project.
+- If the client ask for a change, make sure it’s regarding an existing feature or a change to something that was within the scope of the original project definition and not a whole new feature.
 
-4th Delivery
+### 4th Delivery
 
-For the delivery of the project it may depend of the development platform on which the project was built. Take a look at the Project Transition Guide for more detail of this.
+Delivery of the project will depend on the development platform on which the project was built. Take a look at the Project Transition Guide for more details about this.
