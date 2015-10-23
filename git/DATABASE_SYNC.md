@@ -1,10 +1,12 @@
 # Database Sync
 
-In order to keep the staging and production databases in sync, just follow these steps.
+In order to keep the development, staging and production databases in sync, just follow these steps.
 
 ## Synchronization
 
-You can copy the production app's data to the staging app's database with this command:
+#### Copying the production app's data to the staging app's database
+
+Type in the following command in the terminal, replacing the app names and database colors with the appropriate values. The database color can be found by looking at the Heroku dashboard for the app (in the add-on section).
 
 ```console
 $ heroku pg:copy YOUR_PRODUCTION_APP_NAME::YOUR_PRODUCTION_APP_DATABASE_COLOR YOUR_STAGING_APP_DATABASE_COLOR --app YOUR_STAGING_APP_NAME
@@ -19,6 +21,22 @@ Then confirm that you want to destroy all the staging app data by typing in the 
 
 ```console
 > STAGING_APP_NAME
+```
+
+#### Replacing the local development database with a remote database (staging or production)
+Sometimes it's useful to try out new features using real data; in this case it's handy to copy the remote database to your local database. This is achieved quickly with these two commands:
+
+```console
+$ dropdb YOUR_DEVELOPMENT_DATABASE_NAME
+$ heroku pg:pull YOUR_REMOTE_APP_NAME YOUR_DEVELOPMENT_DATABASE_NAME --app YOUR_REMOTE_APP_NAME
+```
+
+
+If your app's name is "Awesome app" and you want to copy the staging database, this would look like:
+
+```console
+$ dropdb awesome_app_development;
+$ heroku pg:pull HEROKU_POSTGRESQL_BRONZE awesome_app_development --app awesome_app-staging
 ```
 
 ## Adding a scheduler
