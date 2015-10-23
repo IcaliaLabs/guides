@@ -17,8 +17,10 @@ We have found that stabling continuous meeting the client and on each one of thi
 
 3rd Changes
 
-This past is really crucial since here is where most of the pain comes so will try to help you avoid them. 
+This part is really crucial since here is where most of the pain comes so will try to help you avoid them. 
 - When having a meeting with a client regarding a redefinition to the product, or a new feature to be develop, make sure to always take note on what it was discussed during the meeting, have this notes saved in a digital format so that it can be send to the client and have them approved by them before any changes are made. 
 - If the client ask for a changes, make sure it’s regarding an existing feature or a change on something that was in the reach of the definition, and not a whole new feature.
 
 4th Delivery
+
+For the delivery of the project it may depend of the development platform on which the project was built. Take a look at the Project Transition Guide for more detail of this.
