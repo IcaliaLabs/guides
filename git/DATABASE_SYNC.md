@@ -43,16 +43,58 @@ $ heroku pg:pull HEROKU_POSTGRESQL_BRONZE awesome_app_development --app awesome_
 
 Using a Heroku scheduler is a great way to automatically keep the staging database in sync with the production database.
 
-First we need to add the [Heroku scheduler](https://elements.heroku.com/addons/scheduler) add-on to the **staging** app.
-
+#### Set up the needed Buildpack
+Add the [Heroku Toolbelt](https://github.com/gregburek/heroku-buildpack-toolbelt). Before following the instructions outlined there run:
+```console
+$ touch .buildpacks
 ```
+Then run the commands, starting with:
+```console
+ $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git --app YOUR_STAGING_APP_NAME
+ ```
+And ending with:
+```console
+$ heroku run 'vendor/heroku-toolbelt/bin/heroku auth:token' --app YOUR_REMOTE_APP_NAME
+```
+
+Check to make sure the buildpack is successfully installed by typing:
+```console
+$ heroku buildpacks --app YOUR_STAGING_APP_NAME
+```
+
+#### Set up the database sync file
+Create a database sync file and make it executable:
+```console
+$ touch database_sync
+$ chmod +x database_sync
+```
+Add the following lines into the database_sync:
+```
+curl -s https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz | tar xz
+rsync -a heroku-client/* .
+rmdir heroku-client
+PATH="bin:$PATH"
+
+heroku pg:copy YOUR_PRODUCTION_APP_NAME::YOUR_PRODUCTION_APP_DATABASE_COLOR YOUR_STAGING_APP_COLOR --app YOUR_STAGING_APP_NAME --confirm YOUR_STAGING_APP_NAME
+```
+
+For a real app, the last line would like something like:
+
+`heroku pg:copy my-new-app::BRONZE BRONZE --app my-new-app-staging --confirm my-new-app-staging`
+
+Commit all changes and push to your staging environment.
+
+#### Set up scheduler
+Add the [Heroku scheduler](https://elements.heroku.com/addons/scheduler) add-on to the **staging** app.
+
+```console
 $ heroku addons:create scheduler --app PRODUCTION_APP_NAME
 ```
 
-Go to the Heroku dashboard for your staging app. At the bottom of the page, in the add-ons section, click on Heroku Scheduler. On the scheduler page, just add a command to run daily like so:
+Go to the Heroku dashboard for your staging app. At the bottom of the page, in the add-ons section, click on Heroku Scheduler. On the scheduler page, just add a command:
 ```
-$ heroku pg:copy YOUR_PRODUCTION_APP_NAME::YOUR_PRODUCTION_APP_DATABASE_COLOR YOUR_STAGING_APP_COLOR --app YOUR_STAGING_APP_NAME --confirm YOUR_STAGING_APP_NAME
+$ database_sync
 ```
-So now you have a daily synchronization to keep the staging app up to date with the production.
+Select the daily frequency option, and now you have a daily synchronization to keep the staging app up to date with the production.
 
 NOTE: Heroku commands have been changing frequently. If these commands don't work check Heroku and/or Stack Overflow for the latest.
