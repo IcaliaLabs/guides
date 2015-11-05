@@ -8,6 +8,7 @@ Sometimes, just sometimes, it happens that we have to transfer ownership to the 
 - [The process](#the-process)
   - [Finishing Features](#finishing-features)
   - [Clear pending bugfixes](#clear-pending-bugfixes)
+  - [Schedule a revision meeting](#schedule-a-revision-meeting)
   - [Prepare a brief report of technical debt](#prepare-a-brief-report-of-technical-debt)
   - [Transfer the git repository to the client](#transfer-the-git-repository-to-the-client)
 
@@ -53,6 +54,8 @@ Write a brief report of at least this five points:
   - Newrelic?
   - Amazon Web Services (S3, glacier, EC2)?
   - Codeship?
+  - Apple IDS?
+  - Google Services?
 
 
 #####Schedule a revision meeting
@@ -67,8 +70,6 @@ TODO: What time do we have for insurance
 
 Here in Icalia we use github as our main repository of code, please follow the [Github guides to transfer ownership](https://help.github.com/articles/transferring-a-repository/).
 
-Be sure to explain
-
 #####Revoke privileges for our organization
 
-Be sure
+If the application reside in heroku
