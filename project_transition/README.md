@@ -9,6 +9,7 @@ Sometimes, just sometimes, it happens that we have to transfer ownership to the 
   - [Finishing Features](#finishing-features)
   - [Clear pending bugfixes](#clear-pending-bugfixes)
   - [Prepare a brief report of technical debt](#prepare-a-brief-report-of-technical-debt)
+  - [Transfer the git repository to the client](#transfer-the-git-repository-to-the-client)
 
 ####About company culture
 
@@ -42,18 +43,32 @@ Write a brief report of at least this five points:
 
 - Project's code health.
 - Main features pending to development.
-- If the project's have TDD/BDD specs, all the specs should pass
+- If the project's have TDD/BDD specs, all the specs should pass.
+- Be sure to include all the project assets.
+- Be sure your to include a README.md file into the git repository with all the instructions to setup the project in local environment.
+- Technical debt: Be sure to explain what areas are able to improve, code to refactor, etc.
+- Describe what services are we using, take Sendgrid for instance, we use them to transactional email, and especify the client they need to open an account
+  - Do the project use heroku?
+  - Are we using Sendgrid/Mandrill?
+  - Newrelic?
+  - Amazon Web Services (S3, glacier, EC2)?
+  - Codeship?
+
 
 #####Schedule a revision meeting
 
-Critical bugs deserve more attention unless the client's decision and what they want to achieve.
-
+Schedule a meeting with the client (and their technical team if they have) in order to review the last features and fixes.
 
 #####Insurance
 
-We
+TODO: What time do we have for insurance
 
-#####Technical debt
-#####Project's review with the client
+#####Transfer the git repository & every service to the client
+
+Here in Icalia we use github as our main repository of code, please follow the [Github guides to transfer ownership](https://help.github.com/articles/transferring-a-repository/).
+
+Be sure to explain
+
 #####Revoke privileges for our organization
-#####
+
+Be sure
