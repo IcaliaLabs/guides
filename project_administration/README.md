@@ -6,4 +6,4 @@ Some of us here at Icalia have suffered the pain of going down that road many ti
 
 Again this is based on our own experience, so any comments or tips are more than welcome. 
 
-* [Manual](https://github.com/IcaliaLabs/icalia_guides/tree/master/project_administration/project_administration)
+* [Manual](https://github.com/IcaliaLabs/icalia_guides/tree/master/project_administration/project_administration.md)
