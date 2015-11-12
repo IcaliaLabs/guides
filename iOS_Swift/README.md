@@ -5,7 +5,7 @@ The following guides are a compilation of common practices and conventions we us
 * Project Setup 
   * Apple Certificates
   * [New Project](./setup/newproject)
-    * [Multiple Environment Configuration (Staging, Production, etc)](./setup/newproject#Multiple_Environment_Configuration)
+    * [Multiple Environment Configuration (Staging, Production, etc)](./setup/newproject#multiple-environment-configuration)
     * Project Structure
     * Crash Reporting
     * Integrating Cocoapods
