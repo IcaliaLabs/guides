@@ -4,8 +4,8 @@ The following guides are a compilation of common practices and conventions we us
 
 * Project Setup 
   * Apple Certificates
-  * New Project
-    * [Multiple Environment Configuration (Staging, Production, etc)](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/setup/newproject#Multiple_Environment_Configuration)
+  * [New Project](./setup/newproject)
+    * [Multiple Environment Configuration (Staging, Production, etc)](./setup/newproject#Multiple_Environment_Configuration)
     * Project Structure
     * Crash Reporting
     * Integrating Cocoapods
