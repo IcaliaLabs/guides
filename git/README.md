@@ -119,9 +119,9 @@ $ git push origin —-tags
 ```
 ## Stashing
 
-There are times when you want to work on a project but you've made changes which are not ready to be commited, there's a powerful tool to help us with that: git stash.
+There are times when you want to work on a project but you've made changes which are not ready to be committed, there's a powerful tool to help us with that: git stash.
 
-Basically this command saves modified files and puts them in a stack where they can be later accesed if needed.
+Basically this command saves modified files and puts them in a stack where they can be later accessed if needed.
 
 To stash modified files and staged changes:
 
