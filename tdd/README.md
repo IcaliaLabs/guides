@@ -18,6 +18,6 @@ Refactor to remove duplication.
 Take a look at the languaje you will be working, and follow the guides for a TDD enviroment:
 
 * [Ruby On Rails](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd/RubyOnRails.md)
-* [iOS](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd/iOS.md)
-* [JS](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd/JS.md)
+* [iOS](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd)
+* [JS](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd)
 * [Front End](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd/CSS_JS_HTML.md)
