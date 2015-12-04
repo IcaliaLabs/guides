@@ -2,10 +2,10 @@
 
 This is a guide to having your TDD enviroment working on your laptop. For this you will need to have certain tool ready to be used.
 
--RSpec
--FactoryGirl
--Fakker
--DatabaseCleaner
+- RSpec
+- FactoryGirl
+- Fakker
+- DatabaseCleaner
 
 Here at [@icalialabs](http://icalialabs.com), we use [Platter](https://github.com/IcaliaLabs/platter) to create rails app with the basic setup.
 
