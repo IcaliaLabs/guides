@@ -12,7 +12,7 @@ Or it can be any kind of app state that you need to store. This can all be acomp
 
 ### NSUserDefaults
 
-The simplest way to store small amounts of data like user settings or session information is in the User Defaults. **NSUserDefaults** is a singleton class which already handles caching and persisting anything you add to it. You just need to use a string **key** and store any kind of object in it. It is basically a key-value store, that handles caching and on-disk-persistance on the fly for you.
+The simplest way to store small amounts of data like user settings or session information is in the User Defaults. **NSUserDefaults** is a singleton class which already handles caching and persisting anything you add to it. You just need to use a string **key** to identify the object you want to persist, and the object must be a property list type (see next section). It is basically a key-value store, that handles caching and on-disk-persistance on the fly for you.
 
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
      
@@ -20,6 +20,8 @@ The simplest way to store small amounts of data like user settings or session in
     [defaults setObject:lastName forKey:@"lastname"];
     
     NSString *name = [defaults objectForKey: @"firstName"];
+    
+This is a good place to store settings, and small information like a current logged in user. You can also store a session token here, but it would be safer to do that in the Keychain.
 
 ### Property List Serialization
 
@@ -66,6 +68,7 @@ Don't forget to perform nil & error validation, which I excluded for clarity.
 
 So basically, the first code sample turns a property list into data, that can be stored to disk. The second sample turns data included in some file, into a property list, which can be used in code.
 	
+This is useful if you want to cache some app information, like a bunch of posts, but those objects you want to cache are not custom objects but property list types.
 
 ### NSCoding
 
@@ -108,6 +111,8 @@ And, viceversa, to unarchive:
 
 	[NSKeyedUnarchiver unarchiveObjectWithFile: @"/path/to/archive"];
 
+This is useful when you want to cache or store some app information, like with property list serialization, but the objects are your custom objects.
+
 ### Realm
 
 Realm is the "new" kid on the block. It is meant as a Core Data / SQLite replacement. It is a complete custom database (specifically designed for mobile), and an Objective-C and Swift framework to go along with it. 
@@ -146,6 +151,8 @@ It is not as feature complete as Core Data because Core Data is much more than j
 	dispatch_async(dispatch_queue_create("background", 0), ^{
 	  RLMResults<Dog *> *r = [Dog objectsWhere:@"age > 8"];
 	});
+	
+This is useful when you want to have a full offline experience, or when your apps data is not stored in the cloud but locally. Whenever core data seems like too much functionality for what you need, Realm is a godo alternative.
 
 ### Core Data
 
