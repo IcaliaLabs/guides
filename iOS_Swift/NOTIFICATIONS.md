@@ -24,12 +24,39 @@ Afterwards, if your app receives a notification while it's running in the foregr
 
 If the notification was received while the app was completely terminated and the notification was "opened" then you will not get a callback to that method, you will get a notification payload in the appDidFinishLaunching method.
 
+	- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+	{
+	    NSLog(@"APPLICATION : DID REGISTER FOR REMOTE NOTIFICATIONS");
+	    // Store the deviceToken in the current installation and save it to Parse.
+	    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+	    [currentInstallation setDeviceTokenFromData: deviceToken];
+	    [currentInstallation saveInBackground];
+	}
+	
+	- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+	{
+	    NSLog(@"APPLICATION : DID FAIL TO REGISTER FOR REMOTE NOTIFICATIONS");
+	    NSLog(@"ERROR : %@", error);
+	}
+	
+	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+	{
+	    NSLog(@"APPLICATION: RECEIVED PUSH NOTIFICATION");
+	    [[NSNotificationCenter defaultCenter] postNotificationName: kPushNotificationReceivedNotification
+	                                                        object: self
+	                                                      userInfo: userInfo];
+	}
+
 ### Certificates
 
 To be able to send notifications, your backend or service that you will be using needs to have the appropiate certificates to verify its identity.
 
 You will need a Development Push Certificate and a Production Push Certificate. 
 
+![Push Certificates](http://danielozano.com/images/PushCertificates.png)
+
 ### Parse
 
 Implementing push notifications in your custom backend is generally a hassle, which can be avoided by using a free service like Parse. It's really simple to set up; you just have to upload your push certificates to Parse and you're all set to send push notifications using any of their SDKs or even through their web console.
+
+![Parse](http://danielozano.com/images/ParsePush.png)
