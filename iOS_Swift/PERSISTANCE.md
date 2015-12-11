@@ -156,4 +156,10 @@ This is useful when you want to have a full offline experience, or when your app
 
 ### Core Data
 
-...
+Learning how to use **Core Data** is well beyond the scope of this guide, but there are lots of great resources online.
+
+**Core data** is much more than just a simple database. Even the choice of database or "store" you use is left up to you. You can use SQLite, an XML file, or other types.
+
+The big or important part of Core Data is that it is an object graph manager, not just a simple ORM. So it's much less memory intensive to use Core Data when you have tons of records, because it only fetches whatever it needs, inteligently.
+
+I would recommend using Core Data when a lot of complex application data needs to be persisted. If you just need a simple cache, or store a small amount of simple objects I would recommend using one of the previous persistance methods.
