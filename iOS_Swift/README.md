@@ -22,7 +22,9 @@ The following guides are a compilation of common practices and conventions we us
   * app current state
 * Automated Testing
 * Logging
-* Client Deployments Releases
+* [Manual Deployments](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments)
+  * [Testflight and Appstore](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#testflight-andor-appstore-manual-deployments)
+  * [Fabric](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#fabric-manual-deployments) 
 * Api Client Setup
 * Push notification Services
 * Deployments Crash Reporting
