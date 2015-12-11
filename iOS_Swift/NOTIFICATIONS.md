@@ -8,7 +8,7 @@ Notifications are a way for your app to reach out to users while your app is not
 
 Local notifications are notifications that are created locally, meaning on the phone, as opposed to by some backend service.
 
-Since iOS does not show notifications while the app is open you might think that there is no reason to send a local notification, but there is.
+Since iOS does not show a banner for a notification, when the app for that notification is currently in the foregrund notifications while the app is open you might think that there is no reason to send a local notification, but there is.
 
 You can schedule a local notification to be sent at a different times (or perhaps on a recurring scheduling) while the app is not open. Or your app may be running in the background because it was awoken for a short time (like entering a Beacon or GPS region) and you may send a local notification to let the user know.
 
