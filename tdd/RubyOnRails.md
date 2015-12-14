@@ -150,7 +150,7 @@ RSpec.configure do |config|
 
 end
 ```
-## Dos and Don’ts of Testing
+## Do's and Dont's of Testing
 
 There are a few things to keep in mind, but overall if you trust your tests and allow them to guide your development you will not go wrong.
 

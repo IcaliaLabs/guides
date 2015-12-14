@@ -1,6 +1,6 @@
 # TDD
 
-Here at IcaliaLabs, we try to develop software under the TDD schema, since it has shown its value along the procces of creating new features or fixing an issues. Lets start by telling you what it is and how to start working with it.
+Here at IcaliaLabs, we try to develop software under the TDD schema, since it has shown its value along the procces of creating new features or fixing issues. Lets start by telling you what it is and how to start working with it.
 
 ## What is TDD?
 
