@@ -9,7 +9,7 @@ This is a guide to having your TDD enviroment working on your laptop. For this y
 
 Here at [@icalialabs](http://icalialabs.com), we use [Platter](https://github.com/IcaliaLabs/platter) to create rails app with the basic setup.
 
-**Platter needs ruby 2.2.1 in order to run**
+**Platter needs ruby 2.2.3 in order to run**
 
 Run
 
