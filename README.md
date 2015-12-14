@@ -13,6 +13,8 @@ It includes practices for multiple languages, based on our own experience and ex
 * [iOS](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift)
 * [Open source projects](https://github.com/IcaliaLabs/icalia_guides/tree/master/open_source)
 * [Dev happiness](https://github.com/IcaliaLabs/icalia_guides/tree/master/dev_happiness)
+* [Project Administration](https://github.com/IcaliaLabs/icalia_guides/tree/master/project_administration)
+* [TDD](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd)
 
 Primary guidelines:
 
