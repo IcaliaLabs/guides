@@ -3,7 +3,7 @@
 The following guides are a compilation of common practices and conventions we use in Icalia for iOS Projects. We believe it is very important to have a look a this guides to have a common ground in the development style, and make it easier to work in teams or also to retake a project made by another teammate without wasting time understanding the structure and tools used in the project.
 
 * Project Setup 
-  * Apple Certificates
+  * [Apple Certificates](https://github.com/IcaliaLabs/icalia_guides/blob/master/iOS_Swift/CERTIFICATES.md)
   * New Project
     * Multiple Environment Configuration (Staging, Production, etc)
     * Project Structure
@@ -22,7 +22,9 @@ The following guides are a compilation of common practices and conventions we us
   * app current state
 * Automated Testing
 * Logging
-* Client Deployments Releases
+* [Manual Deployments](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments)
+  * [Testflight and Appstore](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#testflight-andor-appstore-manual-deployments)
+  * [Fabric](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#fabric-manual-deployments) 
 * Api Client Setup
 * Push notification Services
 * Deployments Crash Reporting
