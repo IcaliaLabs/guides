@@ -1,6 +1,6 @@
 #New Project Setup
 
-All projects in Icalia will need the following setups
+When working with projects we often need to change different setups, either because at the beggining of a proyect you only work in a staging environment, but later when the app is already in production you need to change the server url, or also change the account of a third party integration like facebook or twitter. There are also the cases when we need release a testflight build, but we use our account for internal releases, and the clients account for external releases and each app needs to be configured its own bundle id. In order to make this switches easier to make, and stop the prone to errors process of making each change manually, we in Icalia do the following setups in each project.
 
 ## Multiple Environment Configuration
 
