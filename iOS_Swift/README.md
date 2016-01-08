@@ -10,7 +10,7 @@ The following guides are a compilation of common practices and conventions we us
     * Crash Reporting
     * Using Cocoapods
   * Existing Projects
-  * Installing Cocoapods
+* Installing Cocoapods
 * Language and Code Conventions
   * Swift Code Conventions
   * Objective-C Code Conventions
