@@ -8,7 +8,7 @@ The following guides are a compilation of common practices and conventions we us
     * Multiple Environment Configuration (Staging, Production, etc.)
     * Project Structure
     * Crash Reporting
-    * Integrating Cocoapods
+    * Using Cocoapods
   * Existing Projects
   * Installing Cocoapods
 * Language and Code Conventions
