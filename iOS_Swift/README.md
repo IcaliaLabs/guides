@@ -31,5 +31,5 @@ The following guides are a compilation of common practices and conventions we us
 * Push Notifications
 * Using Amazon Services (AWS)
   * Amazon Cognito
-* OpenSource
+* Open Source
   * Developing and realising a CocoaPods
