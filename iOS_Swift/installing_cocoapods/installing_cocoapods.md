@@ -14,6 +14,13 @@ CocoaPods is built with Ruby, which already comes installed in your Mac, so all 
 $ sudo gem install cocoapods
 ```
 
+## Why use CocoaPods?
+CocoaPods makes managing dependencies in your code easier. If you wand to add some Open Source Code to your project, CocoaPods makes it easier by helping you with managing versions of the code you want to import. 
+
+Also, with the documentation provided by the author it's easier to know what is going on with the code and the best way to use it. 
+
+<br>
+
 For more information on CocoaPods you can visit their official [page](https://cocoapods.org).
 
 
