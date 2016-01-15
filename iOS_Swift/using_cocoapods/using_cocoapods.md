@@ -47,7 +47,7 @@ end
 Note: This name usually appears on the Github page of the pod you selected, if not you can find it on the official [CocoaPods](https://cocoapods.org) page. 
 
 
-## Installing your Pods
+## Installing & updating your Pods
 
 Once you have added the pods you like to your Podfile, you need to head over to your Terminal and run the following command:
 
@@ -59,11 +59,18 @@ This command will install all the libraries you selected and from now on you'll 
 
 Note: You'll have to follow this step every time you add a new pod to your Podfile.
 
+Sometimes pod authors will make relevant changes to their pods according to new releases of Apple or effciency related. To get the new versions of the pods you're using, run the following command on the Terminal:
+
+```
+$ pod update
+```
+
 ## The Podfile
 
 To edit the Podfile you'll want to use a text editor or you can edit it directly from Xcode.
 
 One tip is to never use Apple's *Text Editor* because it changes some characters from your file and you won't be able to install your pods.
+
 
 <br>
 
