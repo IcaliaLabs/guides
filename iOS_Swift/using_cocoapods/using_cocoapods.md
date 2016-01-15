@@ -71,6 +71,11 @@ To edit the Podfile you'll want to use a text editor or you can edit it directly
 
 One tip is to never use Apple's *Text Editor* because it changes some characters from your file and you won't be able to install your pods.
 
+Here's a peek of what a Podfile looks like:
+
+<br>
+
+<img src="Podfile.png" alt="Podfile" style="width:auto;height:230px;">
 
 <br>
 
