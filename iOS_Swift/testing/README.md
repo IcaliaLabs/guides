@@ -88,7 +88,6 @@ To do this you will have to:
 4. define a class that inherits from `QuickSpec`
 5. you will be required to override a spec function declared by the QuickSpec parent, this is where all your specs will be.
 6. Last but not least in order to access code from your app target you must import it as testable so that even internal methods are testable
-
 ```swift
 import Quick
 import Nimble
@@ -99,9 +98,7 @@ class PersonSpec: QuickSpec {
     }
 }
 ```
-
 7. We can now start writing our test conditions (For information on all matchers and functions of Quick and Nimble review their documentation)
-
 ```swift
 	override func spec() {
         let personSample = Person(name: "Monica", lastName: "Geller")
@@ -144,7 +141,6 @@ class PersonSpec: QuickSpec {
         }
     }
 ```
-
 8. Now if you try to compile it won't let you, even though we told it not to run those test cases with the `x` before each spec in Quick, the compiler still runs and complaints when something is not declared. So this is why I was telling you that you must have at least the skeleton of the class to be able to write the tests. So lets write the skeleton now.
 9. Make a new file in your's apps target for the class Person.
 10. Write the following code as a skeleton:
