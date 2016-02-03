@@ -149,7 +149,7 @@ public func ==(lhs: Person, rhs: Person) -> Bool {
     return false
 }
 
-public class Person {
+public class Person: Equatable {
     let name: String
     let lastName: String
     var fullName: String {
@@ -166,13 +166,167 @@ public class Person {
 12. This is the way in which we can more closely conform to the TDD process. Some expects are not necessary, and some might need to change depending on how you write your skeleton. To see the resulting code to make this work, refer to the demo project.
 
 
-# Tips and tricks of common tasks
+## Tips and tricks of common tasks
 
-* server request
-* ui test
+Now the tests that we wrote earlier are the easy ones, there are parts of the code that are trickier, mostly when making tests for view controllers, but also for network requests, and persistance. For those cases you need help of Mocks, and other work arounds for which here are some tips that might help in those cases.
+
+### Server Request
+
+A common task that you will face is writting test for functions that make network requests. Now you don't want to test against the real functions, not only because those requests may take lots of time but also because you can't know what the answer of the server. Tests have to always be deterministic, that means that their response can't change over time. Your tests can't depend on whether the server is up or down. Thus to test functions that make this kind of calls you need the help of stubs and funtions.
+
+As an example we have created a new class called PersonService and added a function to the class that can retreive all people from a server:
+
+```swift
+
+func fetchAllPeople() -> Promise<[Person]> {
+        return Promise {
+            fulfill, reject in
+            
+            let request = NSURLRequest(URL: NSURL(string: "https://dummy.server.com/people")!)
+            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if let error = error {
+                    reject(error)
+                } else if let data = data {
+                    fulfill(people(data))
+                }
+            })
+        }
+    }
+
+```
+
+In order to test this we will need to create a PersonServiceMock class in your unit tests target. In that class you will inherit from your actual Person class, but will override the fetchAllPeople() function, and also create a variable so that we can inject the proper result to return from our tests.
+
+```swift
+
+import Foundation
+import PromiseKit
+@testable import ILTestingDemo
+
+enum Result<T> {
+    case Success(T)
+    case Failure(ErrorType)
+}
+
+enum PersonMockError: ErrorType {
+    case NoResultForTestSet
+}
+
+class PersonServiceMock: PersonService {
+    var fakeResult: Result<[Person]> = Result.Failure(PersonMockError.NoResultForTestSet)
+    
+    override func fetchAllPeople() -> Promise<[Person]> {
+        switch fakeResult {
+        case .Success(let people):
+            return Promise(people)
+        case .Failure(let error):
+            return Promise(error: error)
+        }
+    }
+}
+
+```
+
+**Note:** If you are using objective-c, there are frameworks like OCMock and OCMockito, that let you mock classes without needing to create a separate mock class with the help of swizziling. This frameworks do not work with swift because of it static nature. Besides there are some people that argue that swizziling is not a good practice as it hides behaviour.
+
+Now as this is functions are totally fake, it doesn't make much sense to make tests in a spec for the class (ex. PersonServiceSpec.swift) but rather this mock classes will be injected in other classes, and view controllers that make use of this funtions so that you can test their behavior. You can see an example of what I am talking about in the view controller testing sections
+
+### View Controller Testing
+
+View controllers are tricky to test, here are a few tips for testing some of the things in view controllers.
+
+#### Methods called by the system
+
+Some functions like the viewDidLoad are called by the system. The first thing you would think is to call it directly from your tests, except that would not garantee that everything works as is supposed to because there is some preparation the system makes before calling this method when the view is loading. So imagine the following view for our view controller:
+
+<div style="width:100%; text-align:center"><img src="./resources/Screen Shot 2016-02-03 at 9.56.22 a.m..png" style="height:300px"/></div>
+
+And we have the following code for the view controller (the outlets are connected):
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var selectedUserLabel: UILabel!
+    var user: Person?
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        selectedUserLabel.text = NSLocalizedString("NO_USER_SELECTED_TEXT", comment: "No user selected")
+    }
+}
+```
+
+If our specs would test for the viewDidLoad method directly like this:
+
+```swift
+		var viewController: ViewController!
+        var navigationController: UINavigationController!
+        
+        beforeEach {
+            navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            viewController = navigationController.topViewController as! ViewController
+        }
+        
+        describe("the user label") {
+            context("when view has just loaded") {
+                beforeEach {
+                    viewController.viewDidLoad()
+                }
+                
+                it("should not be nil") {
+                    expect(viewController.selectedUserLabel).toNot(beNil())
+                }
+                
+                it("should tell the user that no user has been selected") {
+                    expect(viewController.selectedUserLabel?.text).to(equal(NSLocalizedString("NO_USER_SELECTED_TEXT", comment: "")))
+                }
+            }
+        }
+```
+
+our tests would crash at runtime. This is because the outlets are setup before loading the view. So how can we tell the controller to do that setup, and call the viewDidLoad method?
+
+There is a simple trick for that instead of calling the viewDidLoadMethod of the viewController, just call the view property of the controller and it will work its magic. So our testing code will end up like this:
+
+```swift
+		var viewController: ViewController!
+        var navigationController: UINavigationController!
+        
+        beforeEach {
+            navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            viewController = navigationController.topViewController as! ViewController
+        }
+        
+        describe("the user label") {
+            context("when view has just loaded") {
+                beforeEach {
+                    _ = viewController.view
+                }
+                
+                it("should not be nil") {
+                    expect(viewController.selectedUserLabel).toNot(beNil())
+                }
+                
+                it("should tell the user that no user has been selected") {
+                    expect(viewController.selectedUserLabel?.text).to(equal(NSLocalizedString("NO_USER_SELECTED_TEXT", comment: "")))
+                }
+            }
+        }
+```
+
+#### Calls to functions of instances that have network, core data, or other nondeterministic dependencies
+
+#### System delegate methods
+
+### Using static methods 
+
+* app flow (ui tests)
 * core data
 * viewDidLoad
-* models
+* delegates
 
 ## Useful Links you might also want to check
 
