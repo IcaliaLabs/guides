@@ -675,6 +675,10 @@ http://www.thinkandbuild.it/ios-functional-testing-with-user-stories-uitest-and-
 http://masilotti.com/xctest-documentation/index.html
 https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
 
+## Demo project
+
+The [demo project](./ILTestingDemo) with the test samples created through this document is available in the testing folder of the guides.
+
 ## Useful Links you might also want to check
 
 http://www.raywenderlich.com/101306/unit-testing-tutorial-mocking-objects
