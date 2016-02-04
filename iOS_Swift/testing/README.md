@@ -655,8 +655,25 @@ And our test would be modified to be like this:
 
 ```
 
-### app flow (ui tests)
+### App flow (UI Tests)
 
+As of XCode 7 UI Test where introduced to the developer community. Which seems like a very big step for the tools that existed up to that date, as they were made by third party developers and each one laked many things or had lots of bugs and errors. With this new framework for testing were introduced features like recording live your steps so that it made it even easier to test. They even gave a whole talk in the WWDC event and made an example of an app so that you could see how it worked.
+
+Unfortunatelly the example they worked on with during the talk, doesn't reflect the problems that most of the apps will face with the way those UI Test work. Let me tell you an important about how these test work, and how do that affect our testing of most of the apps that exist now a days.
+
+UI Test are very different to unit test, they run your application but they do not work on the same instace of it. They actually run it as a proxy in a completely different instance therefore having no access what so ever to the state, and code of your app. This means that to be able to test this every flow of your actual app should be deterministic as there is no way so that we could make mocks, or check for the state the app currently holds to make the decision of what UI element should be presented. This is highly unlikely to happen in an era where everything is connected to the internet and you have to present connection error banners, or diferent views depending on the response of the server.
+
+They made no mention of this kinds of problems during the talk, they only presented their own perfect scenario demo leaving us developers to wondering around the web looking for answers. Unluckly for us not only did they not mention this in the talk but there is also no oficial guides in their documentation, there are only the XCUI classes doc.
+
+The lack of documentation, combined with the fact that many of iOS developers don't write tests, and that this is a very new technology makes it very hard to find much info about how to solve this. However I did stumble upon some articles in which they talk about a way to use mock classes by adding launch arguments in the setup for the tests. The catch about this is that in that case you have to make your mock classes part of your app target, and write code all over inside your app so that if that argument exist is present it should follow the indicated path. This is not only a very bad practice as you shouldn't have testing code mixed with your app code, but also has lots of bad consecuences because if you make it part of your app target that code will get shipped to the client making it a heavier app in memory and might also have performance impact.
+
+Having into account these facts, we can see that this tools are still very premature and perhaps we should wait until there is better ways to go about these issues to start implementing UI tests. If you would still like to go about the solution that I talked before here are some links that talk about this, and also tell you more about UI Testing:
+
+http://masilotti.com/ui-testing-xcode-7/#launching-the-app-xcuiapplication
+http://masilotti.com/ui-testing-cheat-sheet/
+http://www.thinkandbuild.it/ios-functional-testing-with-user-stories-uitest-and-local-server/
+http://masilotti.com/xctest-documentation/index.html
+https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
 
 ## Useful Links you might also want to check
 
@@ -670,5 +687,6 @@ https://www.objc.io/issues/15-testing/dependency-injection/
 http://masilotti.com/better-swift-unit-testing/
 https://sharpfivesoftware.com/2015/02/03/testing-singletons-in-swift/
 http://stackoverflow.com/questions/28115991/inject-mock-class-into-method-to-unit-test-method
+
 
 
