@@ -317,16 +317,346 @@ There is a simple trick for that instead of calling the viewDidLoadMethod of the
         }
 ```
 
+
 #### Calls to functions of instances that have network, core data, or other nondeterministic dependencies
+
+When making calls to nondeterministic dependencies you will need the help of mocking classes as talked about in the server request section. But in order to use those mocking classes instead of the real ones we will have to use dependency injection. Unfortunately this does mean that we have to create our code with our tests into account. Let's see an example of this.
+
+Imagine we have a class that when it loads it makes a request to fetch all people from a server:
+
+```swift
+var selectedUser: Person?
+    var people: [Person]?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchAllPeople()
+    }
+
+    func fetchAllPeople() {
+        let personService = PersonService()
+        personService.fetchAllPeople().then { (people) -> Void in
+            self.people = people
+        }.error {
+            error in
+            let alertController = UIAlertController(title: "Error", message: "Couldn't fetch people", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+            alertController.addAction(alertAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+```
+
+If we would write it like this it would not be possible to change the fetchAllPeople function which PersonService to use. So instead of writting the function like this we should use the power of swift default parameters so that this is the only the declaration of the function is changed, but all other parts where our function is used can stay the same:
+
+```swift
+func fetchAllPeople(personService: PersonService = PersonService()) {
+        personService.fetchAllPeople().then { (people) -> Void in
+            self.people = people
+        }.error {
+            error in
+            let alertController = UIAlertController(title: "Error", message: "Couldn't fetch people", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+            alertController.addAction(alertAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+```
+
+With this new declaration of the function, there is no need to change nothing in the viewDidLoad method, and now we can easily test it's functionallity:
+
+```swift
+		var userTableController: UserTableViewController!
+        let allPeople = [Person(name: "jacob", lastName: "Wells")!, Person(name: "jessica", lastName: "Parker")!]
+        beforeEach {
+            userTableController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("userTableViewController") as! UserTableViewController
+        }
+        
+        describe("a fetch for users") {
+            context("when succesful") {
+                beforeEach {
+                    let service = PersonServiceMock()
+                    service.fakeResult = Result.Success(allPeople)
+                    userTableController.fetchAllPeople(service)
+                }
+                
+                it("should update the users") {
+                    expect(userTableController.people).toEventually(equal(allPeople), timeout: 3)
+                }
+            }
+        }
+```
 
 #### System delegate methods
 
-### Using static methods 
+For delegates like table view controllers you may call this functions directly:
 
-* app flow (ui tests)
-* core data
-* viewDidLoad
-* delegates
+```swift
+
+		describe("table view") {
+            context("when all people have been fetched sucessfully") {
+                beforeEach {
+                    userTableController.people = allPeople
+                }
+                
+                it("has as many rows as people in it") {
+                expect(userTableController.peopleTableView.dataSource?.tableView(userTableController.peopleTableView, numberOfRowsInSection: 0)) == userTableController.people!.count
+                }
+                
+                it("displays a persons full name for each row") {
+                    
+                    for (index, person) in userTableController.people!.enumerate() {
+                        expect(userTableController.peopleTableView.dataSource?.tableView(userTableController.peopleTableView, cellForRowAtIndexPath: NSIndexPath(forRow: index, inSection: 0)).textLabel?.text).to(equal(person.fullName))
+                        
+                    }
+                }
+            }
+            
+            context("when there is no people") {
+                beforeEach {
+                    userTableController.people = nil
+                }
+                
+                it("has cero rows in it") {
+                    expect(userTableController.peopleTableView.dataSource?.tableView(userTableController.peopleTableView, numberOfRowsInSection: 0)) == 0
+                }
+            }
+        }
+    }
+
+
+```
+
+**Note:** You can create your own custom matchers in Nimble, so that test code remains clean and readable. For example, you could change this lines:
+
+```swift
+for (index, person) in userTableController.people!.enumerate() {
+	expect(userTableController.peopleTableView.dataSource?.tableView(userTableController.peopleTableView, cellForRowAtIndexPath: NSIndexPath(forRow: index, inSection: 0)).textLabel?.text).to(equal(person.fullName))
+                        
+}
+```
+for the following:
+
+```swift
+let peopleFullNames: [String] = userTableController.people!.map{person in person.fullName}
+                    expect(userTableController.peopleTableView).to(CustomMatchers.matchEachCell(info:{
+                        cell in
+                        return cell.textLabel?.text ?? ""
+                        }, withCorresponding: peopleFullNames))
+```
+To see this example working refer to the sample project in the guides.
+
+#### Adding views to the hierarchy
+
+If you go to the code coverage section after having done all the steps form above. You will see that even though we tested for fetchAllPeople method, it is only half way covered.
+<div style="width:100%; text-align:center"><img src="./resources/Screen Shot 2016-02-03 at 4.48.50 p.m..png" style="height:150px"/></div>
+
+That is because we haven't tested yet the case for failing to retrieve users from the server. In the case that happens we will need to test that alert showing the error is presented. The code to test that case would look something like this:
+
+```swift
+describe("a fetch for users") {
+            
+            context("when failed to retrieve users") {
+                beforeEach {
+                    enum ServerError: ErrorType {
+                        case ServerUnreachable
+                    }
+                    
+                    let service = PersonServiceMock()
+                    service.fakeResult = Result.Failure(ServerError.ServerUnreachable)
+                    userTableController.fetchAllPeople(service)
+                }
+                
+                it("should show an alert about the error") {
+                    expect(userTableController.presentedViewController).toEventually(beAnInstanceOf(UIAlertController), timeout: 4)
+                }
+            }
+        }
+
+```
+However after running this code you will findout that it won't pass the test indicating that it expected an instance of UIAlertController but got nil instead.
+
+If you put a breakpoint and go to the log section you will find out the cause of the problem, there is a message that says `Warning: Attempt to present <UIAlertController: 0x7f863d9052b0> on <ILTestingDemo.UserTableViewController: 0x7f863bcccee0> whose view is not in the window hierarchy!`
+
+We never added our view to the running application. In order for this to work, we will need to add the following line of code `UIApplication.sharedApplication().keyWindow!.rootViewController = userTableController` in our prep for the test:
+
+```swift
+describe("a fetch for users") {
+            
+            context("when failed to retrieve users") {
+                beforeEach {
+                    UIApplication.sharedApplication().keyWindow!.rootViewController = userTableController
+                    enum ServerError: ErrorType {
+                        case ServerUnreachable
+                    }
+                    
+                    let service = PersonServiceMock()
+                    service.fakeResult = Result.Failure(ServerError.ServerUnreachable)
+                    userTableController.fetchAllPeople(service)
+                }
+                
+                it("should show an alert about the error") {
+                    expect(userTableController.presentedViewController).toEventually(beAnInstanceOf(UIAlertController), timeout: 4)
+                }
+            }
+}
+```
+
+### Using static or class methods 
+
+Somtimes you might have class methods and for this it gets a little trickier to test and make mocks of this methods. So lets imagine that instead of having a PersonService, you have a fetchAll class method in the Person class:
+
+```swift
+public func ==(lhs: Person, rhs: Person) -> Bool {
+    return lhs.name == rhs.name && lhs.lastName == rhs.lastName
+}
+
+public class Person:Equatable, CustomStringConvertible {
+    let name: String
+    let lastName: String
+    var fullName: String {
+        return "\(name) \(lastName)"
+    }
+    public var description: String {
+        return "<Person: {name:\(name), lastname:\(lastName)}>"
+    }
+    
+    init?(name: String, lastName: String) {
+        self.name = name
+        self.lastName = lastName
+        if self.name == "" || self.lastName == "" {
+            return nil
+        }
+    }
+    
+    class func fetchAll() -> Promise<[Person]> {
+        return Promise {
+            fulfill, reject in
+            
+            let request = NSURLRequest(URL: NSURL(string: "https://dummy.server.com/people")!)
+            NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if let error = error {
+                    reject(error)
+                } else if let data = data {
+                    fulfill(people(data))
+                }
+            })
+        }
+    }
+    
+    private class func people(fromData: NSData) -> [Person] {
+        return [
+            Person(name: "Bianca", lastName: "Smith")!,
+            Person(name: "monica", lastName: "Jones")!,
+            Person(name: "Tim", lastName: "Turner")!,
+            Person(name: "Tony", lastName: "Stark")!,
+            Person(name: "Sasha", lastName: "Minsk")!,
+            Person(name: "Emily", lastName: "Carrey")!]
+    }
+}
+```
+
+If you do this then the dependency injection of your code should change, as you can no longer provide an instance of a class, now you have to provide the class dynamically:
+
+```swift
+func fetchAllPeople(personType: Person.Type = Person.self) {
+        personType.fetchAll().then {
+            (people) -> Void in
+                self.people = people
+                self.peopleTableView.reloadData()
+            }.error {
+                error in
+                let alertController = UIAlertController(title: "Error", message: "Couldn't fetch people", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+                alertController.addAction(alertAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+        }
+}
+
+```
+
+And as you have no instances anymore, now you have to change your mock class to be able to give it fakeResults. You could change your instance variable to a class variable, but as they now share the same space of memory that could risk a race condition between the succesfull and the failure cases. So in order to solve that problem, we are going to create two subclasses of your mocking class, one for success, and the other one for failure. And change the variable to a computed property:
+
+```swift
+
+enum PersonMockError: ErrorType {
+    case NoResultForTestSet
+}
+
+class PersonMock: Person {
+    enum Result {
+        case Success([Person])
+        case Error(ErrorType)
+    }
+    
+    class var fakeResult: Result {
+        return Result.Error(PersonMockError.NoResultForTestSet)
+    }
+    
+    override class func fetchAll() -> Promise<[Person]> {
+        switch fakeResult {
+        case .Success(let people):
+            return Promise(people)
+        case .Error(let error):
+            return Promise(error: error)
+        }
+    }
+}
+
+class PersonMockFetchAllSuccess: PersonMock {
+    static var allPeople: [Person]!
+    
+    override class var fakeResult: Result {
+        return PersonMock.Result.Success(allPeople)
+    }
+}
+
+class PersonMockFetchAllError: PersonMock {
+    static var error: ErrorType!
+    
+    override class var fakeResult: Result {
+        return PersonMock.Result.Error(error)
+    }
+}
+
+```
+
+And our test would be modified to be like this:
+
+```swift
+
+    context("when succesful") {
+                beforeEach {
+                    PersonMockFetchAllSuccess.allPeople = allPeople
+                    userTableController.fetchAllPeople(PersonMockFetchAllSuccess.self)
+                }
+                
+                it("should update the users") {
+                    expect(userTableController.people).toEventually(equal(allPeople), timeout: 3)
+                }
+            }
+            
+            context("when failed to retrieve users") {
+                beforeEach {
+                    UIApplication.sharedApplication().keyWindow!.rootViewController = userTableController
+                    enum ServerError: ErrorType {
+                        case ServerUnreachable
+                    }
+                    
+                    PersonMockFetchAllError.error = ServerError.ServerUnreachable
+                    userTableController.fetchAllPeople(PersonMockFetchAllError.self)
+                }
+                
+                it("should show an alert about the error") {
+                    expect(userTableController.presentedViewController).toEventually(beAnInstanceOf(UIAlertController), timeout: 4)
+                }
+            }
+        }
+
+```
+
+### app flow (ui tests)
+
 
 ## Useful Links you might also want to check
 
