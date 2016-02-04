@@ -669,11 +669,11 @@ The lack of documentation, combined with the fact that many of iOS developers do
 
 Having into account these facts, we can see that this tools are still very premature and perhaps we should wait until there is better ways to go about these issues to start implementing UI tests. If you would still like to go about the solution that I talked before here are some links that talk about this, and also tell you more about UI Testing:
 
-http://masilotti.com/ui-testing-xcode-7/#launching-the-app-xcuiapplication
-http://masilotti.com/ui-testing-cheat-sheet/
-http://www.thinkandbuild.it/ios-functional-testing-with-user-stories-uitest-and-local-server/
-http://masilotti.com/xctest-documentation/index.html
-https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
+* http://masilotti.com/ui-testing-xcode-7/#launching-the-app-xcuiapplication
+* http://masilotti.com/ui-testing-cheat-sheet/
+* http://www.thinkandbuild.it/ios-functional-testing-with-user-stories-uitest-and-local-server/
+* http://masilotti.com/xctest-documentation/index.html
+* https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
 
 ## Demo project
 
@@ -681,16 +681,16 @@ The [demo project](./ILTestingDemo) with the test samples created through this d
 
 ## Useful Links you might also want to check
 
-http://www.raywenderlich.com/101306/unit-testing-tutorial-mocking-objects
-http://www.slideshare.net/bgesiak/everything-you-never-wanted
-https://www.natashatherobot.com/ios-testing-view-controllers-swift/
-https://www.natashatherobot.com/unit-testing-swift-dependency-injection/
-http://www.slideshare.net/bgesiak/quick-better-tests-with-incremental-setup
-https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
-https://www.objc.io/issues/15-testing/dependency-injection/
-http://masilotti.com/better-swift-unit-testing/
-https://sharpfivesoftware.com/2015/02/03/testing-singletons-in-swift/
-http://stackoverflow.com/questions/28115991/inject-mock-class-into-method-to-unit-test-method
+* http://www.raywenderlich.com/101306/unit-testing-tutorial-mocking-objects
+* http://www.slideshare.net/bgesiak/everything-you-never-wanted
+* https://www.natashatherobot.com/ios-testing-view-controllers-swift/
+* https://www.natashatherobot.com/unit-testing-swift-dependency-injection/
+* http://www.slideshare.net/bgesiak/quick-better-tests-with-incremental-setup
+* https://www.bignerdranch.com/blog/ui-testing-in-xcode-7-part-1-ui-testing-gotchas/
+* https://www.objc.io/issues/15-testing/dependency-injection/
+* http://masilotti.com/better-swift-unit-testing/
+* https://sharpfivesoftware.com/2015/02/03/testing-singletons-in-swift/
+* http://stackoverflow.com/questions/28115991/inject-mock-class-into-method-to-unit-test-method
 
 
 
