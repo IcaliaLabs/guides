@@ -9,7 +9,7 @@ You can easily set up your laptop by running [kaishi](https://github.com/IcaliaL
 
 ## App creation
 
-We have developed a [script](https://github.com/IcaliaLabs/railsAppCustomGenerator) to help you start your rails apps with the bare bones that will accelerate your development process.
+We have developed a [script](https://github.com/IcaliaLabs/platter) to help you start your rails apps with the barebones that will accelerate your development process.
 
 ## Setting up an existing app
 
@@ -57,6 +57,8 @@ There are simple guidelines when providing code review to a teammate. The most p
 * Review views for excess usage of helpers or variable declaration
 * Detect N+1 queries on models, and suggest to use eager loading when necessary
 
+We also try our best to follow these [code conventions](https://github.com/IcaliaLabs/icalia_guides/blob/master/rails/CODE_CONVENTION.md)
+
 ## Deployment
 
 It is important that you always deploy from the master of your local computer to the production environment on Heroku. To see more about new feature branches and staging environment, checkout the [git guide](https://github.com/IcaliaLabs/icalia_guides/tree/master/git).
@@ -94,7 +96,7 @@ $ heroku run rake db:migrate --remote production
 $ heroku restart --remote production
 ```
 
-Remember that this process only applies for hot fixes and merged features to dev, as they have been already been tested on the browser.
+Remember that this process only applies for hot fixes and merged features to dev, as they have been already tested on the browser.
 
 ## Setup the production environment
 

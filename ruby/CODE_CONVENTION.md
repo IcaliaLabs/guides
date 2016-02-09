@@ -11,3 +11,5 @@
 * Choose the one line syntax for `if` and `unless` from the `if/unless ... end` syntax when there is only one condition
 * Abstain monkey-patching
 * Abstain optional parameters
+* Write self-documenting code 
+* Try to keep your classes as solid as possible

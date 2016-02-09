@@ -1,31 +1,35 @@
 # iOS GUIDELINES
 
-The following guides are a compilation of common practices and conventions we use in Icalia for iOS Projects. We believe it is very important to have a look a this guides to have a common ground in the development style, and make it easier to work in teams or also to retake a project made by another teammate without wasting time understanding the structure and tools used in the project.
+The following guides are a compilation of common practices and conventions we use in Icalia for iOS Projects. We believe it's very important to have a look at this guides to have a common ground in our development style, and make it easier to work in teams or, also, to retake a project made by another teammate without wasting time understanding the structure and tools used in the project.
 
 * Project Setup 
-  * Apple Certificates
+  * [Apple Certificates](https://github.com/IcaliaLabs/icalia_guides/blob/master/iOS_Swift/CERTIFICATES.md)
   * New Project
-    * Multiple Environment Configuration (Staging, Production, etc)
+    * Multiple Environment Configuration (Staging, Production, etc.)
     * Project Structure
     * Crash Reporting
-    * Integrating Cocoapods
+    * Using CocoaPods
   * Existing Projects
-  * Installing Cocoapods
+* Installing CocoaPods
 * Language and Code Conventions
   * Swift Code Conventions
   * Objective-C Code Conventions
   * Language Independent Conventions
 * User Interface Development
 * Persistent Data Handling
-  * user session
-  * user settings
-  * app current state
+  * User Session
+  * User Settings
+  * App Current State
 * Automated Testing
 * Logging
-* Client Deployments Releases
-* Api Client Setup
-* Push notification Services
+* [Manual Deployments](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments)
+  * [Testflight and Appstore](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#testflight-andor-appstore-manual-deployments)
+  * [Fabric](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#fabric-manual-deployments) 
+* API Client Setup
+* Push Notifications Services
 * Deployments Crash Reporting
 * Push Notifications
 * Using Amazon Services (AWS)
   * Amazon Cognito
+* Open Source
+  * Developing and realising a CocoaPods
