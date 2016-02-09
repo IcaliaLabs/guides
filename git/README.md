@@ -16,7 +16,7 @@ You can easily set up your laptop by running [kaishi](https://github.com/IcaliaL
 
 ## Branch structure
 
-We at [Icalia Labs](http://icalialabs.com) never work directly on the `master` branch to build software, we like to keep things isolated. And although we make a branch per feature, but we consider an extra branch called `dev` where we mantain all of the source code HEAD, so `dev` always reflect the most recent changes to be released.
+We at [Icalia Labs](http://icalialabs.com) never work directly on the `master` branch to build software, we like to keep things isolated. And although we make a branch per feature, we consider an extra branch called `dev` where we mantain all of the source code HEAD, so `dev` always reflect the most recent changes to be released.
 
 Once the `dev` branch is stable enough we then merge with `master` and tagged with a version number. This way we keep things sane, and the CI server can easily push to production or rollback to the last stable version on production.
 
@@ -117,62 +117,15 @@ Or if you have many tags you can push them by using:
 ```console
 $ git push origin —-tags
 ```
-## Stashing
-
-There are times when you want to work on a project but you've made changes which are not ready to be committed, there's a powerful tool to help us with that: git stash.
-
-Basically this command saves modified files and puts them in a stack where they can be later accessed if needed.
-
-To stash modified files and staged changes:
-
-```console
-$ git stash
-```
-
-This will clean your working directory, you can confirm that by using:
-
-```console
-$ git status
-```
-
-To see a list of stored stashes use:
-
-```console
-$ git stash list
-```
-
-Then if you want to apply the most recent stash run:
-
-```console
-$ git stash apply
-```
-
-You can also call to a specific stash by using:
-
-```console
-$ git stash apply stash@{1}
-```
-
-You can also delete a stash from your stash list by using:
-
-```console
-$ git stash drop stash@{0}
-``` 
-
-To stash and drop current changes use:
-
-```console
-$ git stash pop
-```
-
-It's also possible to create a branch from a stash by using:
-
-```console
-$ git stash branch {NameOfBranch}
-```
-
 
 ## .gitignore samples
 
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
 * [iOS](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_ios)
+
+
+Here are some git advanced guides that can help you in your everyday workflow
+
+- [Git stash](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_stash.md)
+- [Git add --patch](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_add_patch.md)
+- [Git aliases](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_aliases.md)
