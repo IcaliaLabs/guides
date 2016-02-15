@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "No user selected"; ObjectID = "a5r-9Z-RyV"; */
+"a5r-9Z-RyV.text" = "No user selected";
+
+/* Class = "UILabel"; text = "User name"; ObjectID = "tGj-NE-0KQ"; */
+"tGj-NE-0KQ.text" = "User name";
+
+/* Class = "UIButton"; normalTitle = "Select User"; ObjectID = "vss-ip-ig5"; */
+"vss-ip-ig5.normalTitle" = "Select User";

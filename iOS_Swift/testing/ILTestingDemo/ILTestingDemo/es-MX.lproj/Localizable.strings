@@ -1,0 +1,9 @@
+/* 
+  ILTestingDemo.strings
+  ILTestingDemo
+
+  Created by Compean on 03/02/16.
+  Copyright © 2016 Compean. All rights reserved.
+*/
+
+NO_USER_SELECTED_TEXT = "No se ha seleccionado un usuario";

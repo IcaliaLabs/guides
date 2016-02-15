@@ -20,7 +20,7 @@ The following guides are a compilation of common practices and conventions we us
   * User Session
   * User Settings
   * App Current State
-* Automated Testing
+* [Automated Testing](./testing)
 * Logging
 * [Manual Deployments](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments)
   * [Testflight and Appstore](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift/deployments#testflight-andor-appstore-manual-deployments)
