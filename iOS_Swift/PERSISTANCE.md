@@ -2,13 +2,13 @@
 
 ### Why 
 
-Sometimes in an iOS App you need to store some data in the users hard drive so it can **persist** among app launches, hence the name, **persistance.**
+Sometimes in an iOS App you need to store some data in the user's hard drive so it can **persist** across app launches, hence the name, **persistance.**
 
 This can be something as simple as cache so that the user has a faster experience and doesn't have to make more extra requests to get data.
 
 This can also be the settings or the session if your app has a login component.
 
-Or it can be any kind of app state that you need to store. This can all be acomplished in several ways, each has it's benefits and different complexity levels. I'll try to go trough all from the simplest to the most complex.
+Or it can be any kind of app state that you need to store. This can all be accomplished in several ways; each has its benefits and different complexity levels. I'll try to go through all of them from the simplest to the most complex.
 
 ### NSUserDefaults
 
@@ -25,9 +25,9 @@ This is a good place to store settings, and small information like a current log
 
 ### Property List Serialization
 
-**Property lists** are a way of expressing simple hierarchies of data. Basically, any **NSNumber**, **NSDate**, **NSData** and **NSString** contained in either a **NSArray** or **NSDictionary** (and any combination of them) is considered a property list. You can create Property Lists in XCode as a .plist file, if you have any static data that needs to be read into your app. Or you can create a property list in code then serialize it to disk, and viceversa.
+**Property lists** are a way of expressing simple hierarchies of data. Basically, any **NSNumber**, **NSDate**, **NSData** and **NSString** contained in either a **NSArray** or **NSDictionary** (and any combination of them) is considered a property list. You can create Property Lists in XCode as a .plist file, if you have any static data that needs to be read into your app. Or you can create a property list in code then serialize it to disk, and vice versa.
 
-To save Plist compatible data types, you would do so like this: (plist is the dictinoary we want to serialize & save to disk).
+To save Plist compatible data types, you would do so like this: (plist is the dictionary we want to serialize & save to disk).
 
 	NSDictionary *plist = @{...}
 	
@@ -64,7 +64,7 @@ To open a Plist file, this is the way you would do it:
                                                        format: &format
                                                         error: &error];
     
-Don't forget to perform nil & error validation, which I excluded for clarity.
+Don't forget to perform nil & error validation, which I excluded for brevity.
 
 So basically, the first code sample turns a property list into data, that can be stored to disk. The second sample turns data included in some file, into a property list, which can be used in code.
 	
@@ -107,7 +107,7 @@ Afterwards, to serialize/archive to disk you do it like so:
 	
 Which gives you NSData that you can store to disk (like the Plist) or even store it inside NSUserDefaults.
 
-And, viceversa, to unarchive:
+And, vice versa, to unarchive:
 
 	[NSKeyedUnarchiver unarchiveObjectWithFile: @"/path/to/archive"];
 

@@ -29,5 +29,9 @@ There are simple guidelines when providing code review to a teammate. In particu
 * Check for if statements that are too deep (3 or more levels)
 * Review specs
 * Use a tool like [SimpleCov](https://github.com/colszowka/simplecov) to quickly visualize your test coverage
-* Check out a style guide. Some style guides are: [AirBnB](https://github.com/airbnb/ruby), [Bozhidar Batsov](https://github.com/bbatsov/ruby-style-guide), and [thoughtbot](https://github.com/thoughtbot/guides/tree/master/style/ruby).
+* Check out a style guide. Some style guides are: 
+  * [AirBnB](https://github.com/airbnb/ruby)
+  * [Bozhidar Batsov](https://github.com/bbatsov/ruby-style-guide)
+  * [thoughtbot](https://github.com/thoughtbot/guides/tree/master/style/ruby).
+  * And of course we have our [own](https://github.com/IcaliaLabs/icalia_guides/blob/master/ruby/CODE_CONVENTION.md)
 * Adhere to Ruby community styles using [rubocop](https://github.com/bbatsov/rubocop) or similar
