@@ -16,10 +16,7 @@ The following guides are a compilation of common practices and conventions we us
   * Objective-C Code Conventions
   * Language Independent Conventions
 * User Interface Development
-* Persistent Data Handling
-  * User Session
-  * User Settings
-  * App Current State
+* [Persistance](./PERSISTANCE.md)
 * Automated Testing
 * Logging
 * [Manual Deployments](./deployments/README.md)
@@ -32,4 +29,4 @@ The following guides are a compilation of common practices and conventions we us
 * Using Amazon Services (AWS)
   * Amazon Cognito
 * Open Source
-  * Developing and realising a CocoaPods
+  * Developing and realising a CocoaPod
