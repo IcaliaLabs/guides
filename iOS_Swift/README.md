@@ -29,4 +29,4 @@ The following guides are a compilation of common practices and conventions we us
 * Using Amazon Services (AWS)
   * Amazon Cognito
 * Open Source
-  * Developing and realising a CocoaPod
+  * Developing and releasing a CocoaPod
