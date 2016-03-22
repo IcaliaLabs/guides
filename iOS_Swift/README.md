@@ -28,5 +28,5 @@ The following guides are a compilation of common practices and conventions we us
 * [Push Notifications](./NOTIFICATIONS.md)
 * Using Amazon Services (AWS)
   * Amazon Cognito
-* [Open Source](./open_source/open_source.md)
+* Open Source
   * [Developing and releasing a CocoaPod](./open_source/developing_and_releasing_a_cocoapod.md)
