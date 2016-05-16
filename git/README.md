@@ -14,9 +14,11 @@ This is the guide to rule every project with version control.
 
 You can easily set up your laptop by running [kaishi](https://github.com/IcaliaLabs/kaishi), a shell script to convert any Mac OS X or Linux computer into a real development machine. This will install the latest version of git.
 
+# Git WorkFlow
+
 ## Branch structure
 
-We at [Icalia Labs](http://icalialabs.com) never work directly on the `master` branch to build software, we like to keep things isolated. And although we make a branch per feature, we consider an extra branch called `dev` where we mantain all of the source code HEAD, so `dev` always reflect the most recent changes to be released.
+We at [Icalia Labs](http://icalialabs.com) never work directly on the `master` branch to build software, we like to keep things isolated. And although we make a branch per feature, hotfix and release, we consider an extra branch called `dev` where we mantain all of the source code HEAD, so `dev` always reflect the most recent changes to be released.
 
 Once the `dev` branch is stable enough we then merge with `master` and tagged with a version number. This way we keep things sane, and the CI server can easily push to production or rollback to the last stable version on production.
 
@@ -24,8 +26,18 @@ An image is presented below to demostrate this:
 
 ![http://nvie.com/posts/a-successful-git-branching-model](http://nvie.com/img/main-branches@2x.png)
 
+##Supporting Branches
 
-## Write a new feature
+Next to the main branches `master` and `dev`, we use two supporting branches to ease tracking of features and to assist in quickly fixing live production problems. These branches have a limited life time, since they will be removed once they are merged to `master` and/or `dev`.
+
+The different types of branches we may use are:
+
+Feature branches
+Hotfix branches
+
+Each of these two branches have a specific purpose and are bound to strict rules as to which branches may be their originating branch and which branches must be their merge targets.
+
+## Feature branches
 
 Now that we understand how the `dev/master` flow works, it is time to get to know how to start a new feature.
 
@@ -33,10 +45,10 @@ First create a local feature branch off `dev`:
 
 ```console
 $ git pull origin dev
-$ git checkout -b <feature-branch>
+$ git checkout -b feature/<feature-name>
 ```
 
-In the branch creation it is important that you prefix the name of it with your initials.
+In the branch creation it is important that you prefix the name of it with `feature/<feature-name>`
 
 Once you are done with the feature it is time to merge it with `dev`, but first we need to fetch for changes
 
@@ -60,18 +72,50 @@ Once the `dev` branch is up to date, it is time to merge your feature branch.
 
 ```console
 $ git checkout dev
-$ git merge <feature-branch>
+$ git merge  feature/<feature-name>
 ```
 
 Share and delete your branch:
 
 ```console
-$ git push origin <feature-branch>
-$ git branch --delete <feature-branch>
+$ git push origin feature/<feature-name>
+$ git branch --delete feature/<feature-name>
 ```
 
 **If you would like a code review from another developer, you can ask him/her kindly, and place a pull request assigned to him/her**
 
+## Hotfix Branches
+
+Hotfix branches always prepare master for a new unplanned production release. They arise from the necessity of act inmediately upon an undesired state of a live production version (something went wrong on production).
+
+When a critical bug in production must be resolved inmediately, a `hotfix` branch may be branched off from `master`. The purpose of this is that work of team members(on `dev`) can continue, while another person is preparing a quick fix on production.
+
+First create a local hotfix branch off `master`:
+
+```console
+$ git checkout -b hotfix/<hotfix-name> master
+```
+
+Then, fix the bug and commit the fix in one or more separate commits.
+
+```console
+$ git commit -m "Fix big nasty bug"
+```
+
+When finished, the bugfix needs to be merged back into `master`, but also needs to be merged back into `develop`
+
+```console
+$ git checkout master
+$ git merge hotfix/<hotfix-name>
+$ git checkout dev
+$ git merge hotfix/<hotfix-name>
+```
+Finally share and delete your branch:
+
+```console
+$ git push origin hotfix/<hotfix-name>
+$ git branch --delete hotfix/<hotfix-name>
+```
 
 ## Multiple environments
 
