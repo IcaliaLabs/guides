@@ -2,19 +2,19 @@
 
 This is the guide to rule every project with version control.
 
-* Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short.
-* Start your commit message with a present verb such as `Adds`, `Removes`, `Updates`
-* Squash multiple commits.
-* Avoid merge commits. Use a rebase workflow.
-* Delete local and remote branches after merge has been done.
-* Every new feature should be build on a separate branch.
-* Never track files specific to your local development machine.
+# Table of Contents
+* [Set up your laptop](##set-up-your-laptop)
+* [Git Workflow](#git-workflow)
+* [Multiple environments](##multiple-environments)
+* [Git tricks to boost productivity](##git-tricks-to-boost-productivity)
+* [Git tips](##git-tips)
+* [Mantaining a project? Follow in case of deployment explosion](##mantaining-a-project?-follow-in-case-of-deployment-explosion)
 
 ## Set up your laptop
 
 You can easily set up your laptop by running [kaishi](https://github.com/IcaliaLabs/kaishi), a shell script to convert any Mac OS X or Linux computer into a real development machine. This will install the latest version of git.
 
-# Git WorkFlow
+# Git Workflow
 
 ## Branch structure
 
@@ -201,9 +201,22 @@ To keep things seamless, whenever a deployment to staging is going to be perform
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
 * [iOS](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_ios)
 
+## Git tricks to boost productivity
 
 Here are some git advanced guides that can help you in your everyday workflow
 
 - [Git stash](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_stash.md)
 - [Git add --patch](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_add_patch.md)
 - [Git aliases](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_aliases.md)
+
+## Git tips
+
+* Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short.
+* Start your commit message with a present verb such as `Adds`, `Removes`, `Updates`
+* Squash multiple commits.
+* Avoid merge commits. Use a rebase workflow.
+* Delete local and remote branches after merge has been done.
+* Every new feature should be build on a separate branch.
+* Never track files specific to your local development machine.
+
+## Mantaining a project? Follow in case of deployment explosion
