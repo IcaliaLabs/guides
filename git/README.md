@@ -116,6 +116,70 @@ Finally share and delete your branch:
 $ git push origin hotfix/<hotfix-name>
 $ git branch --delete hotfix/<hotfix-name>
 ```
+## Releases Branches
+
+When `dev` includes all features that reflects a desired state for a new release we may branch off a release branch to support the new preoduction release.
+
+Release branches allow for minor bug fixes and preparing the version number. It may be deployed to staging so the product owner can test the new release and 
+
+Let's create a local release branch off `dev`:
+
+```console
+$ git checkout -b release/<release-name> dev
+```
+
+Then let's fix some minor bugs
+
+```console
+$ git commit -m "Solves minor nasty bug"
+```
+
+When a release branch is ready to be deployed to production a corresponding tag of the version should be created and pushed to remote to be able to easily get a copy of the code as it was in that release in case needed for the future. This will allow us to act quickly if we need to rollback the last deployment.
+
+Let's merge into `master`
+
+```console 
+$ git checkout master
+$ git merge release/<release-name>
+$ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
+```
+
+Then we should tag the new release, where the number followed by the annotation flag `-a 1.0.0` should be written following the [semantic versioning rules](http://semver.org)
+
+```console 
+$ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
+```
+
+Then you can push your tag to remote by using:
+
+```console
+$ git push origin [tagname]
+```
+
+Or if you have many tags you can push them by using:
+
+```console
+$ git push origin —-tags
+```
+
+Then let's merge into `dev` so we can get the bug fixes
+
+```console 
+$ git checkout master
+$ git merge release/<release-name>
+```
+
+Finally, we may delete the release branch.
+
+```console 
+$ git branch --delete release/<release-name>
+```
+
+After creating the tag you can view the created tag by using:
+
+```console
+$ git tag -l
+```
 
 ## Multiple environments
 
@@ -131,36 +195,6 @@ In order to create these two environments, there is an excellent [article](https
 ### Syncing staging and production databases
 To keep things seamless, whenever a deployment to staging is going to be performed, we sync the production database to the staging app. Check out the [guide](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/DATABASE_SYNC.md) for more information.
 
-
-## Releases
-
-Every time a new version is going to be deployed to production, a corresponding tag of the version should be created and pushed to remote to be able to easily get a copy of the code as it was in that release in case needed for the future.
-
-To create a tag use the command:
-
-```console 
-$ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
-```
-
-Where the number followed by the annotation flag `-a 1.0.0` should be written following the [semantic versioning rules](http://semver.org)
-
-After creating the tag you can view the created tag by using:
-
-```console
-$ git tag -l
-```
-
-Then you can push your tag to remote by using:
-
-```console
-$ git push origin [tagname]
-```
-
-Or if you have many tags you can push them by using:
-
-```console
-$ git push origin —-tags
-```
 
 ## .gitignore samples
 
