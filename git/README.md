@@ -6,7 +6,7 @@ This is the guide to rule every project with version control.
 * [Set up your laptop](##set-up-your-laptop)
 * [Git Workflow](#git-workflow)
 * [Multiple environments](##multiple-environments)
-* [Git hooks to boost productivity](##git-hooks-to-boost-productivity)
+* [Git hooks and tricks to boost productivity](##git-hooks-and-tricks-to-boost-productivity)
 * [Git tips](##git-tips)
 * [Mantaining a project? Follow in case of deployment explosion](##mantaining-a-project?-follow-in-case-of-deployment-explosion)
 
@@ -201,13 +201,15 @@ To keep things seamless, whenever a deployment to staging is going to be perform
 * [Rails](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_rails)
 * [iOS](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/gitignore_ios)
 
-## Git hooks to boost productivity
+## Git hooks and tricks to boost productivity
 
 Here are some git advanced guides that can help you in your everyday workflow
 
+- [Pre commit hooks](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_hooks.md)
 - [Git stash](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_stash.md)
 - [Git add --patch](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_add_patch.md)
 - [Git aliases](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_aliases.md)
+- [Auto resolve db/schema.rb merge conflicts](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/db_schema_merge.md)
 
 ## Git tips
 
