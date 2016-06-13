@@ -222,3 +222,16 @@ Here are some git advanced guides that can help you in your everyday workflow
 * Never track files specific to your local development machine.
 
 ## Mantaining a project? Follow in case of deployment explosion
+
+You deployed to production, sat back and relax... then you get a call telling you that everything exploded.
+
+Now what you might want to do is undo the changes the last release made but keep history so you are able to fix whatever went wrong.
+
+This is what you could do:
+
+```console
+$ git checkout master
+$ git revert HEAD
+```
+
+`git revert` will create a new commit that reverts everything the last commit did, which is the one that went to production.
