@@ -213,7 +213,7 @@ Here are some git advanced guides that can help you in your everyday workflow
 
 ## Git tips
 
-* Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short.
+* Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short. You can use [git templates to assist your messages](https://github.com/IcaliaLabs/icalia_guides/blob/master/git/git_templates.md)!
 * Start your commit message with a present verb such as `Adds`, `Removes`, `Updates`
 * Squash multiple commits.
 * Avoid merge commits. Use a rebase workflow.
