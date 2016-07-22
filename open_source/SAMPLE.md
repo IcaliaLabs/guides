@@ -37,7 +37,7 @@ Thanks!
 
 ## Community
 
-Keep track of new feautres, development issues and community news.
+Keep track of new features, development issues and community news.
 
 * Have a question about anything, email us at weare@icalialabs.com
 
@@ -53,4 +53,4 @@ Keep track of new feautres, development issues and community news.
 
 ## Copyright and license
 
-Code and documentation copyright 2013-2014 Icalia Labs. Code released under [the MIT license](LICENSE).
+Code and documentation copyright 2016 Icalia Labs. Code released under [the MIT license](LICENSE).
