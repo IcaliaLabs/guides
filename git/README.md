@@ -32,8 +32,8 @@ Next to the main branches `master` and `dev`, we use two supporting branches to 
 
 The different types of branches we may use are:
 
-Feature branches
-Hotfix branches
+* Feature branches
+* Hotfix branches
 
 Each of these two branches have a specific purpose and are bound to strict rules as to which branches may be their originating branch and which branches must be their merge targets.
 
