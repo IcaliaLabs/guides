@@ -15,8 +15,7 @@
 
 ## Installing Docker and enabling a development workstation
 
-Installing Docker used to be a daunting task. Not anymore. Install "Docker Toolbox"
-and watch it sing. You can check the details
+Installing Docker used to be a daunting task. Not anymore. Docker for MAC and Docker for Windows are avaiable for each operating system. This makes docker run natively on your OS, and eliminates the need for *Docker Machine* essentially.
 
 ## Docker on Production
 
