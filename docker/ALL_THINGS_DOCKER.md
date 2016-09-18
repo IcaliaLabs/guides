@@ -17,6 +17,8 @@
 
 Installing Docker used to be a daunting task. Not anymore. Docker for MAC and Docker for Windows are avaiable for each operating system. This makes docker run natively on your OS, and eliminates the need for *Docker Machine* essentially.
 
+Here's the main link [to install docker](https://www.docker.com/products/overview). If you're using windows, come features are not available yet, you'll just have to be patient.
+
 ## Docker on Production
 
 ### Cloud Providers
