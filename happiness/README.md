@@ -53,3 +53,7 @@ Learn something new, new frameworks, programming languages, music, a new languag
 ### Share!
 
 Yeah, share the knowledge, talk at meetups, give conferences, transfer knowledge to a new icalier or someone you don't know!
+
+### Relax
+
+If you ever feel like you need to concentrate, or have a need to rest and refresh, there is a nice place called [selfcare.tech](http://selfcare.tech/) where you can find many tools which will help you take better care of yourself.
