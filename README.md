@@ -1,29 +1,30 @@
-[![Stories in Ready](https://badge.waffle.io/IcaliaLabs/icalia_guides.png?label=ready&title=Ready)](https://waffle.io/IcaliaLabs/icalia_guides)
-# Icalia Guides
+# Guides
 
-Icalia Guides is the code convention used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintanable code to get things done.
+Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintainable code.
 
-It includes practices for multiple languages, based on our own experience and experts advice. It also includes how to handle code review when working with teammates.
+* [Happiness](happiness)
+* [Best Practices](best-practices)
+* [Open source projects](open-source-projects)
+* [Testing]()
+* [Stack](stack)
+	* [Ruby]()
+	* [Rails]()
+	* [Git]()
+	* [Sass]()
+	* [Javascript]()
+	* [iOS]()
+	
 
-* [Rails](https://github.com/IcaliaLabs/icalia_guides/tree/master/rails)
-* [Ruby](https://github.com/IcaliaLabs/icalia_guides/tree/master/ruby)
-* [Git](https://github.com/IcaliaLabs/icalia_guides/tree/master/git)
-* [Sass && CSS](https://github.com/IcaliaLabs/icalia_guides/tree/master/sass)
-* [Javascript && Coffescript](https://github.com/IcaliaLabs/icalia_guides/tree/master/coffeescript)
-* [iOS](https://github.com/IcaliaLabs/icalia_guides/tree/master/iOS_Swift)
-* [Open source projects](https://github.com/IcaliaLabs/icalia_guides/tree/master/open_source)
-* [Dev happiness](https://github.com/IcaliaLabs/icalia_guides/tree/master/dev_happiness)
-* [Project Administration](https://github.com/IcaliaLabs/icalia_guides/tree/master/project_administration)
-* [TDD](https://github.com/IcaliaLabs/icalia_guides/tree/master/tdd)
+We algo provide a bunch of *how to* articles at the [wiki](https://github.com/IcaliaLabs/guides/wiki/How-tos) to answer the most frequently asked questions.
 
-Primary guidelines:
+**Primary guidelines:**
 
-* Don't reinvent the wheel, reuse code from gems or plugins
+* Don't reinvent the wheel reuse code from plugins
 * Be consistent
 * Be kind with your teammate
 * Don't violate any guideline, unless you can convince another teammate of doing so
 
-Language used on Icalia Guides:
+Language used on Guides:
 
 * "Choose" means that there could be multiple options to choose from
 * "Use" is a positive declaration
@@ -44,9 +45,9 @@ Credits
 
 Thank you, [contributors](https://github.com/icalialabs/icalia_guides/graphs/contributors)!
 
-![Icalia Labs](https://raw.githubusercontent.com/IcaliaLabs/kaishi/master/logo.png)
+![Icalia Labs](https://avatars0.githubusercontent.com/u/2523244?v=3&s=200)
 
-Icalia Guides is maintained by [Icalia Labs](http://www.icalialabs.com/team).
+Guides is maintained by [Icalia Labs](http://www.icalialabs.com/team).
 
 License
 -------
