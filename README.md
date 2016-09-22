@@ -3,8 +3,8 @@
 Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.com) to create beautiful and maintainable code.
 
 * [Happiness](happiness)
-* [Best Practices](best-practices)
-* [Open source projects](open-source-projects)
+* [Best Practices](best_practices)
+* [Open source projects](open_source)
 * [Testing]()
 * [Stack](stack)
 	* [Ruby]()

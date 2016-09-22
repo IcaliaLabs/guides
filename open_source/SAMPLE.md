@@ -8,24 +8,23 @@ You can have a very short description of what your project is like the one on Fu
 
 *Furatto is a lightweight & friendly front-end framework got get the job done, created and maintained by [Abraham Kuri](https://twitter.com/kurenn) from [Icalia Labs](http://twitter.com/icalialabs).*
 
+Or a more extensive and nice description like the one on [Presentr](https://github.com/IcaliaLabs/Presentr#about)
+
 
 ## Table of contents
-- [Quick start](#quick-start)
-- [Bug tracker & feature request](#bug-tracker-&-feature-request)
-- [Documentation or Installation instructions](#documentation)
+- [Getting started](#quick-start)
+- [Installation instructions](#installation-instructions)
+- [Documentation](#documentation)
 - [Contributing](#contributing)
-- [Community](#community)
+- [Changelog](#changelog)
 - [Heroes](#heroes)
 - [License](#license)
 
-## Quick start
+## Getting started
 
-
-## Bug tracker & feature request
-
+## Installation instructions
 
 ## Documentation
-
 
 ## Contributing
 
@@ -35,20 +34,18 @@ In case you are wondering what to attack, we hnow have a milestone with the vers
 
 Thanks!
 
-## Community
+## Changelog
 
-Keep track of new feautres, development issues and community news.
-
-* Have a question about anything, email us at weare@icalialabs.com
+See [CHANGELOG.md]()
 
 
 ## Heroes
 
-**Abraham Kuri**
+**Author name**
 
-+ [http://twitter.com/kurenn](http://twitter.com/kurenn)
-+ [http://github.com/kurenn](http://github.com/kurenn)
-+ [http://klout.com/#/kurenn](http://klout.com/#/kurenn)
++ [http://twitter.com/username](http://twitter.com/username)
++ [http://github.com/username](http://github.com/username)
++ [http://klout.com/#/username](http://klout.com/#/username)
 
 
 ## Copyright and license
