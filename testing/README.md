@@ -1,4 +1,4 @@
-# TDD
+# Testing
 
 Here at IcaliaLabs, we try to develop software under the TDD methodology, since it has shown its value along the procces of creating new features or fixing issues. Lets start by telling you what it is and how to start working with it.
 
