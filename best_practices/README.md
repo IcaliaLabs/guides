@@ -4,7 +4,7 @@ We like to keep sanity on every project and in order to achieve that we have a s
 
 * [Docker]()
 * [Rails](../stack/rails/BEST_PRACTICES.md)
-* [Ruby]()
+* [Ruby](../stack/ruby/BEST_PRACTICES.md)
 * [Git]()
 
 We do have some general guides every Icalier must follow, not just for us as a team but as a personal investment:
