@@ -69,6 +69,35 @@ $ git branch --delete <feature-branch>
 
 **No code is integrated if codeclimate nor codeship are nice and green**
 
+## Making a Pull Request
+
+Every time a developer no matter if he/she is working alone, its compulsory they place a pull request for a new code integration. We rely on two great services(Codeship & Codeclimate) to guarantee two things: **healthy tests**  and  **high quality code**.
+
+We have a small format on how each pull request should look like:
+
+##### 1. The first thing is to add a meaningful title for the pull request
+
+In some cases you want to place a pull request but this is not ready to be integrated into master, so on the title make sure you add a `[WIP]` prefix which stands for `Work In Progress`. An example on how a title would look like is:
+
+```
+[WIP] Adds payment gateway subscriptions
+```
+
+##### 2. The second and last thing is the body of the pull request which consists on describing what is the purpose of the pull request and if you have some work to do.
+
+```
+### What does this PR do?
+
+* Adds user model
+* Adds user sign up view
+
+### TO-DO
+
+* Adds user account deletion
+```
+
+Take note that the `TO-DO` section is not meant to persist, is just to let anyone on the team what are you missing and probably working on.
+ 
 
 ## Multiple environments
 
