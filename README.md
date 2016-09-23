@@ -13,7 +13,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
 	* [Git](stack/git)
 	* [Sass](stack/sass)
 	* [Javascript](stack/js)
-	* [Swift](stack/swift)
+	* Swift - Coming soon
 	
 
 We algo provide a bunch of *how to* articles at the [wiki](https://github.com/IcaliaLabs/guides/wiki/How-tos) to answer the most frequently asked questions.
