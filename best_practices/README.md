@@ -2,10 +2,10 @@
 
 We like to keep sanity on every project and in order to achieve that we have a set of best practices for each stack, you can find them on the following links:
 
-* [Docker]()
+* [Docker](../stack/docker)
 * [Rails](../stack/rails/BEST_PRACTICES.md)
 * [Ruby](../stack/ruby/BEST_PRACTICES.md)
-* [Git]()
+* [Git](../stack/git/)
 
 We do have some general guides every Icalier must follow, not just for us as a team but as a personal investment:
 
