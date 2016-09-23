@@ -5,7 +5,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
 * [Happiness](happiness)
 * [Best Practices](best_practices)
 * [Open source projects](open_source)
-* [Testing]()
+* [Testing](testing)
 * [Stack](stack)
 	* [Docker](stack/docker)
 	* [Ruby](stack/ruby)

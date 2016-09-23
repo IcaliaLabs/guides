@@ -9,7 +9,7 @@ This is a guide to having your TDD enviroment working on your laptop. For this y
 
 Here at [@icalialabs](http://icalialabs.com), we use [Platter](https://github.com/IcaliaLabs/platter) to create rails app with the basic setup.
 
-**Platter needs ruby 2.2.3 in order to run**
+**Platter needs at least ruby 2.0.0 in order to run**
 
 Run
 
@@ -37,7 +37,7 @@ It will also:
 
 ## Factory Girl
 
-Platter already adds the gem to you GemFile to be ready to use.
+Platter already adds the gem to your Gemfile to be ready to use.
 
 ```ruby
 gem 'factory_girl'
@@ -89,7 +89,7 @@ create(:user) do |user|
 end
 ```
 
-Reffer to [Factory Girl](https://github.com/thoughtbot/factory_girl) for more details in its use.
+Refer to [Factory Girl](https://github.com/thoughtbot/factory_girl) for more details on its use.
 
 ## FFaker 
 
@@ -108,7 +108,7 @@ FFaker solely purpose, is to fill up fields of data saving the developers time d
 
 ## Database Cleaner
 
-Platter al well adds [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner) gem to the GemFile so it can be used.
+Platter adds [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner) gem to the GemFile so it can be used.
 
 ### How to use
 
@@ -130,7 +130,6 @@ DatabaseCleaner.strategy = :truncation, {:only => %w[widgets dogs some_other_tab
 ```ruby
 DatabaseCleaner.strategy = :truncation, {:except => %w[widgets]}
 ```
-
 
 ### RSpec Example
 
@@ -154,49 +153,59 @@ end
 
 There are a few things to keep in mind, but overall if you trust your tests and allow them to guide your development you will not go wrong.
 
-Dos:
--Write your tests first
--Use contexts
--Use shared example groups
--Test your edge cases
+Do's:
+
+- Write your tests first
+- Use contexts
+- Use shared example groups
+- Test your edge cases
 
 Don’ts:
--Test the framework
--Test the implementation
+
+- Test the framework
+- Test the implementation
 
 ## Sample Guide Tests:
 
 #### Describe your methods
 
 **BAD**
+
 ```ruby
 describe 'the authenticate method for User' do
 describe 'if the user is an admin' do
 ```
 
 **GOOD**
+
 ```ruby
 describe '.authenticate' do
 describe '#admin?' do
 ```
 
+Notice the `#` symbol is use to describe instance methods, and the `.` to describe class methods or scopes.
+
 #### Use contexts
 
 **BAD**
+
 ```ruby
 it 'has 200 status code if logged in' do
   expect(response).to respond_with 200
 end
+
 it 'has 401 status code if not logged in' do
   expect(response).to respond_with 401
 end
 ```
 
 **GOOD**
+
 ```ruby
 context 'when logged in' do
   it { is_expected.to respond_with 200 }
 end
+
 context 'when logged out' do
   it { is_expected.to respond_with 401 }
 end
@@ -205,6 +214,7 @@ end
 #### Use factories and not fixtures
 
 **BAD**
+
 ```ruby
 user = User.create(
   name: 'Genoveffa',
@@ -216,6 +226,7 @@ user = User.create(
 ```
 
 **GOOD**
+
 ```ruby
 user = FactoryGirl.create :user
 ```
@@ -223,11 +234,13 @@ user = FactoryGirl.create :user
 # Runnin tests
 
 **For a specific file**
+
 ```console
 % rspec path/to/spec/file.rb
 ```
 
 **For all files in path**
+
 ```console
 % rspec path/to/spec/
 ```
