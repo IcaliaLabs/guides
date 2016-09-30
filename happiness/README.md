@@ -48,7 +48,7 @@ Walk, run, jump, climb, play soccer, go up and downstairs, stay active.
 
 ### Learn something new
 
-Learn something new, new frameworks, programming languages, music, a new language, whatever you want, it's like you are upgrading you mind. Remember not only your body is the only one who needs to be on sharp!
+Learn something new, new frameworks, programming languages, music, a new language, whatever you want, it's like you are upgrading your mind. Remember not only your body is the only one who needs to be on sharp!
 
 ### Share!
 
