@@ -32,7 +32,7 @@ _Schedule 20 minutes during the day to check email and comunication channels, su
 
 _If you have a project management role (ScrumMaster, Team Leader, Lead Dev, etc.) consider schedule a few events (every 2 hours for example) to comunicate with your team or clients._
 
-### Typewriting speed
+### Take the most out of your text editor
 
 Well, it's simple, try to learn shortcuts, write faster, avoid using the mouse (just if it is necessary), just try it, we are pretty sure you'll find this kind of funny and productive.
 
