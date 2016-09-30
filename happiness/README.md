@@ -1,6 +1,6 @@
 # Happiness
 
-We strongly believe the more happy a developer is the more beautiful code he/she will create. Consider this text as suggestions on how to improve your productivity and increase your happiness while you code.
+We strongly believe the happier a developer is, the more beautiful code he/she will create. Consider this text as suggestions on how to improve your productivity and increase your happiness while you code.
 
 ### Avoid multitasking, machines can handle it.
 
