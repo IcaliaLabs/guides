@@ -1,32 +1,33 @@
 # Code Convention
 
-Below we haved listed some of the practices we follow when using Sass as a pre-processor for out CSS.
+CSS architecture is one of the most complex an critical things in the early stage of the project, it's important to determine and understand how to project needs to be structured.
 
-* Use consistent indentation
+
+Below we haved listed some of the statements you might follow:
+
+* Use consistent indentation [Default: 2 spaces]
+* Always use lowecase
+
 * Use well aligned open/closing brackets
 * Never write multiple rules per line
 * Write the rules on alphabetical order
-* Choose snake case over camel case
-* Abstain the dash on class names
 * Never style with #ID's
 * Abstain from using `!important`
 * Try not to go to deep on nesting, probably 3 or 4 levels might be enough
 * Break into as many files as makes sense
-* Use comments with high intensity, when compilation happens they are removed anyway
 * Use variables for colors
-* Use nesting for `media queries`
-* Choose to add a `_shame.scss` file for hot fixes and later on put them where they belong.
 * Abstain of using `mixins` without parameters, instead use `placeholders`
-* Use functions for calculations, for example to transform pixels to rems
 
 
 ## Listing rules
 
-**List @extend(s) first**
+**List @extend(s) and @mixin(s) first**
 
 ```scss
 .button {
 	@extend %button;
+  @include border-radius(2px);
+  ...
 }
 ```
 
@@ -40,20 +41,6 @@ Below we haved listed some of the practices we follow when using Sass as a pre-p
 	padding: 0;
 }
 ```
-
-**List @mixin(s) next**
-
-```scss
-.button {
-	@extend %button;
-	background: #000000;
-	margin: 0;
-	padding: 0;
-	@include border-radius(2px);
-}
-```
-
-This way `placeholders` and `mixins` are separated and allows an easier reading.
 
 **Nested selectors last**
 
@@ -100,4 +87,3 @@ $button-primary-background-color: $blue;
 ```
 
 A really cool live project using this is [Furatto](http://icalialabs.github.io/furatto/) check the [source code](https://github.com/IcaliaLabs/furatto/tree/v3.1.0/scss/furatto) for more on this.
-
