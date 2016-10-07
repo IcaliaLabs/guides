@@ -4,25 +4,25 @@ A mostly reasonable Icalia approach to build projects using sass and css for a b
 
 
 # Table of Contents
-1. General Principles
-2. Glossary & Terminology
-3. Commenting
-4. Specificity
-5. CSS Formatting
-6. CSS Extras
-7. Declaration order
+1. [General Principles](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#general-principles)
+2. [Glossary & Terminology](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#glossary--terminology)
+3. [Commenting](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#commenting)
+4. [Specificity](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#specificity)
+5. [CSS Formatting](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#css-formatting)
+6. [CSS Extras](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#css-extras)
+7. [Declaration order](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#declaration-order)
 8. Good Practices
-  - Values
-  - Colors
+  - [Values](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#values)
+  - [Colors](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#colors)
   - Media Queries
-8. SCSS
-  - Directory structure
-  - Variable naming
-  - Order
-  - Nesting
-  - Nested Pseudo Classes and Pseudo Elements Next
-  - Use ampersand helper to attach classes
-  - SASS Extras
+8. [SCSS](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#sass)
+  - [Directory structure](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#sass)
+  - [Variable naming](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#variable-naming)
+  - [Order](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#order)
+  - [Nesting](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#nesting)
+  - [Nested Pseudo Classes and Pseudo Elements Next](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#nested-pseudo-classes-and-pseudo-elements-next)
+  - [Use ampersand helper to attach classes](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#use-ampersand-helper-to-attach-classes)
+  - [SASS Extras](https://github.com/IcaliaLabs/guides/tree/front-guides/sass#sass-extras)
 
 ## General Principles
 - All code should semantic and readreadable for all the team.
@@ -567,3 +567,4 @@ Use the ampersand `&`helper to create a "moddule constructor" or define actions.
 - Don't Even Commit .css Files
 - Be Generous With Comments
 - Partials are named _partial.scss
+
