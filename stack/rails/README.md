@@ -19,7 +19,7 @@ To install it just run:
 ```
 ## Setting up the app
 
-We created a [how-to wiki article]() for you to follow and setup the application.
+We created a [how-to wiki article](https://github.com/IcaliaLabs/guides/wiki/Dockerize-a-Rails-application) for you to follow and setup the application.
 
 If for some reason you find it hard to run it or something is missing about the app, talk to the project manager about the issue.
 
@@ -48,7 +48,7 @@ It is important that you always deploy from the master of your local computer to
 Whenever we are deploying an application to production for the first time, we make sure we have everything covered:
 
 * Are we on deploying to heroku or using docker?
-* Are we using Unicorn or Puma as the server? [Setup Rails server]()
+* Are we using Unicorn or Puma as the server? [Setup Rails server](https://github.com/IcaliaLabs/guides/wiki/Setup-Rails-application-for-production)
 * Are we using Delayed jobs for sending emails?
 * Is Ruby 2.x.x defined in the Gemfile?
 * Are we using Figaro to setup the environment variables? [Setup Figaro](https://github.com/laserlemon/figaro)

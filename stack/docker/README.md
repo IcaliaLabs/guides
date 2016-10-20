@@ -4,7 +4,7 @@ We currently develop everything using Docker as the engine to encapsulate every 
 
 ## How tos
 
-There is a bunch of wiki articles on how to setup applications with Docker, head [there]() for more explanation on that.
+There is a bunch of wiki articles on how to setup applications with Docker, head [there](https://github.com/IcaliaLabs/guides/wiki/How-tos) for more explanation on that.
 
 ## Why Docker?
 
@@ -29,7 +29,7 @@ Docker enables us to easily migrate all the application infraestructure in just 
 
 ### Cloud Providers
 
-If your'e going to run your Docker app in production, the recommended Docker-capable providers are:
+If you're going to run your Docker app in production, the recommended Docker-capable providers are:
 
 - [Microsoft Azure](https://azure.microsoft.com/en-us/)
 - [Digital Ocean](https://www.digitalocean.com/)

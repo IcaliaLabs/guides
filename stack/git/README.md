@@ -107,13 +107,9 @@ In order to review changes in a real environment we deploy to two different hero
 
 The **staging** environment is basically a mirror app of the production app, and this is were the features get approved by the `product owner` together with the project lead.
 
-### Setting up the staging environment
-
-In order to create these two environments, there is an excellent [article]() on the wiki on how to achieve this.
-
 ### Syncing staging and production databases
 
-To keep things seamless, whenever a deployment to staging is going to be performed, we sync the production database to the staging app. Check out the [article]() for more information.
+To keep things seamless, whenever a deployment to staging is going to be performed, we sync the production database to the staging app. Check out the [article](https://github.com/IcaliaLabs/guides/wiki/Sync-staging-&-production-databases-with-heroku) for more information.
 
 
 ## Releases
@@ -122,7 +118,7 @@ Every time a new version is going to be deployed to production, a corresponding 
 
 To create a tag use the command:
 
-```console 
+```console
 $ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
 ```
 

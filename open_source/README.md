@@ -42,7 +42,7 @@ A good example of an open source branding would be [Presentr](https://github.com
 
 ## Get an audience
 
-If people don't ever find your project, they can't possible benefit from it, So this last step consist on getting your project in front of an audience. If you have a content marketing team talk with them, they can help you in this process, or if you don't don't panic, post your project in the following pages: 
+If people don't ever find your project, they can't possible benefit from it, So this last step consist on getting your project in front of an audience. If you have a content marketing team talk with them, they could help you in this process or, if you don't, don't panic, post your project in the following pages:
 
 - [Hacker News](https://news.ycombinator.com)
 - [Subreddit](https://www.reddit.com/reddits)

@@ -34,7 +34,7 @@ _If you have a project management role (ScrumMaster, Team Leader, Lead Dev, etc.
 
 ### Take the most out of your text editor
 
-Well, it's simple, try to learn shortcuts, write faster, avoid using the mouse (just if it is necessary), just try it, we are pretty sure you'll find this kind of funny and productive.
+Well, it's simple, try to learn shortcuts, write faster, avoid using the mouse (just if it is necessary), just try it, we are pretty sure you'll find it kind of funny and productive..
 
 ### Read more than just technical stuff.
 
