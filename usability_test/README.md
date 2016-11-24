@@ -28,10 +28,10 @@ Keep in mind, however, that every project has different functionality and a diff
 <br>
 *Base questions:*
 <br>
-1. *Any experience with “x” software?*
-2. *Basic info: gender, age, profession, etc*
-3. *What products / websites / apps are you familiar with, related to “x”?*
-4. *What do you expect from “x” software?*
+*- Any experience with “x” software?*
+*- Basic info: gender, age, profession, etc*
+*- What products / websites / apps are you familiar with, related to “x”?*
+*- What do you expect from “x” software?*
 
 * Test
 <br>
@@ -43,10 +43,10 @@ Keep in mind, however, that every project has different functionality and a diff
 <br>
 *Base questions:*
 <br>
-1. *What are your first impressions?*
-2. *Would you use this on a regular basis?*
-3. *What was the hardest task?*
-4. *Any feedback?*
+*- What are your first impressions?*
+*- Would you use this on a regular basis?*
+*- What was the hardest task?*
+*- Any feedback?*
 
 
 ## Stage 3 — Solving
