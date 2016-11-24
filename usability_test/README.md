@@ -8,41 +8,41 @@ Keep in mind, however, that every project has different functionality and a diff
 ## Stage 1 — Planning / Preparation
 
 * Define Objective
-&nbsp;
+<br>
 *What does the team want to accomplish with the Test?*
 
 * Define Scenario
-&nbsp;
+<br>
 *What is the user’s testing? / What is the user’s profile? / Where are we testing it?*
 
 * Define Tasks
-&nbsp;
+<br>
 *What is going to be tested? What do we want to find out? (User Stories are recommended)*
 
 
 ## Stage 2 — Testing
 
 * Pre-interview
-&nbsp;
+<br>
 *User’s background. It can be done with pen & paper, or using a digital form.*
-&nbsp;
+<br>
 *Base questions:*
-&nbsp;
+<br>
 1. *Any experience with “x” software?*
 2. *Basic info: gender, age, profession, etc*
 3. *What products / websites / apps are you familiar with, related to “x”?*
 4. *What do you expect from “x” software?*
 
 * Test
-&nbsp;
+<br>
 *Recommended to use screen recording software (Screenflick).*
 
 * Post-interview/Feedback
-&nbsp;
+<br>
 *User’s thoughts. It can be done with pen & paper, or using a digital form.*
-&nbsp;
+<br>
 *Base questions:*
-&nbsp;
+<br>
 1. *What are your first impressions?*
 2. *Would you use this on a regular basis?*
 3. *What was the hardest task?*
@@ -52,21 +52,21 @@ Keep in mind, however, that every project has different functionality and a diff
 ## Stage 3 — Solving
 
 * Identify Key Issues
-&nbsp;
+<br>
 *What tasks are not easy to accomplish?*
 
 * Processing
-&nbsp;
+<br>
 *Review notes, identify the usability issues and prioritize them*
 
 * Findings
-&nbsp;
+<br>
 *What are the Key Issues and how are we going to fix them?*
 
 * Design Suggestions
-&nbsp;
+<br>
 *What solutions are we offering in order to fix the Key Issues?*
 
 * Re-test the recently fixed issues
-&nbsp;
+<br>
 *Did we fix the issues?*
