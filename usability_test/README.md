@@ -35,7 +35,10 @@ Keep in mind, however, that every project has different functionality and a diff
 
 * Test
 <br>
-*Recommended to use screen recording software (Screenflick).*
+*To get the most out of a test, you will need to:* <br>
+*- Record the user's interaction while using the prototype with a screen recorder (essential)*  <br>
+*- Capture the audio so you can extract quotes and insights from the test (essential)* <br>
+*- Record the test with an external camera or stream it so the client can watch it (optional)* <br>
 
 * Post-interview/Feedback
 <br>
