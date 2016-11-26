@@ -8,68 +8,69 @@ Keep in mind, however, that every project has different functionality and a diff
 ## Stage 1 — Planning / Preparation
 
 * Define Objective
-<br>
-*What does the team want to accomplish with the Test?*
+
+	*What does the team want to accomplish with the Test?*
 
 * Define Scenario
-<br>
-*What is the user’s testing? / What is the user’s profile? / Where are we testing it?*
+
+	*What is the user’s testing? / What is the user’s profile? / Where are we testing it?*
 
 * Define Tasks
-<br>
-*What is going to be tested? What do we want to find out? (User Stories are recommended)*
+
+	*What is going to be tested? What do we want to find out? (User Stories are recommended)*
 
 
 ## Stage 2 — Testing
 
 * Pre-interview
-<br>
-*User’s background. It can be done with pen & paper, or using a digital form.*
-<br>
-*Base questions:*
-<br>
-*- Any experience with “x” software?* <br>
-*- Basic info: gender, age, profession, etc* <br>
-*- What products / websites / apps are you familiar with, related to “x”?* <br>
-*- What do you expect from “x” software?* <br>
+
+	*User’s background. It can be done with pen & paper, or using a digital form.*
+	
+	**Base questions:**
+
+	- Any experience with “x” software?
+	- Basic info: gender, age, profession, etc
+	- What products / websites / apps are you familiar with, related to “x”?
+	- What do you expect from “x” software?
 
 * Test
-<br>
-*To get the most out of a test, you will need to:* <br>
-*- Record the user's interaction while using the prototype with a screen recorder (essential)*  <br>
-*- Capture the audio so you can extract quotes and insights from the test (essential)* <br>
-*- Record the test with an external camera or stream it so the client can watch it (optional)* <br>
 
-* Post-interview/Feedback
-<br>
-*User’s thoughts. It can be done with pen & paper, or using a digital form.*
-<br>
-*Base questions:*
-<br>
-*- What are your first impressions?* <br>
-*- Would you use this on a regular basis?* <br>
-*- What was the hardest task?* <br>
-*- Any feedback?* <br>
+	**To get the most out of a test, you will need to:**
+
+	- Record the user's interaction while using the prototype with a screen recorder (essential)
+	- Capture the audio so you can extract quotes and insights from the test (essential)
+	- Record the test with an external camera or stream it so the client can watch it (optional)
+
+	* Post-interview/Feedback
+
+	*User’s thoughts. It can be done with pen & paper, or using a digital form.*
+
+	**Base questions:**
+
+	- What are your first impressions?
+	- Would you use this on a regular basis?
+	- What was the hardest task?
+	- Any feedback?
 
 
 ## Stage 3 — Solving
 
 * Identify Key Issues
-<br>
-*What tasks are not easy to accomplish?*
+
+	**What tasks are not easy to accomplish?**
 
 * Processing
-<br>
-*Review notes, identify the usability issues and prioritize them*
+
+	**Review notes, identify the usability issues and prioritize them**
 
 * Findings
-<br>
-*What are the Key Issues and how are we going to fix them?*
+
+	**What are the Key Issues and how are we going to fix them?**
 
 * Design Suggestions
-<br>
-*What solutions are we offering in order to fix the Key Issues?*
+
+	**What solutions are we offering in order to fix the Key Issues?**
 
 * Re-test the recently fixed issues
-<br>
-*Did we fix the issues?*
+
+	**Did we fix the issues?**
