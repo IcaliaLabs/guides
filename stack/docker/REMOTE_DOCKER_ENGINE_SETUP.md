@@ -1,21 +1,42 @@
 # Setup a remote Docker Engine
 
-This guide assumes that the engine is going to be installed on a Debian Jessie machine, which uses systemd to start the docker daemon. This part of the guide is based on:
+This guide assumes that the engine is going to be installed on a Debian Jessie machine, which uses
+systemd to start the docker daemon. This part of the guide is based on:
 
  - [Control and configure Docker with systemd](https://docs.docker.com/engine/admin/systemd)
  - [Protect the Docker daemon socket](https://docs.docker.com/engine/security/https)
 
 ## Why not just use Docker Machine?
 
-Docker Machine is GREAT for starting up secure remote Docker hosts on AWS, Azure, Digital Ocean and
-many others <u>if you'll going to be the only user to use these, from a single computer.</u> If this
-is your case - or you want to learn something cool - don't hurt yourself. Be gone and use Docker
-Machine instead.
+Docker Machine is GREAT for starting up single, secure remote Docker hosts on AWS, Azure, Digital
+Ocean and many others <u>if you'll going to be the only user to use these, from a single
+computer.</u> If this is your case - or you want to learn something cool - don't hurt yourself.
+Be gone and use Docker Machine instead.
 
-For those of you still here: Docker Machine creates those instances in most cases running the
-provisioning via SSH, using an auto-generated RSA private/public key.
+For those of you still here: Docker Machine creates those instances on the provider (AWS/Azure, etc)
+running the engine setup via SSH, using an auto-generated RSA private/public key (That's how/why
+they provide the `docker-machine ssh [machine-name]` command), and configures the Docker Engine with
+auto-generated TLS certificates. All of these are stored somewhere on your machine. These configs
+<u>are troublesome to transfer/restore</u> (See
+[related](https://github.com/docker/machine/issues/1328)
+[issues](https://github.com/docker/machine/issues/23)). Plus, these are created on a one-by-one
+basis, making using the same keys/certs for machines on a same "group" is rather impossible.
 
-## 1: Enabling unsecured access from the outside - a first baby step
+I've found out it's quite easier to spin out one of these machines "by hand", create a VM image, and
+then replicate it N times as needed.
+
+## 1: Installing the Docker Engine
+
+That's described completely over the
+[Docker Documentation](https://docs.docker.com/engine/installation/). I prefer to
+[install it](https://docs.docker.com/engine/installation/linux/debian/) over a Debian distribution,
+which is what this guide assumes.
+
+## 2: Enabling remote access to the engine
+
+
+
+### Option A: Unsecured Access
 
 We'll need re-configure the engine to start the engine listening to both the local Unix socket
 *AND* the unsecure HTTP socket on TCP port 2375.
@@ -58,7 +79,7 @@ remote engine:
 docker info
 ```
 
-## 2: Securing access to the engine
+### Option B: Securing access to the engine
 
 There are some security-wise things you might be wary of at this point:
 
