@@ -1,0 +1,74 @@
+---
+postgres:
+  image: postgres:9.3.6
+  # Bind host port 5432 to PostgreSQL port 5432:
+  ports: [ "5442:5432" ]
+  # We're mounting 'db/dumps' into the postgres container so we can backup and
+  # restore data dumps easily:
+  volumes: [ "./db/dumps:/data-dumps" ]
+  mem_limit: 1g # A memory limit similar to our current postgres plan at Heroku.
+  memswap_limit: 2g # A memory swap limit set to an arbitrary value.
+  environment:
+    LC_ALL: C.UTF-8
+    POSTGRES_PASSWORD: 4rt3335
+
+redis:
+  image: redis:3.0.6
+  ports: [ "6379:6379" ]
+  command: redis-server --appendonly yes
+
+# Application: -----------------------------------------------------------------
+gems: &app_base
+  # Using the official ruby image:
+  image: ruby:2.2.4
+  volumes:
+    - ".:/usr/src/app"
+    - "/usr/local/bundle"
+  environment: &app_environment
+    DATABASE_URL: postgres://postgres:4rt3335@postgres.example.local:5432/example_development?pool=25&encoding=unicode&schema_search_path=public
+    REDIS_URL: redis://redis.example.local:6379
+    RACK_ENV: development
+    RAILS_ENV: development
+    # Allow the `top` command to run out-of-the-box without complaining by
+    # by configuring a terminal emulator:
+    TERM: xterm
+  links:
+    - postgres:postgres.example.local
+    - redis:redis.example.local
+  env_file: [ "dev.env" ]
+
+# We'll also use this configuration (&app_base) for the web, test and the rest
+# of the app containers:
+web: &app
+  <<: *app_base
+  ports: [ "3000:3000" ]
+  entrypoint: /usr/src/app/dev-entrypoint.sh
+  stdin_open: true
+  tty: true
+  mem_limit: 512m # A memory limit similar to a Heroku 1x dyno.
+  memswap_limit: 1g # A memory swap limit set to an arbitrary value.
+  volumes_from: [ "gems" ]
+
+benchmark:
+  <<: *app
+  ports: [ "3001:3000" ]
+  command: /bin/true
+  mem_limit: 512m # A memory limit similar to a Heroku 1x dyno, which we're pretending to use instead.
+  memswap_limit: 1g # A memory swap limit set to an arbitrary value.
+  environment:
+    <<: *app_environment
+    RACK_ENV: production
+    RAILS_ENV: production
+    NEWRELIC_AGENT_ENABLED: "false"
+
+# App Guard: Keeps running tests on a separate process:
+test:
+  <<: *app # We copy from &app, and override:
+  ports: []
+  command: guard start --no-bundler-warning --no-interactions
+  environment:
+    <<: *app_environment
+    # Override the app environment for this container:
+    DATABASE_URL: postgres://postgres:4rt3335@postgres.rts.local:5432/rts_testing?pool=25&encoding=unicode&schema_search_path=public
+    RACK_ENV: test
+    RAILS_ENV: test
