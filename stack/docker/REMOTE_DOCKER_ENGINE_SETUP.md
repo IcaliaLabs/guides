@@ -69,7 +69,7 @@ After this, you may point your local Docker client to the remote engine by setti
 environment variable:
 
 ```
-export DOCKER_HOST=[your-remote-server-address]:2375
+export DOCKER_HOST=tcp://[your-remote-server-address]:2375
 ```
 
 You're ready to issue commands via `docker` and `docker-compose`\*. Test your connectivity to the
