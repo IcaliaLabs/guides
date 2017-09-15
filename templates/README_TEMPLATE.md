@@ -14,6 +14,7 @@ A brief but enough description of the project
 * [Restoring the database](#restoring-the-database)
 * [Debugging](#debugging)
 * [Running specs](#running-specs)
+* [Checking code for potential issues](#checking-code-for-potential-issues)
 
 
 ### Client Details
@@ -182,7 +183,7 @@ Or for a specific file:
 $ plis run test rspec spec/models/user_spec.rb
 ```
 
-### Running linters
+### Checking code for potential issues
 
 To run specs, you can do:
 
