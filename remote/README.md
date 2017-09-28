@@ -11,7 +11,8 @@ At Icalia Labs we are strong believes to have a remote culture for every member 
 
 Here are a couple of guidelines that every member at Icalia who is remote must follow:
 
-* Say hi to everyone on the mornings, #general channel is a good fit for this.
+* Choose your spot wisely when being remote
+* Say hi to everyone on the mornings, #happiness channel is a good fit for this.
 * Say goodbye once you are off the work, just to let know the team you won't be as available as expected.
 * Be online at Slack at all times, or at least when you are available
 * Try to answer as fast as possible for a message
@@ -21,6 +22,10 @@ Here are a couple of guidelines that every member at Icalia who is remote must f
 * It is ok to be offline for a couple of hours, just let the team know you'll be off
 * Use slack channels only for the purpose of their creation, whether is to share knowledge or a bunch of gifs
 * On remote calls be at least 10 minutes early, it is a good way to test the quality, sounds and microphone
+* Enable your camera on remote calls
+* Be kind when writing
+* When having a remote call, plan the agenda for it
+* When scheduling a meeting, specify whether is a video call or on premises
 
 ### Tools
 
