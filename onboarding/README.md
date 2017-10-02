@@ -8,6 +8,12 @@ The onboarding process takes up to 1 week, here is how the week would look like:
 
 This day is all about culture, the new members will spend the whole day with the cultural team. The purpose of this day is to explain some of our rituals, work dynamic and get to know other members. 
 
+Some tasks to complete must be done by the end of the day:
+
+- Setup for Icalia General tools: Email & Slack
+- Setup for Icalia Dev tools (if applicable): Github, Codeship, Foresight
+- Setup for Icalia Design tools (if applicable): Sketch
+
 #### Tuesday
 
 On this day the operations manager will step in and give an introduction on how Icalia works from a operations-like perspective, some topics to cover are:
@@ -28,9 +34,11 @@ On this day the operations manager will step in and give an introduction on how 
   * Schedule demo days
   * Schedule weekly standups
 
+**Once the presentation is over, new Icaliers should head to the [guides](https://github.com/IcaliaLabs/guides/) repo and take a look at them, they have a lot of information about best practices, being remote and some other useful stuff.**
+
 #### Wednesday
 
-This day is more about technical stuff, the new incomer will sit down with one of the engineers and will be guide through the development process:
+This day is more about technical stuff, the new comer will sit down with one of the engineers and will be guided through the development process:
 
 * Git flow
 * How to submit a pull request
@@ -46,7 +54,7 @@ This day is more about technical stuff, the new incomer will sit down with one o
 
 #### Thursday
 
-On this day we will keep working with technical stuff, it is Docker time.  Every developer at Icalia develops using docker to help eliminate the gap between differente environments or machines.
+On this day we will keep working with technical stuff, it is Docker time.  Every developer at Icalia develops using docker to help eliminate the gap between different environments or machines.
 
 * What is Docker?
 * Why we use it?
