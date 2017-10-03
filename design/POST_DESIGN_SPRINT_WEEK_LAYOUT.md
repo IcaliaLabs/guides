@@ -31,9 +31,8 @@ By the end of this day you should have the minimum assets for the designer to st
 
 - [ ] Review stories with the designer in charge
 
-- [ ] Prepare the keynote
+- [ ] Prepare the keynote​
 
-      ​
 
 ##### Designer
 
@@ -57,7 +56,6 @@ This day is all about finishing and preparing for tomorrow's meeting, user stori
 
 - [ ] Make a copy of the user stories file
 
-      ​
 
 ##### Designer
 
@@ -77,7 +75,6 @@ You expect a lot of feedback from the client this day, keep in mind you should b
 
 - [ ] Send the keynote to the client
 
-      ​
 
 ##### Designer
 
@@ -94,9 +91,8 @@ The last day of the week is all about wrapping up the design feedback and send o
 
 ##### Facilitator
 
-- [ ] Send the design freeze, scope freeze and statement of work all together. You can use this email [template](FREEZE_EMAIL_TEMPLATE.md) 
+- [ ] Send the design freeze, scope freeze and statement of work all together. You can use this email [template](FREEZE_EMAIL_TEMPLATE.md) ​
 
-      ​
 
 ##### Designer
 
