@@ -7,14 +7,15 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
 * [Open source projects](open_source)
 * [Testing](testing)
 * [Stack](stack)
-	* [Docker](stack/docker)
-	* [Ruby](stack/ruby)
-	* [Rails](stack/rails)
-	* [Git](stack/git)
-	* [Sass](stack/sass)
-	* [Javascript](stack/js)
-	* Swift - Coming soon
-	
+  * [Docker](stack/docker)
+  * [Ruby](stack/ruby)
+  * [Rails](stack/rails)
+  * [Git](stack/git)
+  * [Sass](stack/sass)
+  * [Javascript](stack/js)
+  * Swift - Coming soon
+
+* [Design](design)
 
 We algo provide a bunch of *how to* articles at the [wiki](https://github.com/IcaliaLabs/guides/wiki/How-tos) to answer the most frequently asked questions.
 
