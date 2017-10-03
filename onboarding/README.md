@@ -28,6 +28,7 @@ On this day the operations manager will step in and give an introduction on how 
   * Slack
   * Github
   * Pivotal Tracker
+  * Codeship
   * Email & Calendar
 * How to deal with a client?
   * Schedule meetings
