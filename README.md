@@ -17,6 +17,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
   * Swift - Coming soon
 
 
+* [Design](design)
 We algo provide a bunch of *how to* articles at the [wiki](https://github.com/IcaliaLabs/guides/wiki/How-tos) to answer the most frequently asked questions.
 
 **Primary guidelines:**

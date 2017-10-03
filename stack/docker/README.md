@@ -58,3 +58,7 @@ host cluster using [Swarm](https://docs.docker.com/swarm/) to manage all the ava
 * Most of the time it is because they've invested so
 much money on their own infrastructure, they are not willing to use/pay another
 provider, even if the provider is cheaper and more reliable!
+
+## .dockerignore samples
+
+* [Linux](dockerignore_linux)

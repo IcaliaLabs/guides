@@ -1,0 +1,17 @@
+# git files
+.git
+.gitignore
+
+# Documentation
+README.md
+
+# Rails
+.env
+log
+tmp
+
+# Bash
+.bash_history
+
+# Other
+.dockerignore
