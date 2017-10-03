@@ -1,6 +1,6 @@
 Hello <CLIENT_NAME>,
 
-First of all we'd like to say thanks for believeing on us and let us share this past two weeks with you. You should congratulate yourself, it's been quite a ride and you made a lot of important decisions in just a couple of days.
+First of all we'd like to say thanks for believeing in us and let us share this past two weeks with you. You should congratulate yourself, it's been quite a ride and you made a lot of important decisions in just a couple of days.
 
 The next big step is to review the 3 files we attached:
 
