@@ -14,7 +14,7 @@
 	* Make sure to list the problems you are addressing
 	* Include the relevant issue number if applicable
 	* Review the linters checklist
-* When submitting a pull request you can make use of two tag titles, which helps the code reviewers to notice about the status of the pull request, for example if you need the pull request to be checked right away you can add into de title something like - `[URGENT] This is the pull request title` - but there are some other times you hace work pending on the pull request, in that case the tag would be - `[WIP] This is the pull request title`
+* When submitting a pull request you can make use of two tag titles, which helps the code reviewers to notice about the status of the pull request, for example if you need the pull request to be checked right away you can add into de title something like - `[URGENT] This is the pull request title` - but there are some other times you have work pending on the pull request, in that case the tag would be - `[WIP] This is the pull request title`
 * Whenever you are ready to request a review, just remove any title tag(WIP or URGENT) and assign the code reviewer, otherwise it won't be reviewed
 
 #### **Did you fix whitespace, format code, or make a purely cosmetic patch?**
