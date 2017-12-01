@@ -4,7 +4,9 @@ This guide is built to share the best practices in writing swift code.
 
 - [Fundamentals](#fundamentals)
 - [Swift style guide](#swift-style-guide)
+- [IOS App Architecture](#ios-app-architecture)
 - [Api Client Setup](#api-client-setup)
+- [Building views form xib's](#building-views-form-xib's)
 - [Project structure for MVC](#project-structure-for-mvc)
 - [Swiftlint](#swiftlint)
 - [Pod installations](#pod-installations)
@@ -16,7 +18,7 @@ This guide is built to share the best practices in writing swift code.
     ```swift
       let isCorrect: Bool
     ```
-  * Use descriptive descriptive, clarity is more important than brevity. For example:
+  * Use descriptive code, clarity is more important than brevity. For example:
     ```swift
       let isFriday: Bool {}
       if isFriday {
@@ -29,6 +31,11 @@ This guide is built to share the best practices in writing swift code.
   * https://swift.org/documentation/api-design-guidelines/
   * https://github.com/raywenderlich/swift-style-guide
 
+## IOS App Architecture
+
+  There are many architectures developers use to build IOS apps, MVC (Model View Controller), is Apple recommended architecture pattern.
+
+  * Here's a Icalia Labs blog by Daniel Lozano which we recommend reading: [Introduction to iOS App Architectures](#https://medium.com/sudo-by-icalia-labs/introduction-to-ios-app-architectures-59f86801a2ad) 
 
 ## Api Client Setup
 
@@ -64,6 +71,10 @@ This guide is built to share the best practices in writing swift code.
        }
      }
   ```
+
+## Building views form xib's
+
+  Building views from xib's can be useful, to do this we recommend following steps shown in this post, [Loading views from XIB’s on iOS](https://medium.com/sudo-by-icalia-labs/loading-views-from-xibs-on-ios-29d008eda85c), from Icalia Labs blog by Daniel Lozano.
 
 ## Project structure for MVC
 
@@ -111,9 +122,11 @@ This guide is built to share the best practices in writing swift code.
 
     * [Presentr](https://github.com/IcaliaLabs/Presentr)
     * [LoginKit](https://github.com/IcaliaLabs/LoginKit)
-    
 
-  * Pods that we use in Icalia Labs:  
 
+  * Pods that we use in Icalia Labs:
+
+    * [Alamofire](https://github.com/Alamofire/Alamofire)
+    * [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
     * [IHKeyboardAvoiding](https://github.com/IdleHandsApps/IHKeyboardAvoiding)
     * [SideMenu](https://github.com/jonkykong/SideMenu)
