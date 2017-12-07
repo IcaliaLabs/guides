@@ -4,12 +4,14 @@ This guide is built to share the best practices in writing swift code.
 
 - [Fundamentals](#fundamentals)
 - [Swift style guide](#swift-style-guide)
-- [IOS App Architecture](#ios-app-architecture)
-- [Api Client Setup](#api-client-setup)
-- [Building views form xib's](#building-views-form-xib's)
-- [Project structure for MVC](#project-structure-for-mvc)
 - [Swiftlint](#swiftlint)
-- [Pod installations](#pod-installations)
+- [IOS](#ios)
+  - [IOS App Architecture](#ios-app-architecture)
+  - [Api Client Setup](#api-client-setup)
+  - [Building views form xib's](#building-views-form-xib's)
+  - [Project structure for MVC](#project-structure-for-mvc)
+  - [Pod installations](#pod-installations)
+- [Swift Packet Manager](swift-packet-manager)
 
 ## Fundamentals
 
@@ -31,11 +33,43 @@ This guide is built to share the best practices in writing swift code.
   * https://swift.org/documentation/api-design-guidelines/
   * https://github.com/raywenderlich/swift-style-guide
 
+
+## Swiftlint
+
+ * Swiftlint is a tool to enforce swift style and conventions, here the  link to its github https://github.com/realm/SwiftLint/.
+
+ * Here are the set of rules that we use:
+
+  ```yml
+    disabled_rules:
+    - control_statement
+    - line_length
+    - trailing_whitespace
+    - force_cast
+    - class_delegate_protocol
+    - weak_delegate
+
+    opt_in_rules:
+    - empty_count
+
+    excluded:
+    - Pods
+
+    vertical_whitespace:
+    max_empty_lines: 2
+
+    file_length:
+    warning: 500
+    error: 1000
+  ```
+
+# IOS  
+
 ## IOS App Architecture
 
   There are many architectures developers use to build IOS apps, MVC (Model View Controller), is Apple recommended architecture pattern.
 
-  * Here's a Icalia Labs blog by Daniel Lozano which we recommend reading: [Introduction to iOS App Architectures](#https://medium.com/sudo-by-icalia-labs/introduction-to-ios-app-architectures-59f86801a2ad) 
+  * Here's a Icalia Labs blog by Daniel Lozano which we recommend reading: [Introduction to iOS App Architectures](#https://medium.com/sudo-by-icalia-labs/introduction-to-ios-app-architectures-59f86801a2ad)
 
 ## Api Client Setup
 
@@ -84,36 +118,6 @@ This guide is built to share the best practices in writing swift code.
     * Controllers
     * Others
 
-
-## Swiftlint
-
- * Swiftlint is a tool to enforce swift style and conventions, here the  link to its github https://github.com/realm/SwiftLint/.
-
- * Here are the set of rules that we use:
-
-  ```yml
-    disabled_rules:
-    - control_statement
-    - line_length
-    - trailing_whitespace
-    - force_cast
-    - class_delegate_protocol
-    - weak_delegate
-
-    opt_in_rules:
-    - empty_count
-
-    excluded:
-    - Pods
-
-    vertical_whitespace:
-    max_empty_lines: 2
-
-    file_length:
-    warning: 500
-    error: 1000
-  ```
-
 ## Pod installations  
 
   * [CocoaPods](https://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects. It has over 40 thousand libraries and is used in over 2.8 million apps. CocoaPods can help you scale your projects elegantly. (Taken from https://cocoapods.org)
@@ -130,3 +134,14 @@ This guide is built to share the best practices in writing swift code.
     * [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
     * [IHKeyboardAvoiding](https://github.com/IdleHandsApps/IHKeyboardAvoiding)
     * [SideMenu](https://github.com/jonkykong/SideMenu)
+
+##  Swift Packet Manager
+
+  * Swift Packet Manager is used to create swift libraries and and command line apps in macOS.
+
+  ```
+    mkdir CommandLineApp
+    cd CommandLineApp
+    swift package init --type executable
+  ```
+  
