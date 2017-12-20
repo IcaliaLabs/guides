@@ -11,7 +11,7 @@ This guide is built to share the best practices in writing swift code.
   - [Building views form xib's](#building-views-form-xib's)
   - [Project structure for MVC](#project-structure-for-mvc)
   - [Pod installations](#pod-installations)
-- [Swift Packet Manager](swift-packet-manager)
+- [Swift Packet Manager](#swift-packet-manager)
 
 ## Fundamentals
 
@@ -69,7 +69,7 @@ This guide is built to share the best practices in writing swift code.
 
   There are many architectures developers use to build IOS apps, MVC (Model View Controller), is Apple recommended architecture pattern.
 
-  * Here's a Icalia Labs blog by Daniel Lozano which we recommend reading: [Introduction to iOS App Architectures](#https://medium.com/sudo-by-icalia-labs/introduction-to-ios-app-architectures-59f86801a2ad)
+  * Here's a Icalia Labs blog by Daniel Lozano which we recommend reading: [Introduction to iOS App Architectures](https://medium.com/sudo-by-icalia-labs/introduction-to-ios-app-architectures-59f86801a2ad)
 
 ## Api Client Setup
 
@@ -135,7 +135,7 @@ This guide is built to share the best practices in writing swift code.
     * [IHKeyboardAvoiding](https://github.com/IdleHandsApps/IHKeyboardAvoiding)
     * [SideMenu](https://github.com/jonkykong/SideMenu)
 
-##  Swift Packet Manager
+## Swift Packet Manager
 
   * Swift Packet Manager is used to create swift libraries and and command line apps in macOS.
 
@@ -144,4 +144,3 @@ This guide is built to share the best practices in writing swift code.
     cd CommandLineApp
     swift package init --type executable
   ```
-  
