@@ -14,7 +14,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
   * [Git](stack/git)
   * [Sass](stack/sass)
   * [Javascript](stack/js)
-  * Swift - Coming soon
+  * [Swift](stack/swift)
 
 
 * [Design](design)
@@ -60,6 +60,3 @@ Guides is © 2015 Icalia Labs. It is distributed under the [Creative Commons
 Attribution License](http://creativecommons.org/licenses/by/3.0/).
 
 The names and logos for Icalia Labs are trademarks of Icalia Labs.
-
-
-
