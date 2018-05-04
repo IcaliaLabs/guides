@@ -39,6 +39,6 @@ When a PR is finally ready to be accepted:
 
 * Include a cool, encouraging final comment. Maybe also further reading/actions.
 
-* **Use squash & merge **
+* **Use squash & merge**
 
 * Delete the branch **ONLY** if the accepted PR screen on Github allows you to do it. Never nuke it directly from Git (i.e. using `git push --delete origin the-branch`)
