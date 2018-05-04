@@ -1,6 +1,6 @@
 # Code Reviewer Guide
 
-## Checklist
+## Pre-flight Checklist
 
 Whenever any of these fails, stop the review and ask the developer to fix the issue.
 
