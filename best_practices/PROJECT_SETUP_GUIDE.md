@@ -67,3 +67,7 @@ to decrease the final image is recommended.
 
 * Make sure codeship is up and running
 * Make sure Foresight Sibyl is up and running
+
+## Cloning
+
+**Windows Users**: Clone the project inside your "C:\\Users\[your-user]" folder!
