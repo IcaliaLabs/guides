@@ -2,6 +2,7 @@
 
 We like to keep sanity on every project and, in order to achieve that, we have a set of best practices for each stack, you can find them on the following links:
 
+* [Project Setup](PROJECT_SETUP_GUIDE.md)(for all projects)
 * [Docker](../stack/docker)
 * [Rails](../stack/rails/BEST_PRACTICES.md)
 * [Ruby](../stack/ruby/BEST_PRACTICES.md)
