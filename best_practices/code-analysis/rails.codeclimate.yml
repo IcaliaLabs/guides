@@ -4,17 +4,17 @@ prepare:
   # Fetch the configuration from our guides site:
   fetch:
     # Fetch the Rubocop Ruby + Rails configuration files:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.rubocop.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop.yml"
       path: ".rubocop.yml"
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.rubocop-rails.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop-rails.yml"
       path: ".rubocop-rails.yml"
 
     # Fetch the reek rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/reek-rails.reek"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/reek-rails.reek"
       path: ".reek"
 
     # Fetch the SCSS Lint Rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.scss-lint.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
       path: ".scss-lint.yml"
 
 checks:
