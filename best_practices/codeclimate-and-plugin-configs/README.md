@@ -42,7 +42,7 @@ application:
 # Go to the root of your python project:
 cd my-python-app
 
-# Fetch the example rails codeclimate config:
+# Fetch the example python codeclimate config:
 wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/python.codeclimate.yml"
 
 # Fetch the plugin configuration files:
@@ -65,10 +65,10 @@ Be sure to copy this file as `.codeclimate.yml` inside the root of your node
 application:
 
 ```
-# Go to the root of your python project:
+# Go to the root of your node project:
 cd my-node-app
 
-# Fetch the example rails codeclimate config:
+# Fetch the example javascript/node codeclimate config:
 wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/javascript.codeclimate.yml"
 
 # Fetch the plugin configuration files:
