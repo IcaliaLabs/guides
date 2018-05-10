@@ -3,6 +3,10 @@ version: "2"         # required to adjust maintainability checks
 prepare:
   # Fetch the configuration from our guides site:
   fetch:
+    # Fetch the latest codeclimate configuration files for the project type:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/rails.codeclimate.yml"
+      path: ".codeclimate.yml"
+
     # Fetch the Rubocop Ruby + Rails configuration files:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop.yml"
       path: ".rubocop.yml"
@@ -73,6 +77,7 @@ plugins:
     enabled: true
 
 exclude_patterns:
+  - ".rubocop*.yml"
   - "spec/"
   - "node_modules/"
   - "!spec/support/helpers"
