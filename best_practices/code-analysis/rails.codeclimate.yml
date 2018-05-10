@@ -54,7 +54,7 @@ plugins:
     enabled: true
     channel: rubocop-0-54
     config:
-      file: ".rubocop.yml"
+      file: ".rubocop-rails.yml"
   eslint:
     enabled: false
   csslint:
