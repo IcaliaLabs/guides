@@ -1,11 +1,10 @@
-# Codeclimate + Plugins Configuration
-
+# Code Analysis
 
 ## Example Codeclimate configuration files
 
 ### Rails projects:
 
-The [`rails.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/codeclimate-and-plugin-configs/rails.codeclimate.yml)
+The [`rails.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/code-analysis/rails.codeclimate.yml)
 configuration file is our example codeclimate config file for rails projects.
 This configuration enables codeclimate CLI to fetch our rules for "Rubocop" and
 "Reek" checks, among others, using the `codeclimate prepare` command.
@@ -18,7 +17,7 @@ application:
 cd my-rails-app
 
 # Fetch the example rails codeclimate config:
-wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/rails.codeclimate.yml"
+wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/rails.codeclimate.yml"
 
 # Fetch the plugin configuration files:
 codeclimate prepare
@@ -29,7 +28,7 @@ codeclimate analyze
 
 ### Python projects:
 
-The [`python.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/codeclimate-and-plugin-configs/python.codeclimate.yml)
+The [`python.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/code-analysis/python.codeclimate.yml)
 configuration file is our example codeclimate config file for typical python
 projects. This configuration enables codeclimate CLI to fetch our rules for
 "PEP8" and "Sonar Python" plugins, among others, using the `codeclimate prepare`
@@ -43,7 +42,7 @@ application:
 cd my-python-app
 
 # Fetch the example python codeclimate config:
-wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/python.codeclimate.yml"
+wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/python.codeclimate.yml"
 
 # Fetch the plugin configuration files:
 codeclimate prepare
@@ -54,7 +53,7 @@ codeclimate analyze
 
 ### Javascript + Node projects:
 
-The [`javascript.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/codeclimate-and-plugin-configs/python.codeclimate.yml)
+The [`javascript.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/code-analysis/python.codeclimate.yml)
 configuration file is our example codeclimate config file for javascript
 projects, either frontend or backend, which typically uses node.js for
 compilation and/or runtime. This configuration enables codeclimate CLI to fetch
@@ -69,7 +68,7 @@ application:
 cd my-node-app
 
 # Fetch the example javascript/node codeclimate config:
-wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/javascript.codeclimate.yml"
+wget -O .codeclimate.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/javascript.codeclimate.yml"
 
 # Fetch the plugin configuration files:
 codeclimate prepare
