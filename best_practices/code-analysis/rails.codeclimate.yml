@@ -17,10 +17,6 @@ prepare:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.scss-lint.yml"
       path: ".scss-lint.yml"
 
-    # Fetch the Python PEP8 Rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/tox.ini"
-      path: "tox.ini"
-
 checks:
   argument-count:
     config:
@@ -72,8 +68,6 @@ plugins:
   fixme:
     enabled: true
   reek:
-    enabled: true
-  rubocop:
     enabled: true
   shellcheck:
     enabled: true
