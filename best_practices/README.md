@@ -1,14 +1,17 @@
 # Best practices
 
-We like to keep sanity on every project and, in order to achieve that, we have a set of best practices for each stack, you can find them on the following links:
+We like to keep sanity on every project and, in order to achieve that, we have a
+set of best practices for each stack, you can find them on the following links:
 
 * [Project Setup](PROJECT_SETUP_GUIDE.md)(for all projects)
 * [Docker](../stack/docker)
 * [Rails](../stack/rails/BEST_PRACTICES.md)
 * [Ruby](../stack/ruby/BEST_PRACTICES.md)
 * [Git & Icalia Code Flow](../stack/git/)(See also [Code Reviewer Guide](CODE_REVIEWER_GUIDE.md))
+* [Code Analysis](code-analysis)
 
-We do have some general guides every Icalier must follow, not just for us as a team but as a personal investment:
+We do have some general guides every Icalier must follow, not just for us as a
+team but as a personal investment:
 
 * Don't follow instructions without asking why
 * Don't reinvent the wheel, use libraries, gems or plugins
