@@ -5,11 +5,11 @@ prepare:
   # Fetch the configuration from our guides site:
   fetch:
     # Fetch the SCSS Lint Rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.scss-lint.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
       path: ".scss-lint.yml"
 
     # Fetch the ESLint Rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/default.eslintrc.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/default.eslintrc.yml"
       path: ".eslintrc"
 
 checks:
