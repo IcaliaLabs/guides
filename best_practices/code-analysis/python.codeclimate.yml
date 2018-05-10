@@ -4,6 +4,10 @@ version: "2"
 prepare:
   # Fetch the configuration from our guides site:
   fetch:
+    # Fetch the latest codeclimate configuration files for the project type:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/python.codeclimate.yml"
+      path: ".codeclimate.yml"
+
     # Fetch the SCSS Lint Rules:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
       path: ".scss-lint.yml"
