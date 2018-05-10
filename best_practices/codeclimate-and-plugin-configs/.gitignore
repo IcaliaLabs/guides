@@ -1,0 +1,6 @@
+.*_hist*
+
+# Ignore fetched rubocop files:
+default.yml
+disabled.yml
+enabled.yml

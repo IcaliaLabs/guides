@@ -1,0 +1,92 @@
+version: "2"         # required to adjust maintainability checks
+
+prepare:
+  # Fetch the configuration from our guides site:
+  fetch:
+    # Fetch the Rubocop Ruby + Rails configuration files:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.rubocop.yml"
+      path: ".rubocop.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.rubocop-rails.yml"
+      path: ".rubocop-rails.yml"
+
+    # Fetch the reek rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/reek-rails.reek"
+      path: ".reek"
+
+    # Fetch the SCSS Lint Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/.scss-lint.yml"
+      path: ".scss-lint.yml"
+
+    # Fetch the Python PEP8 Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/codeclimate-and-plugin-configs/tox.ini"
+      path: "tox.ini"
+
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 250
+  method-complexity:
+    config:
+      threshold: 5
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+  identical-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+
+plugins:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-54
+    config:
+      file: ".rubocop.yml"
+  eslint:
+    enabled: false
+  csslint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  fixme:
+    enabled: true
+  reek:
+    enabled: true
+  rubocop:
+    enabled: true
+  shellcheck:
+    enabled: true
+
+exclude_patterns:
+  - "spec/"
+  - "node_modules/"
+  - "!spec/support/helpers"
+  - "config/"
+  - "db/"
+  - "spec/"
+  - "vendor/"
+  - "coverage/"
+  - "bin/"
+  - ".idea/"
+  - "Guardfile"
