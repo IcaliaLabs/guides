@@ -11,6 +11,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
 * [Stack](stack)
   * [Docker](stack/docker)
   * [Ruby](stack/ruby)
+  * [Python](stack/python)
   * [Rails](stack/rails)
   * [Git](stack/git)
   * [Sass](stack/sass)
