@@ -28,6 +28,12 @@ codeclimate analyze
 
 ### Python projects:
 
+Adding to the 10-point check performed by CodeClimate, we're including also checks from the following engines:
+
+- PEP8 - *See the rules we're applying on [the downloadable tox.ini file](./tox.ini)*
+
+- [SonarPython](https://rules.sonarsource.com/python) - *See [SonarPython's Rule Explorer](https://rules.sonarsource.com/python)*
+
 The [`python.codeclimate.yml`](https://github.com/IcaliaLabs/guides/blob/master/best_practices/code-analysis/python.codeclimate.yml)
 configuration file is our example codeclimate config file for typical python
 projects. This configuration enables codeclimate CLI to fetch our rules for
