@@ -8,6 +8,10 @@ parserOptions:
         jsx: true
     sourceType: "module"
 
+plugins: [
+  "babel"
+]
+
 env:
     es6: true
     browser: true
@@ -44,7 +48,7 @@ rules:
     no-fallthrough: 2
     no-floating-decimal: 2
     no-implied-eval: 2
-    no-invalid-this: 2
+    babel/no-invalid-this: 2
     no-iterator: 2
     no-label-var: 2
     no-labels: 2
@@ -74,7 +78,7 @@ rules:
     no-undef: 2
     no-undef-init: 2
     no-undefined: 2
-    no-underscore-dangle: 2
+    no-underscore-dangle: 0
     no-unused-expressions: 2
     no-unused-vars: [2, {vars: "all", args: "after-used", ignoreRestSiblings: false, argsIgnorePattern: '^_'}]
     no-use-before-define: 2
