@@ -97,7 +97,7 @@ UncommunicativeMethodName:
 UncommunicativeModuleName:
   enabled: true
   exclude:
-  - V1
+  - !ruby/regexp /\AV(\d+)\z/i
   reject:
   - !ruby/regexp /^.$/
   - !ruby/regexp /[0-9]$/
