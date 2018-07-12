@@ -1,0 +1,101 @@
+version: "2"         # required to adjust maintainability checks
+
+prepare:
+  # Fetch the configuration from our guides site:
+  fetch:
+    # Fetch the latest codeclimate configuration files for the project type:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/rails.codeclimate.yml"
+      path: ".codeclimate.yml"
+
+    # Fetch the Rubocop Ruby + Rails configuration files:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop.yml"
+      path: ".rubocop.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop-rails.yml"
+      path: ".rubocop-rails.yml"
+
+    # Fetch the reek rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/reek-rails.reek"
+      path: ".reek"
+
+    # Fetch the SCSS Lint Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
+      path: ".scss-lint.yml"
+
+    # Fetch the latest codeclimate configuration files for the project type:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/javascript.codeclimate.yml"
+      path: ".codeclimate.yml"
+
+    # Fetch the ESLint Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/react.eslintrc.yml"
+      path: ".eslintrc"
+
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 250
+  method-complexity:
+    config:
+      threshold: 5
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+  identical-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+
+plugins:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-54
+    config:
+      file: ".rubocop-rails.yml"
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  fixme:
+    enabled: true
+  reek:
+    enabled: true
+  shellcheck:
+    enabled: true
+  nodesecurity:
+    enabled: true
+
+exclude_patterns:
+  - ".rubocop*.yml"
+  - "spec/"
+  - "node_modules/"
+  - "!spec/support/helpers"
+  - "config/"
+  - "db/"
+  - "spec/"
+  - "vendor/"
+  - "coverage/"
+  - "bin/"
+  - ".idea/"
+  - "Guardfile"
