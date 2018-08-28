@@ -2446,6 +2446,8 @@ Metrics/BlockLength:
   CountComments: false  # count full line comments?
   Max: 25
   ExcludedMethods: []
+  Exclude:
+    - 'spec/**/*_spec.rb'
 
 Metrics/BlockNesting:
   CountBlocks: false
