@@ -8,9 +8,9 @@ prepare:
       path: ".codeclimate.yml"
 
     # Fetch the Rubocop Ruby + Rails configuration files:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/rubocop/0.60/core.yml"
       path: ".rubocop.yml"
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.rubocop-rails.yml"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/rubocop/0.60/rails.yml"
       path: ".rubocop-rails.yml"
 
     # Fetch the reek rules:
@@ -64,7 +64,7 @@ checks:
 plugins:
   rubocop:
     enabled: true
-    channel: rubocop-0-54
+    channel: rubocop-0-60
     config:
       file: ".rubocop-rails.yml"
   eslint:
