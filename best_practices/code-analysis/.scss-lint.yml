@@ -158,7 +158,7 @@ linters:
 
   SelectorFormat:
     enabled: true
-    convention: 'strict_BEM'
+    convention: 'hyphenated_BEM'
 
   Shorthand:
     enabled: true
