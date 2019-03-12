@@ -1,153 +1,121 @@
-# Git
+***
+[[TOC]]
+***
 
-This is the guide to rule every project with version control.
+## 1.1. Setup
+You can make a clean installation of git using the installation instructions from the [official website](https://git-scm.com/downloads).
 
-* Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short.
-* Start your commit message with a present verb such as `Adds`, `Removes`, `Updates`
-* Squash multiple commits when necessary.
-* Avoid merge commits. Use a rebase workflow.
-* Delete local and remote branches after merge has been done.
-* Every new feature should be build on a separate branch.
-* Never track files specific to your local development machine. Some examples of this files are .env, .DS_Store, .log, etc.
-* Every new request for code integration must be done through a pull request following [this](#making-a-pull-request) guideline.
-
-## Set up your laptop
-
-You can easily set up your laptop by running [kaishi](https://github.com/IcaliaLabs/kaishi), a shell script to convert any Mac OS X or Linux computer into a real development machine. This will install the latest version of git. 
-
-You can make a clean installation of git using the installation instructions from the official [website](https://git-scm.com/downloads).
-
-## Branch structure
-
-We at [Icalia Labs](http://icalialabs.com) never work directly on the `master` branch to build software, we like to keep things isolated. We even give only access to a developer or group of developers who are in charge of merging the code. Although we make a branch per feature, we consider an extra branch called `dev` where we mantain all of the source code HEAD, so `dev` always reflect the most recent changes to be released.
-
-Once the `dev` branch is stable enough we then merge with `master` and tagged with a version number. This way we keep things sane, and the CI server can easily push to production or rollback to the last stable version on production.
-
-An image is presented below to demostrate this:
-
-![http://nvie.com/posts/a-successful-git-branching-model](http://nvie.com/img/main-branches@2x.png)
+You will need a [GitHub Account](https://github.com/join?source=header-home) and configure your  [ssh key with github](https://medium.com/codebase/configuring-ssh-key-for-github-9d2416a377ae) to collaborate with the IcaliaLabs git repositories.
 
 
-## Writing a new feature
+## 1.2. Basics
+If you never use git version control before you can  continue with this guide you should check this awesome resources to learn git:
 
-Now that we understand how the `dev/master` flow works, it is time to get to know how to start a new feature.
+- [Git - the simple guide](http://rogerdudler.github.io/git-guide/)
+- [Learn Git Version Control using Interactive Browser-Based Scenarios](https://www.katacoda.com/courses/git)
 
-First create a local feature branch off `dev`:
+## 1.3. Icalia code flow
+We at Icalia Labs never work directly on the master branch to build software, we use a git workflow to keep things isolated.
 
-```console
-$ git pull origin dev
-$ git checkout -b feat/<feature-branch>
-```
+Lets take a look to this workflow: 
 
-In the branch creation it is important that you prefix the name of it with your initials.
+/git-guide-images/Screen Shot 2019-03-09 at 6.03.40 PM.png
 
-Once you are done with the feature it is time to merge it with `dev`, but first we need to fetch for changes
+### 1.3.1. Create a Branch from Master
 
-```console
-$ git fetch origin
-```
+You’ll develop your new feature, knowing that when finished, your feature will be ready to be deployed, instead of waiting in “inventory”.
 
-If there are changes in the upstream you should rebase them and squash them to make them more atomic:
+- Keep small code features.
+- **You must keep track of changes coming from “master” while your code is still in development.**
+***
+/git-guide-images/step_2.png
 
-```console
-$ git rebase -i origin/dev
-```
+### 1.3.2. Create Code, add Commits, Push to Github
+Automated CI tools (Drone, Foresight) will start giving you feedback throughout the process.
 
-Resolve every conflict and make sure the tests are passing:
+***
 
-```console
-$ git add --all
-```
+/git-guide-images/step_3.png
 
-Once the `dev` branch is up to date, you can push to your branch and place a pull request. This way codeship and codeclimate will trigger their events and let the developer in charge what is wrong with the code.
+### 1.3.3. Create a Pull Request at Github
+Lets your team know:
 
-Once the code is merge make sure you erase your feature branch:
+ - Your feature is ready
+ - Your’e stuck and need help
+ - Your’e sharing code and/or general ideas
+ - The rest of the team may need to adapt to changes in code
+***
 
-```console
-$ git branch --delete <feature-branch>
-```
+/git-guide-images/step_4.png
+### 1.3.4. Discuss your code and get it reviewed at github
+- Lets you receive feedback from your team mates:
+	- Questions about how to use your new code feature, or how your code will impact their current work.
+	- Quick tips from your team mates.
+- Lets you receive feedback from Icalia Labs’ Tech Leads:
+	- Learn how to improve your code.
+	- Learn development platform / framework features you might be missing.
+- Lets you add changes to the code upon received feedback:
+	- Improve the quality of the code.
+	- Add missing code features (i.e. tests, etc).
 
-**No code is integrated if codeclimate nor codeship are nice and green**
+***
 
-## Making a Pull Request
+/git-guide-images/step_5.png
 
-Every time a developer no matter if he/she is working alone, its compulsory they place a pull request for a new code integration. We rely on two great services(Codeship & Codeclimate) to guarantee two things: **healthy tests**  and  **high quality code**.
+### 1.3.5. Deploy your feature branch to staging/demo servers
+An opportunity to detect deployment issues with your code without causing trouble on live / production servers. 
 
-We have a small format on how each pull request should look like:
+***
 
-##### 1. The first thing is to add a meaningful title for the pull request
+/git-guide-images/step_6.png
 
-In some cases you want to place a pull request but this is not ready to be integrated into master, so on the title make sure you add a `[WIP]` prefix which stands for `Work In Progress`. An example on how a title would look like is:
+### 1.3.6. Your feature gets merged back to master at Github
+  By this point, your code has been reviewed, accepted, and validated on staging/demo servers, and ready to be merged back to master.
 
-```
-[WIP] Adds payment gateway subscriptions
-```
+Your feature will automatically be deployed if continuous deployment is enabled, and your work is no longer in “Code Inventory”.
 
-##### 2. The second and last thing is the body of the pull request which consists on describing what is the purpose of the pull request and if you have some work to do.
-
-```
-### What does this PR do?
-
-* Adds user model
-* Adds user sign up view
-
-### TO-DO
-
-* Adds user account deletion
-```
-
-Take note that the `TO-DO` section is not meant to persist, is just to let anyone on the team what are you missing and probably working on.
+- Changes merged to master via “*Squash & Merge”*.
+***
+## 1.4. Git Commands you must master
+ ### Add
+ Selects code changes to add to an upcoming commit.
  
+ You can practice this command in this [katacoda scenario](https://www.katacoda.com/courses/git/1)
+ 
+### 1.4.1. Commit
+ Commit related code changes.
+ 
+ - Commit messages reflect intent.
+ - Write [meaningful commit messages](https://about.futurelearn.com/blog/telling-stories-with-your-git-history/), don't just go simple and short.
+- Start your commit message with a present verb such as `Adds`, `Removes`, `Updates`.
+- Never track files specific to your local development machine.Some examples of this files are `.env`, `.DS_Store`, `.log`, etc.
+### 1.4.2. Push
+Used to publish new local commits on a remote server.
 
-## Multiple environments
+You can practice this command in this [katacoda scenario](https://www.katacoda.com/courses/git/3)
 
-At Icalia Labs we like to be sure that everything will work whenever we deploy a feature or set of features to production. Automated testing alone is not enough. All features should be validated by the product owner (commonly the client or the project lead).
+### 1.4.3. Pull
+ Used to bring changes from our branch at origin.
+  
+- Change into the branch you want to update.
+- Don’t use “git pull” to merge code from other branches.
+- If you’re forced to specify the branch name with pull your’e doing it wrong - ask for help.
 
-In order to review changes in a real environment we deploy to two different heroku apps: **staging** and **production**.
+### 1.4.4. Merge and  how to manage conflicts 
+ Use it to bring up changes from other branches(most commonly, from “master”).
+#### 1.4.4.1. Merge Conflicts
+ - Solving code conflicts is not a code reviewer’s responsibility!
+ - However, you might ask for help when you get stuck.
+ - VS Code is a great tool to resolve merge conflicts [VS Code git guide](https://code.visualstudio.com/Docs/editor/versioncontrol#_merge-conflicts).
+ introduction
+### 1.4.5. Stash
+ Saves uncommitted changes into a “drawer”, from which you can retrieve those later.
 
-The **staging** environment is basically a mirror app of the production app, and this is were the features get approved by the `product owner` together with the project lead.
-
-### Syncing staging and production databases
-
-To keep things seamless, whenever a deployment to staging is going to be performed, we sync the production database to the staging app. Check out the [article](https://github.com/IcaliaLabs/guides/wiki/Sync-staging-&-production-databases-with-heroku) for more information.
-
-
-## Releases
-
-Every time a new version is going to be deployed to production, a corresponding tag of the version should be created and pushed to remote to be able to easily get a copy of the code as it was in that release in case needed for the future.
-
-To create a tag use the command:
-
-```console
-$ git tag -a 1.0.0 -m "App versión 1.0.0 Released in appstore"
-```
-
-Where the number followed by the annotation flag `-a 1.0.0` should be written following the [semantic versioning rules](http://semver.org)
-
-After creating the tag you can view the created tag by using:
-
-```console
-$ git tag -l
-```
-
-Then you can push your tag to remote by using:
-
-```console
-$ git push origin [tagname]
-```
-
-Or if you have many tags you can push them by using:
-
-```console
-$ git push origin —-tags
-```
-
-## .gitignore samples
-
-* [Rails](gitignore_rails)
-* [iOS](gitignore_ios)
-
-
+- Used when you can’t pull from upstream because of conflicting uncommitted changes.
+- Also used when you can’t switch between branches because of conflicting uncommitted changes.
+### 1.4.6. Cherry-Pick
+Picks one or several commits from another branch into yours(useful when back-porting fixes from another branch).
+## Resources
 Here are some git advanced guides that can help you in your everyday workflow
 
 - [Git stash](GIT_STASH.md)
