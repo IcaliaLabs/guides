@@ -31,7 +31,7 @@ You’ll develop your new feature, knowing that when finished, your feature will
 ![](/stack/git/img/step_2.png)
 
 ### 1.3.2. Create Code, add Commits, Push to Github
-Automated CI tools (Drone, Foresight) will start giving you feedback throughout the process.
+Automated CI tools ([Drone](https://cloud.drone.io/login), [Foresight](https://foresight.icalialabs.com)) will start giving you feedback throughout the process.
 
 ***
 
@@ -44,6 +44,24 @@ Lets your team know:
  - You’re stuck and need help
  - You’re sharing code and/or general ideas
  - The rest of the team may need to adapt to changes in code
+
+ Remember to use the Pull request template:
+ ```
+	### What does this PR do?
+
+  * Add "create post" button
+  * etc
+
+	#### Merge Checklist:
+
+	- [ ] The branch is up-to-date (i.e. rebased) with the base branch
+	- [ ] All tests are passing - see ["Running tests"](../#running-tests)
+	- [ ] No code style issues
+ ```
+ This template consists in two sections:
+
+- A list for describing  what the pull request does
+- A list of checkboxes with information about the status of the pull request( tests status, branch status, code style issues)
 ***
 
 ![](/stack/git/img/step_4.png)
