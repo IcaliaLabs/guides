@@ -132,20 +132,24 @@ UtilityFunction:
   public_methods_only: false
 
 # Rails configuration:
-"app/controllers":
-  IrresponsibleModule:
-    enabled: false
-  NestedIterators:
-    max_allowed_nesting: 2
-  UnusedPrivateMethod:
-    enabled: false
-  InstanceVariableAssumption:
-    enabled: false
-"app/helpers":
-  IrresponsibleModule:
-    enabled: false
-  UtilityFunction:
-    enabled: false
-"app/mailers":
-  InstanceVariableAssumption:
-    enabled: false
+directories:
+  "app/controllers":
+    IrresponsibleModule:
+      enabled: false
+    NestedIterators:
+      max_allowed_nesting: 2
+    UnusedPrivateMethod:
+      enabled: false
+    InstanceVariableAssumption:
+      enabled: false
+  "app/helpers":
+    IrresponsibleModule:
+      enabled: false
+    UtilityFunction:
+      enabled: false
+  "app/mailers":
+    InstanceVariableAssumption:
+      enabled: false
+  "app/models":
+    InstanceVariableAssumption:
+      enabled: false
