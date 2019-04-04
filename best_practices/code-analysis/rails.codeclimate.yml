@@ -14,7 +14,7 @@ prepare:
       path: ".rubocop-rails.yml"
 
     # Fetch the reek rules:
-    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/reek-rails.reek"
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/reek-rails.yml"
       path: ".reek.yml"
 
     # Fetch the SCSS Lint Rules:
