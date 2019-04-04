@@ -15,7 +15,7 @@ prepare:
 
     # Fetch the reek rules:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/reek-rails.reek"
-      path: ".reek"
+      path: ".reek.yml"
 
     # Fetch the SCSS Lint Rules:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
