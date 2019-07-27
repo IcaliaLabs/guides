@@ -27,25 +27,46 @@ we can watch the costs of our proposed solution.
 
 ## Creating an IAM user for the app
 
-1: Create the user
-
-Via AWS CLI (Please change "our-client-application-name"!):
+### 1: Create an "Apps" group to better identify app users
 
 ```bash
+# See https://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html
+aws iam create-group --group-name "Apps"
+```
+
+### 2: Create the user
+
+*Please change "our-client-application-name"!)*
+
+```bash
+# See https://docs.aws.amazon.com/cli/latest/reference/iam/create-user.html
 aws iam create-user --user-name "the-customer-app-name"
 ```
 
-2: Create an access key for the user - Please take note on the output of this
-command, as we're going to use the values on it to configure the app:
+### 3: Add the user to the "Apps" group
 
 ```bash
+# See https://docs.aws.amazon.com/cli/latest/reference/iam/add-user-to-group.html
+aws iam add-user-to-group \
+ --user-name "the-customer-app-name" \
+ --group-name "Apps"
+```
+
+### 4: Create an access key for the user
+
+* Please take note on the output from this command, as we're going to use the
+values on it to configure the app*
+
+```bash
+# See https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html
 aws iam create-access-key --user-name "the-customer-app-name"
 ```
 
-3: Configure your app to access AWS using environment variables
+### 5: Configure your app to access AWS using environment variables
 
 We're going to use the standard environment variables used by the AWS SDKs to
-set up the access key and secret key - be sure any configuration in your app uses these as well:
+set up the access key and secret key - be sure any configuration in your app
+uses these as well:
 
 ```bash
 AWS_ACCESS_KEY_ID=[The "AccessKeyId" value from the output]
