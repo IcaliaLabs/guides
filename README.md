@@ -5,6 +5,7 @@ Icalia Guides is the programming style used at [Icalia Labs](http://icalialabs.c
 * [Onboarding](onboarding)
 * [Happiness](happiness)
 * [Best Practices](best_practices)
+  * [Amazon Web Services](best_practices/AWS.md)
   * [Code Analysis](best_practices/code-analysis)
 * [Open source projects](open_source)
 * [Testing](testing)
