@@ -12,7 +12,7 @@ Whenever we'll be working with a customer's AWS account, we need to:
 - A nice touch will be to ensure an account alias is set up for the IAM
     sign-in (i.e. https://icalialabs.signin.aws.amazon.com/console)
 
-- Use our work email address as the account username (i.e. vov@icalialabs.com)
+- Use our work email address as the account username (i.e. my-name@icalialabs.com)
 
 - Have the proper permissions assigned to them:
   - The project's tech lead should at least have the "AdministratorAccess"
