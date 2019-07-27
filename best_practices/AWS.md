@@ -10,7 +10,7 @@ Whenever we'll be working with a customer's AWS account, we need to:
 ### Access the AWS console using "Identity and Access Management" (IAM)
 
 - A nice touch will be to ensure an account alias is set up for the IAM
-    sign-in (i.e. https://icalialabs.signin.aws.amazon.com/console)
+    sign-in (i.e. https://the-customer-company-name.signin.aws.amazon.com/console)
 
 - Use our work email address as the account username (i.e. my-name@icalialabs.com)
 
