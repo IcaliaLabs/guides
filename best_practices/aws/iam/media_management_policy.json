@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteObjectTagging",
+        "s3:GetBucketTagging",
+        "s3:DeleteObjectVersion",
+        "s3:GetObjectVersionTagging",
+        "s3:PutObjectVersionTagging",
+        "s3:ListBucket",
+        "s3:DeleteObjectVersionTagging",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketAcl",
+        "s3:PutObject",
+        "s3:GetObjectAcl",
+        "s3:GetObject",
+        "s3:GetBucketCORS",
+        "s3:GetObjectVersionAcl",
+        "s3:PutBucketAcl",
+        "s3:PutObjectTagging",
+        "s3:DeleteObject",
+        "s3:GetBucketLocation",
+        "s3:PutObjectAcl",
+        "s3:GetObjectVersion"
+      ],
+      "Resource": [
+        "arn:aws:s3:::*",
+        "arn:aws:s3:::*/*"
+      ]
+    }
+  ]
+}
