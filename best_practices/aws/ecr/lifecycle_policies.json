@@ -1,0 +1,302 @@
+{
+  "rules": [
+    {
+      "rulePriority": 1,
+      "description": "Remove untagged images",
+      "selection": {
+        "tagStatus": "untagged",
+        "countType": "imageCountMoreThan",
+        "countNumber": 1
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 2,
+      "description": "Remove old testing images",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "testing"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 3,
+      "description": "Remove old builder images",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "builder"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 4,
+      "description": "Remove old images with tags starting with \"0\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "0"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 5,
+      "description": "Remove old images with tags starting with \"1\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "1"
+        ],
+        "countType": "imageCountMoreThan",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 6,
+      "description": "Remove old images with tags starting with \"2\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "2"
+        ],
+        "countType": "imageCountMoreThan",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 7,
+      "description": "Remove old images with tags starting with \"3\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "3"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 8,
+      "description": "Remove old images with tags starting with \"4\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "4"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 9,
+      "description": "Remove old images with tags starting with \"5\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "5"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 10,
+      "description": "Remove old images with tags starting with \"6\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "6"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 11,
+      "description": "Remove old images with tags starting with \"7\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "7"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 12,
+      "description": "Remove old images with tags starting with \"8\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "8"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 13,
+      "description": "Remove old images with tags starting with \"9\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "9"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 14,
+      "description": "Remove old images with tags starting with \"a\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "a"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 15,
+      "description": "Remove old images with tags starting with \"b\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "b"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 16,
+      "description": "Remove old images with tags starting with \"c\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "c"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 17,
+      "description": "Remove old images with tags starting with \"d\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "d"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 18,
+      "description": "Remove old images with tags starting with \"e\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "e"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    },
+    {
+      "rulePriority": 19,
+      "description": "Remove old images with tags starting with \"f\"",
+      "selection": {
+        "tagStatus": "tagged",
+        "tagPrefixList": [
+          "f"
+        ],
+        "countType": "sinceImagePushed",
+        "countUnit": "days",
+        "countNumber": 3
+      },
+      "action": {
+        "type": "expire"
+      }
+    }
+  ]
+}
