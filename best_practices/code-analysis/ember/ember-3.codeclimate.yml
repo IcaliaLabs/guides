@@ -10,12 +10,12 @@ prepare:
     path: ".scss-lint.yml"
 
   # Fetch the ESLint Rules:
-  # - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/default.eslintrc.yml"
-  #  path: ".eslintrc.js"
+  - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/ember/ember-3.eslintrc.js"
+    path: ".eslintrc.js"
 
   # Fetch the ESLint Ignore Rules:
-  # - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/ember.eslintrc-ignore.txt"
-  #  path: ".eslintignore"
+  - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/ember/ember-3.eslintignore.txt"
+   path: ".eslintignore"
 
 checks:
   argument-count:
