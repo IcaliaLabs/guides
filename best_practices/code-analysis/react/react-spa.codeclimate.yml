@@ -14,7 +14,7 @@ prepare:
     
     # Fetch the ESLint Ignore Rules:
     - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/react/eslintignore.txt"
-    path: ".eslintignore"
+      path: ".eslintignore"
 
 checks:
   argument-count:
