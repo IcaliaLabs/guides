@@ -1,0 +1,9 @@
+# misc
+/coverage/
+!.*
+
+node_modules
+dist/
+public/build/
+/config
+webpack.config.js
