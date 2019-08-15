@@ -1,0 +1,78 @@
+# required to adjust maintainability checks
+version: "2"
+
+prepare:
+  # Fetch the configuration from our guides site:
+  fetch:
+    # Fetch the SCSS Lint Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.scss-lint.yml"
+      path: ".scss-lint.yml"
+
+    # Fetch the ESLint Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/react.eslintrc.yml"
+      path: ".eslintrc.yml"
+    
+    # Fetch the ESLint Ignore Rules:
+    - url: "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/react/eslintignore.txt"
+    path: ".eslintignore"
+
+checks:
+  argument-count:
+    config:
+      threshold: 4
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 250
+  method-complexity:
+    config:
+      threshold: 5
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+  identical-code:
+    config:
+      threshold: # language-specific defaults. an override will affect all languages.
+
+plugins:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  scss-lint:
+    enabled: true
+  shellcheck:
+    enabled: true
+  nodesecurity:
+    enabled: true
+
+# We recommend to add exclusions for:
+# - third party libraries
+# - production assets, such as minimized or cross-compiled files
+# - automated test suites
+exclude_patterns:
+  - "config/"
+  - "db/"
+  - "dist/"
+  - "features/"
+  - "**/node_modules/"
+  - "script/"
+  - "**/spec/"
+  - "**/test/"
+  - "**/tests/"
+  - "**/vendor/"
+  - "**/*.d.ts"
