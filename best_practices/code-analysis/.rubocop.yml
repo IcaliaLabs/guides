@@ -425,7 +425,7 @@ Layout/FirstMethodParameterLineBreak:
     method parameter definition.
   Enabled: false
 
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   Description: Checks the indentation of the first parameter in a method call.
   Enabled: true
   EnforcedStyle: special_for_inner_method_call_in_parentheses
@@ -469,7 +469,7 @@ Layout/IndentationWidth:
   IgnoredPatterns: []
 
 # Checks the indentation of the first element in an array literal.
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Description: Checks the indentation of the first element in an array literal.
   Enabled: true
   # The value `special_inside_parentheses` means that array literals with
@@ -502,7 +502,7 @@ Layout/IndentAssignment:
   IndentationWidth: ~
 
 # Checks the indentation of the first key in a hash literal.
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   Description: Checks the indentation of the first key in a hash literal.
   Enabled: true
   # The value `special_inside_parentheses` means that hash literals with braces
@@ -529,9 +529,8 @@ Layout/IndentHeredoc:
   Description: This cops checks the indentation of the here document bodies.
   StyleGuide: "#squiggly-heredocs"
   Enabled: true
-  EnforcedStyle: auto_detection
+  EnforcedStyle: squiggly
   SupportedStyles:
-    - auto_detection
     - squiggly
     - active_support
     - powerpack
@@ -1689,11 +1688,8 @@ Style/FrozenStringLiteralComment:
                  Add the frozen_string_literal comment to the top of files
                  to help transition from Ruby 2.3.0 to Ruby 3.0.
   Enabled: true
-  EnforcedStyle: when_needed
+  EnforcedStyle: always
   SupportedStyles:
-    # `when_needed` will add the frozen string literal comment to files
-    # only when the `TargetRubyVersion` is set to 2.3+.
-    - when_needed
     # `always` will always add the frozen string literal comment to a file
     # regardless of the Ruby version or if `freeze` or `<<` are called on a
     # string literal. If you run code against multiple versions of Ruby, it is
@@ -1862,8 +1858,13 @@ Style/MethodDefParentheses:
     - require_no_parentheses
     - require_no_parentheses_except_multiline
 
-Style/MethodMissing:
-  Description: 'Avoid using `method_missing`.'
+Style/MethodMissingSuper:
+  Description: 'This cop checks for the presence of method_missing without falling back on super.'
+  StyleGuide: '#no-method-missing'
+  Enabled: true
+
+Style/MissingRespondToMissing:
+  Description: 'This cop checks for the presence of `method_missing` without also defining `respond_to_missing?`.'
   StyleGuide: '#no-method-missing'
   Enabled: true
 
@@ -2418,12 +2419,14 @@ Style/YodaCondition:
   Description: Do not use literals as the first operand of a comparison.
   Reference: https://en.wikipedia.org/wiki/Yoda_conditions
   Enabled: true
-  EnforcedStyle: all_comparison_operators
+  EnforcedStyle: forbid_for_all_comparison_operators
   SupportedStyles:
-    # check all comparison operators
-    - all_comparison_operators
     # check only equality operators: `!=` and `==`
     - equality_operators_only
+    - forbid_for_all_comparison_operators
+    - forbid_for_equality_operators_only
+    - require_for_all_comparison_operators
+    - require_for_equality_operators_only
 
 Style/ZeroLengthPredicate:
   Description: 'Use #empty? when testing for objects of length 0.'
@@ -2769,11 +2772,7 @@ Lint/StringConversionInInterpolation:
   Description: Checks for Object#to_s usage in string interpolation.
   StyleGuide: "#no-to-s"
   Enabled: true
-
-Lint/Syntax:
-  Description: Checks syntax error
-  Enabled: true
-
+  
 Lint/UnderscorePrefixedVariableName:
   Description: Do not use prefix `_` for a variable that is used.
   Enabled: true
