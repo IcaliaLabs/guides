@@ -56,7 +56,7 @@ checks:
 plugins:
   rubocop:
     enabled: true
-    channel: rubocop-0-60
+    channel: rubocop-0-74
     config:
       file: ".rubocop-rails.yml"
   eslint:
