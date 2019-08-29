@@ -17,11 +17,11 @@ wget -O .rubocop-base.yml "https://raw.githubusercontent.com/miguejs/guides/upda
 ```
 
 ```
-wget -O .eslintrc.yml "https://raw.githubusercontent.com/miguejs/guides/master/best_practices/code-analysis/.default.eslintrc.yml" 
+wget -O .eslintrc.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.default.eslintrc.yml" 
 ```
 
 ```
-wget -O .reek.yml "https://raw.githubusercontent.com/miguejs/guides/master/best_practices/code-analysis/.reek-rails.reek" 
+wget -O .reek.yml "https://raw.githubusercontent.com/IcaliaLabs/guides/master/best_practices/code-analysis/.reek-rails.reek" 
 ```
 
 Open `.rubocop.yml` and replace the second line with `.rubocop-base.yml` to finish the linter configuration.
