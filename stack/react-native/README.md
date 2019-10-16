@@ -17,4 +17,6 @@ I see several weak points to the tech - all will require constant updating, whic
       schedule, priorities or urge to make their package compatible with changes on Xcode. Unless you have a big team,
       with people willing to contribute and/or maintain open-source projects, this is a big disadvantage.
 
+### Some articles reflecting my exact sentiments
 
+- https://medium.com/@rknell/two-years-with-react-native-and-why-its-no-longer-the-future-2b1d16f7443b
