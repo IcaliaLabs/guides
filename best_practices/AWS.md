@@ -20,10 +20,14 @@ Whenever we'll be working with a customer's AWS account, we need to:
   - Any other team member should have the proper policies attached to them,
     depending on the case (are they gonna deploy the app?)
 
-### Check the Billing
+### Allowing Project/Tech Leads to see details on Billing
 
 The team's tech leads should be able to have access to the Billing console, so
 we can watch the costs of our proposed solution.
+
+See [Control Access Billing](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html)
+
+See [Cost Explorer Access](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html) as an alternative to giving access to Billing
 
 ## Creating an IAM user for the app
 
