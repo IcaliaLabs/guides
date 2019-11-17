@@ -1,0 +1,29 @@
+## Fixing Bugs on OSS libraries
+
+Whenever we find ourselves in the need of issuing fixes to open-source libraries
+(gems, npm packages, etc) that are being used in our projects, CI/CD processes,
+etc., we should follow these considerations:
+
+### 1: Report the issue on the OSS project upstream
+
+Be courteous when reporting the problem. Most of the OSS projects are maintained
+by people like you and me, and deserve respect.
+
+### 2: Create an example project that helps replicating the problem
+
+### 3: Share the example project in the issue thread
+
+### 4: Fork the repo in the IcaliaLabs organization
+
+Due to the fact that we might need the fix before it's merged back to upstream,
+we certainly need to maintain the repository while the fix makes it's way into
+upstream. The best way to ensure everything keeps that way in the meantime is
+to have the repo in the IcaliaLabs organization at GitHub.
+
+### 5: Work to fix the issue
+
+Work in a new branch. Follow the conventions used by the upstream project - including
+branch names.
+
+Remember to keep the changes minimal. Address unrelated issues in a different
+branch/pull request.
