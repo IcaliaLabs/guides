@@ -49,7 +49,7 @@ For the changes required to be hidden beneath a feature flag, include tests for 
 
 Be sure to deliver your work (i.e. being it accepted via a PR to `master`) before continuing on the next part of the feature.
 
-## Step 4: Cleanup PR
+## Step 4: Prepare the Cleanup PR
 
 ** The feature is not considered to be ready for release until a cleanup PR is accepted and ready to be merged! **
 
@@ -74,3 +74,7 @@ Right after the feature is "released" on production, we'll need to have the "Cle
 Sometimes features should not be released at all. Maybe because the project is "pivoting away" from the feature, maybe the feature has to be extensively re-worked for release, etc. On either case, we need to "take out" the code that's already deployed in this scheme, so the **"Cleanup PR"** should instead include the removal of the new code.
 
 The "Cleanup PR" commit over `master` will work as a reference - actually the parent commit of it - of the code prior to the cleanup. So, the "Cleanup PR" commit can be "reverted" with Git in case we need the new code back.
+
+### Finishing the Release Cleanup
+
+Once the cleanup PR is applied & deployed, we should remove the feature flag from the system
