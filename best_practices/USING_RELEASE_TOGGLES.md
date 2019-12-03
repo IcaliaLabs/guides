@@ -63,7 +63,14 @@ The most important idea about the "Cleanup PR" is that there is no leftover code
 
 ## Step 5: Release or Archive the feature
 
-Once the "Cleanup PR" is ready, we might proceed to release the feature by switching the "toggle" ON at production servers.
+### The good outcome: Releasing the feature
+
+Once the **"Cleanup PR"** is ready, we might proceed to release the feature by switching the "toggle" ON at production servers.
 
 Right after the feature is "released" on production, we'll need to have the "Cleanup PR" merged to master - this causing a deploy is actually good, as the "old" code will no longer be deployed.
 
+### The alternate outcome: "Archiving" the feature
+
+Sometimes features should not be released at all. Maybe because the project is "pivoting away" from the feature, maybe the feature has to be extensively re-worked for release, etc. On either case, we need to "take out" the code that's already deployed in this scheme, so the **"Cleanup PR"** should instead include the removal of the new code.
+
+The "Cleanup PR" commit over `master` will work as a reference - actually the parent commit of it - of the code prior to the cleanup. So, the "Cleanup PR" commit can be "reverted" with Git in case we need the new code back.
