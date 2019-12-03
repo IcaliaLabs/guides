@@ -24,9 +24,9 @@ Each story on Pivotal should have a Task List.
 
 For stories over 3 points, several of the tasks in the list may actually be smaller stories, so be sure to analyze these stories during the weekly planning session!
 
-When a story needs a release toggle, consider a final "Cleanup" chore to remove the "release toggle" from the app code - see step 4.
+When a story needs a release toggle, consider a final "Cleanup" chore to remove the "release toggle" from the app code - see [Step 4](#step-4-prepare-the-cleanup-pr)
 
-** PLEASE DO NOT START WORKING ON STORIES WORTH MORE THAN 3 POINTS **
+**PLEASE DO NOT START WORKING ON STORIES WORTH MORE THAN 3 POINTS**
 
 ### Find out which parts are dependant, and which are not
 
