@@ -1,6 +1,6 @@
-# Dockerfiles: Common Dockerfile steps
+# Dockerfiles: Common Dockerfile tasks
 
-The purpose of this guide is to have a library on how do we implement steps for
+The purpose of this guide is to have a library on how do we implement tasks for
 stuff we use on all of our Dockerfiles.
 
 Also, since we also use Alpine Linux for some of our projects, we'll have two
@@ -122,4 +122,26 @@ RUN apt-get update && apt-get install -y  \
       --no-replaces \ 
       --no-enhances google-chrome-stable | grep "^\w" | sort -u) && \
     rm -rf /var/lib/apt/lists/*
+```
+
+## Installing dockerize
+
+[`dockerize`](https://github.com/jwilder/dockerize) is an "utility to simplify running applications in docker containers". Our main use case in at development stage to wait until a newly created service - such as postgres or elasticsearch - is accepting connections.
+
+We use a combination of `curl`/`wget` + `tar`, depending on the base:
+
+On alpine:
+
+```Dockerfile
+RUN wget -O - \
+  https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz \
+  | tar -C /usr/local/bin -xz
+```
+
+On Debian:
+
+```Dockerfile
+RUN curl -L \
+    https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz \
+    | tar -C /usr/local/bin -xz
 ```
