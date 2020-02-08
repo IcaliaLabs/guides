@@ -120,7 +120,7 @@ RUN apt-get update && apt-get install -y  \
       --no-conflicts \
       --no-breaks \
       --no-replaces \ 
-      --no-enhances google-chrome-stable | grep "^\w" | sort -u) && \
+      --no-enhances chromium | grep "^\w" | sort -u) && \
     rm -rf /var/lib/apt/lists/*
 ```
 
