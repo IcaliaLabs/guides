@@ -114,12 +114,15 @@ On Debian, it's not difficult:
 ```Dockerfile
 RUN apt-get update && apt-get install -y  \
     $(apt-cache depends \
+      -o APT::Cache::ShowOnlyFirstOr=true \
       --recurse \
-      --no-recommends \ 
+      --no-pre-depends \
+      --no-depends \
+      --no-recommends \
       --no-suggests \
       --no-conflicts \
       --no-breaks \
-      --no-replaces \ 
+      --no-replaces \
       --no-enhances chromium | grep "^\w" | sort -u) && \
     rm -rf /var/lib/apt/lists/*
 ```
