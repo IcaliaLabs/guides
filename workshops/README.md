@@ -16,3 +16,5 @@ Keep in ind that this is just a bunch of advices we have learned on the way, and
   * You can sell or share the content for later
 9. During the workshop, when changing from one topic to another, ask if there is any question that you can address before moving on.
 10. Watch the tone of your voice, if you are on a big place, you may or not be heard from every corner. You can ask the audience if that is the case.
+
+We have provided a [template](TEMPLATE.md) where you just need to fill some information to give you some sort of notion on where to go, or at least answer some basic questions you were not aware of.
