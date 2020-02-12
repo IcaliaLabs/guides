@@ -18,3 +18,8 @@ Keep in ind that this is just a bunch of advices we have learned on the way, and
 10. Watch the tone of your voice, if you are on a big place, you may or not be heard from every corner. You can ask the audience if that is the case.
 
 We have provided a [template](TEMPLATE.md) where you just need to fill some information to give you some sort of notion on where to go, or at least answer some basic questions you were not aware of.
+
+
+## References
+
+- [How to create compelling technical screencasts](http://www.backbonerails.com/blog/how-to-create-compelling-technical-screencasts)
