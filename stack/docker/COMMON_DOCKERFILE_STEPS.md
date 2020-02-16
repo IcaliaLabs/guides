@@ -115,15 +115,14 @@ On Debian, it's not difficult:
 RUN apt-get update && apt-get install -y  \
     $(apt-cache depends \
       -o APT::Cache::ShowOnlyFirstOr=true \
-      --recurse \
       --no-pre-depends \
-      --no-depends \
+      --no-breaks \
+      --no-conflicts \
       --no-recommends \
       --no-suggests \
-      --no-conflicts \
-      --no-breaks \
       --no-replaces \
-      --no-enhances chromium | grep "^\w" | sort -u) && \
+      --no-enhances \
+      --important chromium | grep "^\w" | sort -u) && \
     rm -rf /var/lib/apt/lists/*
 ```
 
