@@ -85,7 +85,11 @@ dependencies ourselves.
 This works the same for both Alpine & Debian:
 
 ```Dockerfile
-RUN export CHROMIUM_BUILD_NUMBER=672088 \
+# Step XX: Fetch the pre-built specific version of Chromium & Chromedriver:
+# NOTE: In case your'e using "puppeteer", check the "puppeteer.chrome_revision"
+# key at puppeteer's package.json to check which chromium build number is
+# compatible with your project's puppeteer version:
+RUN export CHROMIUM_BUILD_NUMBER=722234 \
  && mkdir -p /tmp/chromium \
  && cd /tmp/chromium \
  && wget -O chrome-linux.zip http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/chrome-linux.zip \
