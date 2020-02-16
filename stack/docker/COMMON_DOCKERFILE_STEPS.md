@@ -82,7 +82,7 @@ dependencies ourselves.
 
 ### 1: Downloading prebuilt Chromium
 
-This works the same for both Alpine & Debian:
+This works the same for both Alpine & Debian (you'll need the `unzip` package):
 
 ```Dockerfile
 # Step XX: Fetch the pre-built specific version of Chromium & Chromedriver:
@@ -92,13 +92,15 @@ This works the same for both Alpine & Debian:
 RUN export CHROMIUM_BUILD_NUMBER=722234 \
  && mkdir -p /tmp/chromium \
  && cd /tmp/chromium \
- && wget -O chrome-linux.zip http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/chrome-linux.zip \
- && unzip chrome-linux.zip -d /opt \
+ && for FILE in chrome-linux.zip chromedriver_linux64.zip; do \
+      # Use wget -O ${FILE} on alpine!
+      curl --progress-bar --location --output $FILE \ 
+      "http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/${FILE}" ; \
+      unzip ${FILE} -d /opt ; \
+    done \
  && ln -s /opt/chrome-linux/chrome /usr/bin/chromium \
- && wget -O chromedriver_linux64.zip http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/chromedriver_linux64.zip \
- && unzip chromedriver_linux64.zip -d /opt \
  && ln -s /opt/chromedriver_linux64/chromedriver /usr/bin/chromedriver \
- && cd /usr/src \
+ && cd ${HOME} \
  && rm -rf /tmp/chromium
 ```
 
