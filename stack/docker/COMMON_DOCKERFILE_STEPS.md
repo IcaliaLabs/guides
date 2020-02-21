@@ -13,6 +13,10 @@ container that will generate code (i.e. `rails g scaffold`). This way, we ensure
 the resulting files are owned by the developer user - instead of root - when
 working on a Linux host.
 
+Sometimes the docker image will have a user with the same user id as the host's user, so
+we will use `getent passwd "${DEVELOPER_UID}"` command to prevent the user creation in case
+it already exists.
+
 Given we have the following arguments - notice that there are defaults for these
 arguments:
 
@@ -26,13 +30,15 @@ ENV DEVELOPER_UID=${DEVELOPER_UID}
 On alpine, we use `adduser`:
 
 ```Dockerfile
-RUN adduser -D -H -u ${DEVELOPER_UID} -h /usr/src -g "Developer User,,," ${DEVELOPER_USERNAME}
+RUN getent passwd "${DEVELOPER_UID}" || \
+  adduser -D -H -u ${DEVELOPER_UID} -h /usr/src -g "Developer User,,," ${DEVELOPER_USERNAME}
 ```
 
 On debian, we use `useradd` - notice the difference in the option flags:
 
 ```Dockerfile
-RUN useradd -r -M -u ${DEVELOPER_UID} -d /usr/src -c "Developer User,,," ${DEVELOPER_USERNAME}
+RUN getent passwd "${DEVELOPER_UID}" || \
+  useradd -r -M -u ${DEVELOPER_UID} -d /usr/src -c "Developer User,,," ${DEVELOPER_USERNAME}
 ```
 
 
