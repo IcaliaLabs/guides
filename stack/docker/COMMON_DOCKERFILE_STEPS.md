@@ -101,7 +101,7 @@ RUN export CHROMIUM_BUILD_NUMBER=722234 \
  && for FILE in chrome-linux.zip chromedriver_linux64.zip; do \
       # Use wget -O ${FILE} on alpine!
       curl --progress-bar --location --output $FILE \ 
-      "http://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/${FILE}" ; \
+      "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Linux_x64/${CHROMIUM_BUILD_NUMBER}/${FILE}" ; \
       unzip ${FILE} -d /opt ; \
     done \
  && ln -s /opt/chrome-linux/chrome /usr/bin/chromium \
