@@ -113,30 +113,36 @@ RUN export CHROMIUM_BUILD_NUMBER=722234 \
 
 ### 2: Installing the dependencies
 
-Instead of adding an ultra-long list of dependencies, I prefer to ask `apt`
-or `apk` for the dependency list instead, and then install them at once
+Instead of adding an ultra-long list of dependencies, we should use the `ldd` command
+to get the shared libraries from the downloaded chromium & chrome driver executables.
 
-On Alpine it's easy:
+On Alpine, I haven't checked yet...
+
+On Debian, the plan is:
+
+1. Run `ldd /usr/bin/[EXECUTABLE]
+2. Pipe to `grep not` to filter libraries that already exist
+3. Pipe to `sed` to extract the library name from each line
+4. Pipe to `uniq`, as there may be some duplicates
+5. Pipe to `apt-file search`, to get the packages that contain each library
+6. Pipe to `sed` to extract the package name from each line
+7. Pipe to `uniq` again, to remove duplicates
 
 ```Dockerfile
-RUN apk add --no-cache $(apk info --no-cache --depends --quiet chromium)
-```
-
-On Debian, it's not difficult:
-
-```Dockerfile
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    $(apt-cache depends \
-      -o APT::Cache::ShowOnlyFirstOr=true \
-      --no-pre-depends \
-      --no-breaks \
-      --no-conflicts \
-      --no-recommends \
-      --no-suggests \
-      --no-replaces \
-      --no-enhances \
-      --important chromium | sed 1d | sed 's/  Depends: //g' | sort -u) && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+  && apt-get install --no-install-recommends -y apt-file \
+  && apt-file update \
+  && apt-get install --no-install-recommends -y $( \
+    ldd /usr/bin/chromium \
+    | grep not \
+    | sed -E 's/\s+(.+) =.+/\1/' \
+    | uniq \
+    | apt-file search --from-file - \
+    | sed -E 's/(.+):.+/\1/' \
+    | uniq \
+    | sed -n '/^lib/p' \
+  ) \
+  && rm -rf /var/lib/apt/lists/*
 ```
 
 ## Installing dockerize
