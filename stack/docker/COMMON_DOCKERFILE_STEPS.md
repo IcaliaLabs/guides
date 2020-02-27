@@ -92,6 +92,7 @@ This works the same for both Alpine & Debian (you'll need the `unzip` package):
 
 ```Dockerfile
 # Step XX: Fetch the pre-built specific version of Chromium & Chromedriver:
+# See https://omahaproxy.appspot.com for build / version lookup.
 # NOTE: In case your'e using "puppeteer", check the "puppeteer.chrome_revision"
 # key at puppeteer's package.json to check which chromium build number is
 # compatible with your project's puppeteer version:
