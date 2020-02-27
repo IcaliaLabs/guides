@@ -124,7 +124,7 @@ RUN apk add --no-cache $(apk info --no-cache --depends --quiet chromium)
 On Debian, it's not difficult:
 
 ```Dockerfile
-RUN apt-get update && apt-get install -y  \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     $(apt-cache depends \
       -o APT::Cache::ShowOnlyFirstOr=true \
       --no-pre-depends \
@@ -134,7 +134,7 @@ RUN apt-get update && apt-get install -y  \
       --no-suggests \
       --no-replaces \
       --no-enhances \
-      --important chromium | grep "^\w" | sort -u) && \
+      --important chromium | sed 1d | sed 's/  Depends: //g' | sort -u) && \
     rm -rf /var/lib/apt/lists/*
 ```
 
