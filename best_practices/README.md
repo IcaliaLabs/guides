@@ -7,6 +7,7 @@ set of best practices for each stack, you can find them on the following links:
 * [Docker](../stack/docker)
 * [Rails](../stack/rails/BEST_PRACTICES.md)
 * [Ruby](../stack/ruby/BEST_PRACTICES.md)
+* [Javascript](../stack/javascript/BEST_PRACTICES.md)
 * [Git & Icalia Code Flow](../stack/git/)(See also [Code Reviewer Guide](CODE_REVIEWER_GUIDE.md))
 * [Code Analysis](code-analysis)
 
