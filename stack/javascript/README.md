@@ -2,7 +2,7 @@
 
 ## Package management
 
-Always use yarn instead of plain npm:
+Always use `yarn` instead of plain `npm`:
   - Yarn package resolution performance is better
   - Yarn features such as workspaces is commonly required
   - Yarn selective dependency resolution is required when dealing with vulnerable sub-dependencies
