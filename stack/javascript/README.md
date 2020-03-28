@@ -4,8 +4,8 @@
 
 Always use `yarn` instead of plain `npm`:
   - Yarn package resolution performance is better
-  - Yarn features such as workspaces is commonly required
-  - Yarn selective dependency resolution is required when [dealing with vulnerable sub-dependencies](#dealing-with-vulnerable-sub-dependencies)
+  - Yarn selective dependency resolution is required to [deal with vulnerable sub-dependencies](#dealing-with-vulnerable-sub-dependencies)
+  - Yarn workspaces feature may become commonly required
 
 ## Dealing with vulnerable sub-dependencies
 
