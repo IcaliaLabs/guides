@@ -1,0 +1,18 @@
+# Given that all configuration inherits from RuboCop's default configuration
+# - see https://docs.rubocop.org/rubocop/configuration.html#inheritance - we
+# will just add corrections over the default configuration instead:
+Metrics/BlockLength:
+  IgnoredMethods:
+    - configure # Ignore the typical configuration blocks
+    - describe  # Ignore RSpec "describe" blocks
+    - context   # Ignore RSpec "context" blocks
+    - namespace # Ignore Rake tasks namespace blocks on lib/tasks folder
+
+# Let's all do Sandi Metz's 5 lines per method thing!
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 5 lines of code.'
+  Max: 5
+
+# Also, let's keep method parameters under 5:
+Metrics/ParameterLists:
+  Max: 4
