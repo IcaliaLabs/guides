@@ -1,0 +1,8 @@
+# Given that all configuration inherits from RuboCop's default configuration
+# - see https://docs.rubocop.org/rubocop/configuration.html#inheritance - we
+# will just add corrections over the default configuration instead:
+Metrics/BlockLength:
+  IgnoredMethods:
+    - configure # Ignore the typical configuration blocks
+    - describe  # Ignore RSpec "describe" blocks
+    - context   # Ignore RSpec "context" blocks
