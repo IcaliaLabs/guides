@@ -8,10 +8,11 @@ Metrics/BlockLength:
     - context   # Ignore RSpec "context" blocks
     - namespace # Ignore Rake tasks namespace blocks on lib/tasks folder
 
-# Let's all do Sandi Metz's 5 lines per method thing!
+# Let's dial down this "Sandi Metz's 5 lines per method" thing!
+# 10 lines per method is OK!
 Metrics/MethodLength:
-  Description: 'Avoid methods longer than 5 lines of code.'
-  Max: 5
+  Description: 'Avoid methods longer than 10 lines of code.'
+  Max: 10
 
 # Also, let's keep method parameters under 5:
 Metrics/ParameterLists:
